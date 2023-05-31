@@ -1,4 +1,17 @@
 .card-section {
+  margin: 32px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media screen and (max-width: 578px) {
+  .card-section sdds-card {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.tabs-section {
+  margin: 32px;
 }
