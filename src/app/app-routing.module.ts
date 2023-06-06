@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PageOneComponent } from './pages/page-one/page-one.component';
 import { PageTwoComponent } from './pages/page-two/page-two.component';
-import { HomeComponent} from "./pages/home/home.component";
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home aka start page
@@ -12,9 +12,8 @@ const routes: Routes = [
   { path: '**', redirectTo: '', pathMatch: 'full' }, // Wildcard route
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
