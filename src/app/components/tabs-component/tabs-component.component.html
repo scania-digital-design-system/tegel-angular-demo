@@ -13,7 +13,62 @@
 
   <div class="tabs-panel">
     <span [hidden]="0 !== selectedIndex">
-      Content for 0 tab
+      <tds-table vertical-dividers="true" compact-design="false" enable-responsive="true" no-min-width>
+  <tds-table-header>
+    <tds-header-cell column-key="total-tables" column-title="Total Tables"></tds-header-cell>
+    <tds-header-cell column-key="total-columns" column-title="Total Columns"></tds-header-cell>
+    <tds-header-cell column-key="creation-date" column-title="Created on"></tds-header-cell>
+    <tds-header-cell column-key="submission-date" column-title="Submitted on"></tds-header-cell>
+    <tds-header-cell column-key="approval-date" column-title="Approved on"></tds-header-cell>
+    <tds-header-cell column-key="data-src" column-title="Approved on"></tds-header-cell>
+    <tds-header-cell column-key="status" column-title="Approved on"></tds-header-cell>
+  </tds-table-header>
+  <tds-table-body>
+    <tds-table-body-row>
+      <tds-body-cell
+        cell-key="total-tables"
+        disable-padding="false"
+      >
+        10
+      </tds-body-cell>
+      <tds-body-cell
+        cell-key="total-columns"
+        disable-padding="false"
+      >12
+      </tds-body-cell>
+      <tds-body-cell
+        cell-key="creation-date"
+        disable-padding="false"
+      >
+        06th June 2023
+      </tds-body-cell>
+      <tds-body-cell
+        cell-key="submission-date"
+        disable-padding="false"
+      >
+        07th June 2023
+      </tds-body-cell>
+        <tds-body-cell
+          cell-key="approval-date"
+          disable-padding="false"
+        >
+        08th June 2023
+      </tds-body-cell>
+        <tds-body-cell
+            cell-key="data-src"
+            disable-padding="false"
+          >
+       Datalake
+      </tds-body-cell>
+           <tds-body-cell
+             cell-key="status"
+             disable-padding="false"
+           >
+       Pending
+      </tds-body-cell>
+    </tds-table-body-row>
+  </tds-table-body>
+</tds-table>
     </span>
 
     <span [hidden]="1 !== selectedIndex">
