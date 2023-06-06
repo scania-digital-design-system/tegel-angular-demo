@@ -5,6 +5,10 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.card-section tds-card {
+  display: inline-grid;
+}
+
 @media screen and (max-width: 578px) {
   .card-section tds-card {
     display: flex;

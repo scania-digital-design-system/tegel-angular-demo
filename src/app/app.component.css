@@ -1,6 +1,6 @@
 main {
   padding-top: 64px;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: var(--tds-grey-50);
   min-height: 100vh;
   display: flex;
