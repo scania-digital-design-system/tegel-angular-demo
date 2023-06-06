@@ -6,7 +6,9 @@
 }
 
 .card-section tds-card {
-  display: inline-grid;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 578px) {
