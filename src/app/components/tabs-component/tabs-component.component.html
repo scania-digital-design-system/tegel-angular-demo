@@ -4,7 +4,7 @@
       <button>First tab</button>
     </tds-inline-tab>
     <tds-inline-tab>
-      <button>Second tab is much longer</button>
+      <button>Second tab</button>
     </tds-inline-tab>
     <tds-inline-tab>
       <button>Third tab</button>
@@ -31,7 +31,7 @@
             column-title="Submitted on"
           ></tds-header-cell>
           <tds-header-cell column-key="approval-date" column-title="Approved on"></tds-header-cell>
-          <tds-header-cell column-key="data-src" column-title="Approved on"></tds-header-cell>
+          <tds-header-cell column-key="data-src" column-title="Data source"></tds-header-cell>
           <tds-header-cell column-key="status" column-title="Approved on"></tds-header-cell>
         </tds-table-header>
         <tds-table-body>
@@ -54,8 +54,8 @@
       </tds-table>
     </span>
 
-    <span [hidden]="1 !== selectedIndex"> Content for 1 tab </span>
+    <span [hidden]="1 !== selectedIndex"> Content for 2nd tab </span>
 
-    <span [hidden]="2 !== selectedIndex"> Content for 2 tab </span>
+    <span [hidden]="2 !== selectedIndex"> Content for 3rd tab </span>
   </div>
 </ng-container>
