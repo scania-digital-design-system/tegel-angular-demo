@@ -1,0 +1,5 @@
+.tabs-panel {
+  background-color: var(--tds-white);
+  height: 500px;
+  padding: 16px;
+}

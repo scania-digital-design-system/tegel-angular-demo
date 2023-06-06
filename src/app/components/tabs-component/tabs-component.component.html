@@ -1,0 +1,27 @@
+<ng-container>
+<tds-inline-tabs default-selected-index="0" #tabs>
+  <tds-inline-tab>
+    <button>First tab</button>
+  </tds-inline-tab>
+  <tds-inline-tab>
+    <button>Second tab is much longer</button>
+  </tds-inline-tab>
+  <tds-inline-tab>
+    <button>Third tab</button>
+  </tds-inline-tab>
+</tds-inline-tabs>
+
+  <div class="tabs-panel">
+    <span [hidden]="0 !== selectedIndex">
+      Content for 0 tab
+    </span>
+
+    <span [hidden]="1 !== selectedIndex">
+      Content for 1 tab
+    </span>
+
+    <span [hidden]="2 !== selectedIndex">
+      Content for 2 tab
+    </span>
+  </div>
+</ng-container>
