@@ -1,7 +1,7 @@
 main {
   padding-top: 64px;
   overflow-y: scroll;
-  background-color: var(--sdds-grey-50);
+  background-color: var(--tds-grey-50);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

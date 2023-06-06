@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 578px) {
-  .card-section sdds-card {
+  .card-section tds-card {
     display: flex;
     justify-content: center;
   }
