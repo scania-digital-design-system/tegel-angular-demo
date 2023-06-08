@@ -2,7 +2,7 @@ main {
   padding-top: 64px;
   overflow-y: auto;
   background-color: var(--tds-grey-50);
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
 }
