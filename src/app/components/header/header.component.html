@@ -1,21 +1,25 @@
-<tds-header class="tds-u-fixed tds-u-top0">
-  <tds-header-hamburger
-    id="demo-hamburger"
-    aria-label="Open application drawer"
-    aria-haspopup="true"
-    aria-expanded="false"
-  ></tds-header-hamburger>
+<ng-container>
+  <tds-header class="tds-u-fixed tds-u-top0">
+    <tds-header-hamburger
+      id="demo-hamburger"
+      aria-label="Open application drawer"
+      aria-haspopup="true"
+      aria-expanded="false"
+    ></tds-header-hamburger>
 
-  <tds-header-title>Example: Few items</tds-header-title>
+    <tds-header-title>Example: Few items</tds-header-title>
 
-  <tds-header-item>
-    <a routerLink="/page-one">Page one</a>
-  </tds-header-item>
-  <tds-header-item>
-    <a routerLink="/page-two">Page Two</a>
-  </tds-header-item>
+    <tds-header-item [attr.selected]="isActive('/page-one')">
+      <a routerLink="/page-one">Page one</a>
+    </tds-header-item>
 
-  <tds-header-brand-symbol slot="end">
-    <a routerLink="/" aria-label="Scania - red gryphon on blue shield"></a>
-  </tds-header-brand-symbol>
-</tds-header>
+    <tds-header-item selected="{{ getCurrentUrl() === '/page-two'}}">
+      <a routerLink="/page-two">Page Two</a>
+    </tds-header-item>
+
+    <tds-header-brand-symbol slot="end">
+      <a routerLink="/" aria-label="Scania - red gryphon on blue shield"></a>
+    </tds-header-brand-symbol>
+  </tds-header>
+
+</ng-container>
