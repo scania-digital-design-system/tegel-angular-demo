@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TabsComponentComponent } from './components/tabs-component/tabs-component.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TabsComponentComponent } from './components/tabs-component/tabs-compone
     FooterComponent,
     HomeComponent,
     TabsComponentComponent,
+    ErrorPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageOneComponent } from './pages/page-one/page-one.component';
 import { PageTwoComponent } from './pages/page-two/page-two.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home aka start page
   { path: 'page-one', component: PageOneComponent },
   { path: 'page-two', component: PageTwoComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }, // Wildcard route
+  { path: '404', component: ErrorPageComponent },
+  { path: '**', redirectTo: '404', pathMatch: 'full' }, // Wildcard route
 ];
 
 @NgModule({
