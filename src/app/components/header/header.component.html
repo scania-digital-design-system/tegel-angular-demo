@@ -1,24 +1,25 @@
-<sdds-header>
+<ng-container>
+  <tds-header class="tds-u-fixed tds-u-top0">
+    <tds-header-hamburger
+      id="demo-hamburger"
+      aria-label="Open application drawer"
+      aria-haspopup="true"
+      aria-expanded="false"
+    ></tds-header-hamburger>
 
-  <sdds-header-hamburger
-    id="demo-hamburger"
-    aria-label="Open application drawer"
-    aria-haspopup="true"
-    aria-expanded="false"
-  ></sdds-header-hamburger>
+    <tds-header-title>Example: Few items</tds-header-title>
 
-  <sdds-header-title>Example: Few items</sdds-header-title>
+    <tds-header-item [attr.selected]="isActive('/page-one')">
+      <a routerLink="/page-one">Page one</a>
+    </tds-header-item>
 
-  <sdds-header-item>
-    <a routerLink="/page-one">Page one</a>
-  </sdds-header-item>
-  <sdds-header-item>
-    <a routerLink="/page-two">Page Two</a>
-  </sdds-header-item>
-  <sdds-header-brand-symbol
-    slot="end"
-    aria-label="Scania - red gryphon on blue shield"
-    link-href="/"
-    routerLink="/"
-  ></sdds-header-brand-symbol>
-</sdds-header>
+    <tds-header-item selected="{{ getCurrentUrl() === '/page-two'}}">
+      <a routerLink="/page-two">Page Two</a>
+    </tds-header-item>
+
+    <tds-header-brand-symbol slot="end">
+      <a routerLink="/" aria-label="Scania - red gryphon on blue shield"></a>
+    </tds-header-brand-symbol>
+  </tds-header>
+
+</ng-container>
