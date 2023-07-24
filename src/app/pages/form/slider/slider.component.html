@@ -1,0 +1,45 @@
+
+<section>
+  <h3>Sliders</h3>
+  <h5>Tell us how you feel about your..</h5>
+  <tds-slider
+    ref={happinesSlider}
+    label="..happiness at work"
+    name="happinessAtWork"
+    min="0"
+    value="5"
+    show-tick-numbers
+    max="10"
+    ticks="9"
+    snap
+  ></tds-slider>
+
+  <h4>Disabled</h4>
+  <tds-slider
+    ref={stressSlider}
+    label="..stress level  disabled slider"
+    name="stressLevel"
+    min="0"
+    value="5"
+    show-tick-numbers
+    max="10"
+    ticks="9"
+    snap
+    disabled
+  ></tds-slider>
+
+  <h4>Read-Only</h4>
+
+  <tds-slider
+    ref={workLifeSlider}
+    label="..work/life balance. read-only slider"
+    name="workLifeBalance"
+    min="0"
+    value="5"
+    show-tick-numbers
+    max="10"
+    ticks="9"
+    snap
+    read-only
+  ></tds-slider>
+</section>

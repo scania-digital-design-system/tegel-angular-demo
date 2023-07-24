@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css'],
+    standalone: true,
+    imports: [RouterLink],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class HeaderComponent {
   /* Here are two examples how to check current url to make "selected" prop of <tds-header-item> to work.

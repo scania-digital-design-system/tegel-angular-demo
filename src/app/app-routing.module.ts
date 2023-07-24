@@ -6,16 +6,17 @@ import { PageTwoComponent } from './pages/page-two/page-two.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
-const routes: Routes = [
+const routes = [
   { path: '', component: HomeComponent }, // Home aka start page
+{
+  path: 'form',
+  loadComponent: () => import('./pages/form/form.component'),
+
+},
   { path: 'page-one', component: PageOneComponent },
   { path: 'page-two', component: PageTwoComponent },
   { path: '404', component: ErrorPageComponent },
   { path: '**', redirectTo: '404', pathMatch: 'full' }, // Wildcard route
-];
+] satisfies Routes;
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+export default routes;

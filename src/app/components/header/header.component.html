@@ -17,6 +17,10 @@
       <a routerLink="/page-two">Page Two</a>
     </tds-header-item>
 
+    <tds-header-item selected="{{ getCurrentUrl() === '/form'}}">
+      <a routerLink="/form">form</a>
+    </tds-header-item>
+
     <tds-header-dropdown>
       <span slot="button-label">Example dropdown</span>
       <tds-header-dropdown-list>

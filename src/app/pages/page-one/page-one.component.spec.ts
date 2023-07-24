@@ -8,8 +8,8 @@ describe('PageOneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PageOneComponent],
-    }).compileComponents();
+    imports: [PageOneComponent],
+}).compileComponents();
 
     fixture = TestBed.createComponent(PageOneComponent);
     component = fixture.componentInstance;
