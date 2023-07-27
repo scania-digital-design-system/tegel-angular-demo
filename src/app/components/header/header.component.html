@@ -7,10 +7,10 @@
       aria-expanded="false"
     ></tds-header-hamburger>
 
-    <tds-header-title>Example: Few items</tds-header-title>
+    <tds-header-title>Angular Demo</tds-header-title>
 
-    <tds-header-item [attr.selected]="isActive('/page-one')">
-      <a routerLink="/page-one">Page one</a>
+    <tds-header-item [attr.selected]="isActive('/components')">
+      <a routerLink="/components">Components</a>
     </tds-header-item>
 
     <tds-header-item selected="{{ getCurrentUrl() === '/page-two'}}">

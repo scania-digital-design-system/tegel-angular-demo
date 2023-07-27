@@ -2,7 +2,17 @@ main {
   padding-top: 64px;
   overflow-y: auto;
   background-color: var(--tds-grey-50);
-  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  justify-content: center;
+  padding: 128px 0;
 }
