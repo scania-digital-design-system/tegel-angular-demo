@@ -1,5 +1,4 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-accordion',
@@ -7,7 +6,6 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./accordion.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [FormsModule]
 })
 
 export class AccordionComponent {
@@ -26,8 +24,8 @@ export class AccordionComponent {
     this.expandedItem = this.expandedItem === item ? '' : item;
   }
 
-  handleIconPositionChange(value: 'end' | 'start'): void {
-    this.iconPosition = value;
-    this.iconPositionChange.emit(value); // Emit the custom event
+  handleIconPositionChange(newPosition: 'end' | 'start'): void {
+    this.iconPosition = newPosition;
+    this.iconPositionChange.emit(newPosition);
   }
 }
