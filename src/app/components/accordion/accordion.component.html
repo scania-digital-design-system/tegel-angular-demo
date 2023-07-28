@@ -1,13 +1,40 @@
-<div class="tds-headline-02 tds-u-pb1">Accordion</div>
+<!-- Add the following code to your accordion.component.html -->
+
+<!-- Your existing code for accordion items goes here -->
 <tds-accordion>
-    <tds-accordion-item header="First item">
-    This is the panel, which contains associated information with the header. Usually it contains
-    text, set in the same size as the header. Lorem ipsum doler sit amet.
+    <tds-accordion-item
+      header="Item 1"
+      [expanded]="expandedItem === 'item1'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item1')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
     </tds-accordion-item>
-    <tds-accordion-item expanded>
-    <div slot="header">Second item</div>
-    This is the panel, which contains associated information with the header. Usually it contains
-    text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. Duis laoreet vestibulum fermentum.
-    </tds-accordion-item>
-</tds-accordion>
+    <!-- Add other accordion items as needed -->
+  </tds-accordion>
+  
+  <!-- Add the radio buttons for icon position -->
+  <h2>Icon Position</h2>
+  <div>
+    <input
+      type="radio"
+      name="icon-position"
+      value="end"
+      [(ngModel)]="iconPosition"
+      (ngModelChange)="handleIconPositionChange($event)"
+    >
+    <label>End</label>
+  
+    <input
+      type="radio"
+      name="icon-position"
+      value="start"
+      [(ngModel)]="iconPosition"
+      (ngModelChange)="handleIconPositionChange($event)"
+    >
+    <label>Start</label>
+  </div>
+  

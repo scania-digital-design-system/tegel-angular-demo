@@ -1,0 +1,8 @@
+<!-- accordion-item.component.html -->
+<div [class.expanded]="expanded">
+    <div class="header" (click)="toggle()">{{ header }}</div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  
