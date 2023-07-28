@@ -28,4 +28,14 @@ export class AccordionComponent {
     this.iconPosition = newPosition;
     this.iconPositionChange.emit(newPosition);
   }
+
+  handlePaddingResetToggle(event: Event): void {
+    const detail = (event as CustomEvent).detail as { checked: boolean };
+    this.paddingReset = detail.checked;
+  }
+
+  handleAccordionToggle(event: Event): void {
+    const detail = (event as CustomEvent).detail as { checked: boolean };
+    this.checkboxState = detail.checked;
+  }
 }

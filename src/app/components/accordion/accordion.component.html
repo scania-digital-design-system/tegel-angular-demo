@@ -18,7 +18,20 @@
   >
     <div slot="label">Start</div>
   </tds-radio-button>
+  <br />
+  <tds-toggle (tdsToggle)="handlePaddingResetToggle($event)">
+    <div slot="label">{{ paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset' }}</div>
+  </tds-toggle>
+  <br />
+  <tds-toggle
+  ref="accordionToggleRef"
+  [checked]="checkboxState"
+  (tdsToggle)="handleAccordionToggle($event)"
+>
+  <div slot="label">{{ checkboxState ? 'Disable Accordion' : 'Enable Accordion' }}</div>
+</tds-toggle>
 </div>
+
 <br />
 <tds-accordion>
     <tds-accordion-item
