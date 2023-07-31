@@ -1,5 +1,5 @@
-@import url('@scania/tegel/dist/tegel/tegel.css');
 @import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
+@import url('@scania/tegel/dist/tegel/tegel.css');
 
 main {
   padding-top: 64px;
