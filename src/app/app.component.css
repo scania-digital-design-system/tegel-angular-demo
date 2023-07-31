@@ -1,3 +1,6 @@
+@import url('@scania/tegel/dist/tegel/tegel.css');
+@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
+
 main {
   padding-top: 64px;
   overflow-y: auto;
