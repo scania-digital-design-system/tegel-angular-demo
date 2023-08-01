@@ -1,0 +1,112 @@
+<div class="tds-headline-02 tds-u-pb1">Accordion</div>
+<br />
+<h2>Icon Position</h2>
+<div>
+  <tds-radio-button
+    name="icon-position"
+    value="end"
+    [checked]="iconPosition === 'end'"
+    (tdsChange)="handleIconPositionChange('end')"
+  >
+    <div slot="label">End</div>
+  </tds-radio-button>
+  <tds-radio-button
+    name="icon-position"
+    value="start"
+    [checked]="iconPosition === 'start'"
+    (tdsChange)="handleIconPositionChange('start')"
+  >
+    <div slot="label">Start</div>
+  </tds-radio-button>
+  <br />
+  <tds-toggle (tdsToggle)="handlePaddingResetToggle($event)">
+    <div slot="label">{{ paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset' }}</div>
+  </tds-toggle>
+  <br />
+  <tds-toggle
+  ref="accordionToggleRef"
+  [checked]="checkboxState"
+  (tdsToggle)="handleAccordionToggle($event)"
+>
+  <div slot="label">{{ checkboxState ? 'Disable Accordion' : 'Enable Accordion' }}</div>
+</tds-toggle>
+</div>
+
+<br />
+<h2>Accordion with Primary Mode Variant</h2>
+<tds-accordion mode-variant="primary">
+    <tds-accordion-item
+      header="Item 1"
+      [expanded]="expandedItem === 'item1'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item1')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+    <tds-accordion-item
+      header="Item 2"
+      [expanded]="expandedItem === 'item2'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item2')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+    <tds-accordion-item
+      header="Item 3"
+      [expanded]="expandedItem === 'item3'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item3')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+  </tds-accordion>
+
+  <h2>Accordion with Secondary Mode Variant</h2>
+
+  <tds-accordion mode-variant="secondary">
+    <tds-accordion-item
+      header="Item 1"
+      [expanded]="expandedItem === 'item1'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item1')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+    <tds-accordion-item
+      header="Item 2"
+      [expanded]="expandedItem === 'item2'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item2')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+    <tds-accordion-item
+      header="Item 3"
+      [expanded]="expandedItem === 'item3'"
+      [expandIconPosition]="iconPosition"
+      [disabled]="!checkboxState"
+      [paddingReset]="paddingReset"
+      (onTdsToggle)="handleAccordionItemClick('item3')"
+    >
+      This is the panel, which contains associated information with the header. Usually, it
+      contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+    </tds-accordion-item>
+  </tds-accordion>
+  
+ 
+  
