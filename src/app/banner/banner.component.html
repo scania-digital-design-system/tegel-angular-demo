@@ -1,0 +1,26 @@
+<div>
+  <div class="tds-headline-02 tds-u-pb1">Banner</div>
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-1">
+    <tds-banner icon="error" header="This Banner won't close" variant="error" (tdsClose)="handleClose($event)">
+      <div slot="banner-subheader">Due to its tdsClose event being prevented.</div>
+    </tds-banner>
+    <tds-banner icon="info" header="This Banner will close." variant="information">
+      <div slot="banner-subheader">And it also has a link.</div>
+      <tds-link slot="banner-link">
+        <a href="/">Link example</a>
+      </tds-link>
+    </tds-banner>
+    <tds-banner id="my-banner" icon="save" persistent="true" [header]="'This Banner is persistent.'">
+      <div slot="banner-subheader">That means it doesn't have a "close button"</div>
+    </tds-banner>
+  </div>
+
+  <div class="tds-u-mt-2">
+    <p>
+      But you can close the persistent banner programmatically by toggling the toggle below.
+    </p>
+    <tds-toggle #toggle (tdsToggle)="handleToggle()">
+      <div slot="label">{{ bannerVisibility ? 'Hide Banner' : 'Show Banner' }}</div>
+    </tds-toggle>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 /* @import "reset.css"; */
 @import url('@scania/tegel/dist/tegel/tegel.css');
+@import 'utility-classes.css'; 
 
 body {
   min-height: 100vh;
