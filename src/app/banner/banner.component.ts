@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
@@ -18,10 +18,8 @@ export class BannerComponent {
     const bannerElement = this.elementRef.nativeElement.querySelector(
       'tds-banner[persistent="true"]'
     );
-    console.log(bannerElement);
 
     if (bannerElement) {
-      console.log('it is a banner element');
       if (this.bannerVisibility) {
         bannerElement.hideBanner();
       } else {
