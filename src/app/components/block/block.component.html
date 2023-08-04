@@ -6,6 +6,7 @@
         name="variant"
         value="primary"
         radio-id="variant-option-1"
+        checked=true
         (tdsChange)="handleVariantChange($event)"
       >
         <div slot="label">Primary variant</div>
@@ -22,7 +23,7 @@
     </div>
   
     <tds-block [modeVariant]="modeVariant">
-      <div class="tds-headline-02 tds-u-pb1">{{ capitalizeFirst(modeVariant) }} Block</div>
+      <div class="tds-headline-02 tds-u-pb1 capitalize">{{ modeVariant }} Block</div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
         ultrices. Nunc venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et

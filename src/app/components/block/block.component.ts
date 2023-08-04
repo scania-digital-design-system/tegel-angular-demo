@@ -1,6 +1,4 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { capitalizeFirst } from '../../shared/utils';
-
 @Component({
   selector: 'app-block',
   templateUrl: './block.component.html',
@@ -13,9 +11,5 @@ export class BlockComponent {
 
   handleVariantChange(event: any) {
     this.modeVariant = event.detail.value;
-  }
-
-  capitalizeFirst(str: string) {
-    return capitalizeFirst(str);
   }
 }
