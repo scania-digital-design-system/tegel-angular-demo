@@ -16,3 +16,33 @@ main {
   justify-content: center;
   padding: 128px 0;
 }
+
+.side-menu-and-main {
+  display: flex;
+  flex-grow: 1;
+}
+
+
+.mobile-nav-item {
+  display: none;
+}
+
+tds-header {
+  position: sticky;
+  top: 0px;
+}
+
+@media (min-width: 992px) {
+  tds-side-menu {
+    height: calc(100vh - 64px);
+    position: sticky;
+    top: 64px;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-nav-item {
+    display: block;
+  }
+}
