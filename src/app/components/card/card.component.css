@@ -1,0 +1,22 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.split-cards {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.card-carousel tds-card {
+    min-width: 250px;
+}
+
+.card-carousel {
+    display: flex;
+    column-gap: 16px;
+    overflow: auto;
+    padding: 16px 1px;
+}
