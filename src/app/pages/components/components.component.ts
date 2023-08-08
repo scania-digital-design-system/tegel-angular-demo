@@ -5,6 +5,7 @@ import { BadgeComponent } from 'src/app/components/badge/badge.component';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { BlockComponent } from 'src/app/components/block/block.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
+import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
 
 @Component({
     selector: 'app-components',
@@ -17,6 +18,7 @@ import { ButtonComponent } from 'src/app/components/button/button.component';
         BannerComponent,
         ButtonComponent,
         BlockComponent,
+        BreadcrumbsComponent,
         FormsModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
