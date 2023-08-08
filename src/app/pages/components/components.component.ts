@@ -4,6 +4,7 @@ import { AccordionComponent } from '../../components/accordion/accordion.compone
 import { BadgeComponent } from 'src/app/components/badge/badge.component';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { BlockComponent } from 'src/app/components/block/block.component';
+import { ButtonComponent } from 'src/app/components/button/button.component';
 
 @Component({
     selector: 'app-components',
@@ -14,6 +15,7 @@ import { BlockComponent } from 'src/app/components/block/block.component';
         AccordionComponent,
         BadgeComponent,
         BannerComponent,
+        ButtonComponent,
         BlockComponent,
         FormsModule,
     ],
