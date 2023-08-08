@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccordionComponent } from '../../components/accordion/accordion.component';
-import { BadgeComponent } from 'src/app/badge/badge.component';
+import { BadgeComponent } from 'src/app/components/badge/badge.component';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { BlockComponent } from 'src/app/components/block/block.component';
 
