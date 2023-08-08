@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { Router, RouterOutlet,RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -9,7 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
     styleUrls: ['./app.component.css'],
     standalone: true,
     imports: [
-        HeaderComponent,
+        RouterLink,
         RouterOutlet,
         FooterComponent,
     ],
@@ -17,5 +16,16 @@ import { HeaderComponent } from './components/header/header.component';
 
 })
 export class AppComponent {
-  title = 'tegel-angular-demo';
+  constructor(private router: Router) {}
+  
+  title = 'Angular Demo';
+  mobileNavOpen = false;
+
+  isActive(url: string): boolean {
+    return this.router.url === url;
+  }
+
+  toggleMobileSideMenu() {
+    this.mobileNavOpen = !this.mobileNavOpen;
+  }
 }
