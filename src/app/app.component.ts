@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { Router, RouterOutlet,RouterLink } from '@angular/router';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @Component({
     selector: 'app-root',
@@ -11,6 +12,7 @@ import { Router, RouterOutlet,RouterLink } from '@angular/router';
         RouterLink,
         RouterOutlet,
         FooterComponent,
+        BreadcrumbsComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

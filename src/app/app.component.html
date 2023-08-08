@@ -5,7 +5,7 @@
   <tds-header-title>{{ title }} </tds-header-title>
 
   <tds-header-item [attr.selected]="isActive('/components')">
-    <a routerLink="/components">Components</a>
+    <a routerLink="/web-components">Components</a>
   </tds-header-item>
 
   <tds-header-item [selected]="isActive('/form')">
@@ -59,7 +59,7 @@
       </a>
     </tds-side-menu-item>
     <tds-side-menu-item class="mobile-nav-item" [attr.selected]="isActive('/components')">
-      <a routerLink="/components" (click)="toggleMobileSideMenu()">
+      <a routerLink="/web-components" (click)="toggleMobileSideMenu()">
         <tds-icon name="tool" size="24"></tds-icon>
         Components
       </a>
@@ -106,6 +106,7 @@
     <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
   </tds-side-menu>
   <main class="tds-u-h-100 tds-u-w-100">
+    <app-breadcrumbs></app-breadcrumbs>
     <div class="tds-u-h-100 tds-u-p3">
       <router-outlet></router-outlet>
     </div>

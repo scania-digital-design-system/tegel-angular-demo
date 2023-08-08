@@ -7,3 +7,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  height: var(--tds-header-height);
+}
