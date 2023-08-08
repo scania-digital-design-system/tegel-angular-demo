@@ -15,13 +15,12 @@ import { filter } from 'rxjs/operators';
 export class BreadcrumbsComponent {
   segments: Array<{ title: string; path: string }> = []; // Initialize an empty array
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private router: Router) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.url = event.url;
         this.segments = this.generateSegments(this.url); // Initialize segments array here
-        console.log(this.segments);
       });
   }
 
