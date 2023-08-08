@@ -1,14 +1,15 @@
 <div>
     <div class="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
-    <tds-breadcrumbs>
-        <tds-breadcrumb>
-            <a href="#">Page 1</a>
-        </tds-breadcrumb>
-        <tds-breadcrumb>
-            <a href="#">Page 2</a>
-        </tds-breadcrumb>
-        <tds-breadcrumb current>
-            <a href="#">Page 3</a>
-        </tds-breadcrumb>
-    </tds-breadcrumbs>
+    <div *ngIf="segments.length > 1 && segments[1].path !== '/web-components'" class="root">
+        <tds-breadcrumbs>
+          <ng-container *ngFor="let segment of segments; let idx = index">
+            <app-breadcrumb
+              [key]="segment.path"
+              [segment]="segment"
+              [isLast]="idx >= segments.length - 1"
+              [idx]="idx"
+            ></app-breadcrumb>
+          </ng-container>
+        </tds-breadcrumbs>
+      </div>
 </div>
