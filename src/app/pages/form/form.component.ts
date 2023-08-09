@@ -50,8 +50,14 @@ export default class FormComponent implements OnInit {
 
   dropdownField: FormGroup = new FormGroup({
     country: new FormControl(''),
-    norwegianTown: new FormControl({ value: '', disabled: true}),
-    swedishTown: new FormControl({ value: '', disabled: true}),
+    norwegianTown: new FormControl({ value: null, disabled: true}),
+    swedishTown: new FormControl({ value: null, disabled: true}),
+  })
+
+  sliderField: FormGroup = new FormGroup({
+    happines: new FormControl(5),
+    stress: new FormControl({ value: '', disabled: true}),
+    balance: new FormControl({ value: '', disabled: true}),
   })
 
 
@@ -64,6 +70,8 @@ export default class FormComponent implements OnInit {
     console.log("checkboxField", this.checkboxField.value);
 
     console.log("dropdownField", this.dropdownField.value);
+
+    console.log("sliderField", this.sliderField.value);
   }
 
   ngOnInit(): void {

@@ -27,12 +27,16 @@ export class DropdownComponent {
     if(event.detail.value === 'norway'){
       this.norwayDropdown.nativeElement.disabled = false;
       this.swedenDropdown.nativeElement.disabled = true;
+      this.dropdownGroup.get('norwegianTown')?.enable()
+      this.dropdownGroup.get('swedishTown')?.disable()
       this.swedenDropdown.nativeElement.reset()
     } else if(event.detail.value === 'sweden'){
       this.swedenDropdown.nativeElement.disabled = false;
       this.norwayDropdown.nativeElement.disabled = true;
+      this.dropdownGroup.get('swedishTown')?.enable()
+      this.dropdownGroup.get('norwegianTown')?.disable()
       this.norwayDropdown.nativeElement.reset()
+
     }
-    
   }
 }
