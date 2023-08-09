@@ -1,32 +1,55 @@
 <ng-container [formGroup]="checkboxGroup">
-
-  <h5>Which offices do you work from?</h5>
-  <tds-checkbox name="office" formControlName="sodertalje" ngDefaultControl>
-    <div slot="label">Södertälje 321</div>
-  </tds-checkbox>
-  <tds-checkbox value="sergel" name="office">
-    <div slot="label">Sergel</div>
-  </tds-checkbox>
-  <tds-checkbox value="homeoffice" name="office">
-    <div slot="label">Home office</div>
-  </tds-checkbox>
-  <tds-checkbox value="b260" name="office" disabled>
-    <div slot="label">Building 260</div>
-  </tds-checkbox>
-  <h5>How long have you been at Scania?</h5>
-  <tds-radio-button checked value="radio-1" name="yearsAtScania">
-    <div slot="label">0 - 6 months</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">6 months - 1 year</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">1 - 2 years</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">2 - 5 years</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">+ 5 years</div>
-  </tds-radio-button>
+  <section class="form-section">
+    <div>
+      <h5>Which offices do you work from?</h5>
+      <div>
+        <tds-checkbox value="checkbox" (tdsChange)="handleCheckboxChange('checkbox')">
+          <span slot="label">Södertälje 321</span>
+        </tds-checkbox>
+        <tds-checkbox value="sergel" (tdsChange)="handleCheckboxChange('sergel')">
+          <span slot="label">Sergel</span>
+        </tds-checkbox>
+        <tds-checkbox value="homeOffice" (tdsChange)="handleCheckboxChange('homeOffice')">
+          <span slot="label">Home Office</span>
+        </tds-checkbox>
+        <tds-checkbox value="building260" (tdsChange)="handleCheckboxChange('building260')">
+          <span slot="label">Building 260</span>
+        </tds-checkbox>
+      </div>
+    </div>
+    <div>
+      <h5>How long have you been at Scania?</h5>
+      <tds-radio-button
+        checked
+        value="radio-1"
+        name="yearsAtScania"
+      >
+        <div slot="label">0 - 6 months</div>
+      </tds-radio-button>
+      <tds-radio-button
+        value="radio-2"
+        name="yearsAtScania"
+      >
+        <div slot="label">6 months - 1 year</div>
+      </tds-radio-button>
+      <tds-radio-button
+        value="radio-2"
+        name="yearsAtScania"
+      >
+        <div slot="label">1 - 2 years</div>
+      </tds-radio-button>
+      <tds-radio-button
+        value="radio-2"
+        name="yearsAtScania"
+      >
+        <div slot="label">2 - 5 years</div>
+      </tds-radio-button>
+      <tds-radio-button
+        value="radio-2"
+        name="yearsAtScania"
+      >
+        <div slot="label">+ 5 years</div>
+      </tds-radio-button>
+    </div>
+  </section>
 </ng-container>
