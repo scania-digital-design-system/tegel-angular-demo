@@ -24,7 +24,6 @@ import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs
     CheckboxComponent,
     SliderComponent,
     TextInputComponent,
-    TextInputComponent,
     DropdownComponent,
     BreadcrumbsComponent
   ],
@@ -49,6 +48,12 @@ export default class FormComponent implements OnInit {
     building260: new FormControl(false)
   })
 
+  dropdownField: FormGroup = new FormGroup({
+    country: new FormControl(''),
+    norwegianTown: new FormControl({ value: '', disabled: true}),
+    swedishTown: new FormControl({ value: '', disabled: true}),
+  })
+
 
 
   constructor(){}
@@ -58,6 +63,7 @@ export default class FormComponent implements OnInit {
 
     console.log("checkboxField", this.checkboxField.value);
 
+    console.log("dropdownField", this.dropdownField.value);
   }
 
   ngOnInit(): void {
