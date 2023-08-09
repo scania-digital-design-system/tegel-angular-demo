@@ -1,1 +1,55 @@
-<h1>Chips</h1>
+<h1>Start testing Chips by exploring the actions below</h1>
+<p>
+  Action chips are interactive UI elements triggering actions tied to main content. Compact
+  and context-specific, they enhance user experience by providing additional functionality.
+  For instance, in a music app, a chip may allow users to add songs to a playlist, or share
+  them, thus seamlessly integrating extra features.
+</p>
+<div class="tds-u-flex tds-u-flex-gap-1">
+  <tds-chip size="lg" onclick="alert('Clicked chip!')">
+    <tds-icon slot="prefix" name="lock_inactive" size="16px"></tds-icon>
+    <span slot="label">Lock</span>
+  </tds-chip>
+  <tds-chip size="lg" onclick="alert('Clicked chip!')">
+    <tds-icon slot="prefix" name="notification" size="16px"></tds-icon>
+    <span slot="label">Set alarm</span>
+  </tds-chip>
+</div>
+
+<p class="tds-u-mb3">
+  Checkbox chips are versatile UI components allowing multiple selections within a dataset.
+  Unlike traditional checkboxes, these chips provide a modern, compact, and intuitive way to
+  select options. They are particularly effective in scenarios where users may want to apply
+  multiple filters or categories simultaneously, improving user experience through their
+  simplicity and ease of use.
+</p>
+<form (submit)="handleSubmit($event)">
+
+  <fieldset class="tds-u-mb3">
+    <legend class="tds-headline-02 tds-u-mb3">Pick your favourite topics</legend>
+    <div class="tds-u-flex tds-u-flex-gap-1 tds-u-flex-wrap">
+      <div *ngFor="let topic of data.topic.fields; let i = index">
+        <tds-chip [type]="'checkbox'" [name]="'topic'" [value]="topic.name"
+          [checked]="data.topic.preselected === topic.id">
+          <span slot="label">{{ topic.name }}</span>
+        </tds-chip>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="tds-u-mb3">
+    <legend class="tds-headline-02 tds-u-mb3">Wheel size</legend>
+
+    <div class="tds-u-flex tds-u-flex-gap-1 tds-u-flex-wrap">
+      <div *ngFor="let size of data.size.fields; let i = index">
+        <tds-chip [type]="'radio'" [name]="'size'" [value]="size.name" [checked]="data.size.preselected === size.id"
+          (tdsChange)="handleTdsChange($event)" #sizeChip>
+          <span slot="label">{{ size.name }}</span>
+        </tds-chip>
+      </div>
+
+    </div>
+  </fieldset>
+  <tds-button text="Submit" type="submit"></tds-button>
+</form>
+<pre>{{ submittedData }}</pre>
