@@ -6,6 +6,7 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { BlockComponent } from 'src/app/components/block/block.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
+import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
 
 @Component({
     selector: 'app-components',
@@ -19,6 +20,7 @@ import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs
         ButtonComponent,
         BlockComponent,
         BreadcrumbsComponent,
+        CheckboxComponent,
         FormsModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
