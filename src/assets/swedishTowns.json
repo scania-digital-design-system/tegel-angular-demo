@@ -1,0 +1,53 @@
+[
+    {
+      "value": "stockholm",
+      "label": "Stockholm",
+      "disabled": false
+    },
+    {
+      "value": "gothenburg",
+      "label": "Gothenburg",
+      "disabled": false
+    },
+    {
+      "value": "malmo",
+      "label": "Malmö",
+      "disabled": false
+    },
+    {
+      "value": "uppsala",
+      "label": "Uppsala",
+      "disabled": false
+    },
+    {
+      "value": "västerås",
+      "label": "Västerås",
+      "disabled": false
+    },
+    {
+      "value": "örebro",
+      "label": "Örebro",
+      "disabled": false
+    },
+    {
+      "value": "linköping",
+      "label": "Linköping",
+      "disabled": false
+    },
+    {
+      "value": "helsingborg",
+      "label": "Helsingborg",
+      "disabled": false
+    },
+    {
+      "value": "jönköping",
+      "label": "Jönköping",
+      "disabled": false
+    },
+    {
+      "value": "norrköping",
+      "label": "Norrköping",
+      "disabled": false
+    }
+  ]
+  
