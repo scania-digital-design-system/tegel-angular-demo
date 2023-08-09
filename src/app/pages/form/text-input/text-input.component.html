@@ -1,65 +1,26 @@
-    <ng-container [formGroup]="textFieldGroup" >
+<ng-container [formGroup]="textFieldGroup">
+  <section class="form-section">
+  <h4>Text Input</h4>
+  <tds-text-field ngDefaultControl mode-variant="secondary" name="text-field" label="Full name" label-position="outside"
+    formControlName="firstName" placeholder="John Doe">
+  </tds-text-field>
 
-    <section >
-        <h4>Text Input</h4>
-        <tds-text-field
-        ngDefaultControl
-        mode-variant="secondary"
-        name="text-field"
-        label="Full name"
-        label-position="outside"
-        formControlName="firstName"
-        placeholder="John Doe"
-       >
-      </tds-text-field>
-    </section>
+  <tds-datetime ngDefaultControl mode-variant="secondary" label="Date of birth" name="dateOfBirth" type="date"
+    formControlName="dateOfBirth"></tds-datetime>
 
-    <section>
-      <tds-datetime
-      ngDefaultControl
-      mode-variant="secondary"
-      label="Date of birth"
-      name="dateOfBirth"
-      type="date"
-      formControlName="dateOfBirth"
-      ></tds-datetime>
-    </section>
+  <tds-text-field mode-variant="secondary" type="text" size="lg" state="success" label="Phone number" name="phoneNumber"
+    label-position="outside" no-min-width placeholder="08 456 32" ngDefaultControl formControlName="phoneNumber">
+    <span slot="prefix">
+      <tds-icon name="phone" size="16px"></tds-icon>
+    </span>
+  </tds-text-field>
 
-    <section class="side-by-side-input">
-      <tds-text-field
-        mode-variant="secondary"
-        type="text"
-        size="lg"
-        state="success"
-        label="Phone number"
-        name="phoneNumber"
-        label-position="outside"
-        no-min-width
-        placeholder="08 456 32"
-        ngDefaultControl
-        formControlName="phoneNumber"
-      >
-        <span slot="prefix">
-          <tds-icon name="phone" size="16px"></tds-icon>
-        </span>
-      </tds-text-field>
-
-      <tds-text-field
-      ngDefaultControl
-      formControlName="address"
-        mode-variant="secondary"
-        type="text"
-        size="lg"
-        state="default"
-        label="Address"
-        name="homeAddress"
-        label-position="outside"
-        no-min-width
-        placeholder="Majorvägen 32"
-      >
-        <span slot="prefix">
-          <tds-icon name="pin" size="16px"></tds-icon>
-        </span>
-      </tds-text-field>
-    </section>
-  </ng-container>
+  <tds-text-field ngDefaultControl formControlName="address" mode-variant="secondary" type="text" size="lg"
+    state="default" label="Address" name="homeAddress" label-position="outside" no-min-width
+    placeholder="Majorvägen 32">
+    <span slot="prefix">
+      <tds-icon name="pin" size="16px"></tds-icon>
+    </span>
+  </tds-text-field>
+  </section>
+</ng-container>
