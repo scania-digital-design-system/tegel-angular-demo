@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+.capitalize {
+	text-transform: capitalize;
+}
+
 
 .breadcrumbs {
   display: flex;
