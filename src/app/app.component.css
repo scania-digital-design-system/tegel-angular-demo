@@ -1,5 +1,4 @@
 main {
-  padding-top: 64px;
   overflow-y: auto;
   background-color: var(--tds-white);
   display: flex;

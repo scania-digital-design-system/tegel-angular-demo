@@ -1,0 +1,9 @@
+<div class="breadcrumbs tds-u-ml3" *ngIf="segments.length > 1 && segments[1].path !== '/web-components'">
+    <tds-breadcrumbs>
+      <ng-container *ngFor="let segment of segments; let idx = index;  last as isLast">
+        <tds-breadcrumb [current]="isLast">
+          <a class="capitalize" [routerLink]="segment.path">{{ segment.title }}</a>
+        </tds-breadcrumb>
+      </ng-container>
+    </tds-breadcrumbs>
+  </div>

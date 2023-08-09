@@ -7,3 +7,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  height: var(--tds-header-height);
+}

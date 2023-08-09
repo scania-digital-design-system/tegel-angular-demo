@@ -12,6 +12,7 @@ import { CheckboxComponent } from 'src/app/pages/form/checkbox/checkbox.componen
 import { SliderComponent } from 'src/app/pages/form/slider/slider.component';
 import { TextInputComponent } from 'src/app/pages/form/text-input/text-input.component';
 import { DropdownComponent } from 'src/app/pages/form/dropdown/dropdown.component';
+import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-form',
@@ -24,7 +25,8 @@ import { DropdownComponent } from 'src/app/pages/form/dropdown/dropdown.componen
     SliderComponent,
     TextInputComponent,
     TextInputComponent,
-    DropdownComponent
+    DropdownComponent,
+    BreadcrumbsComponent
   ],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
