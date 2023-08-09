@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
@@ -13,5 +13,9 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class CheckboxComponent {
 
   @Input() checkboxGroup : FormGroup;
+  checked: boolean = false;
 
+  handleCheckboxChange(name: string){
+    this.checkboxGroup.get(name)?.setValue(!this.checkboxGroup.get(name)?.value)
+  }
 }
