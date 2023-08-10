@@ -1,11 +1,12 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { SliderDirective } from 'src/app/directives/slider.directive';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, SliderDirective],
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -16,15 +17,13 @@ export class SliderComponent {
   @ViewChild('stressSlider', { static: true }) stressSlider!: ElementRef<HTMLTdsSliderElement>;
   @ViewChild('balanceSlider', { static: true }) balanceSlider!: ElementRef<HTMLTdsSliderElement>;
 
-  handleChange(event:any, name: string){
-    this.sliderGroup.get(name)?.enable()
-    this.sliderGroup.get(name)?.setValue(event.detail.value)
-    if(name === 'happines'){
+  handleChange(event:any){
+    if(event.target.getAttribute('name') === 'happines'){
+      this.sliderGroup.get('stress')?.enable()
       this.stressSlider.nativeElement.disabled = false;
-
-    } else if(name === 'stress'){
+    } else if(event.target.getAttribute('name') === 'stress'){
+      this.sliderGroup.get('balance')?.enable()
       this.balanceSlider.nativeElement.disabled = false;
-
     }
   }
 }

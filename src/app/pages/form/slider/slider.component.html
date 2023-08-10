@@ -5,14 +5,16 @@
   <h5>Tell us how you feel about your..</h5>
   <tds-slider
     label="..happiness at work"
-    name="happinessAtWork"
+    name="happines"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
-    (tdsChange)="handleChange($event, 'happines')"
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
+
   ></tds-slider>
 
   <h4>Disabled</h4>
@@ -21,14 +23,15 @@
     formControlName="stress"
     ngDefaultControl
     label="..stress level  disabled slider"
-    name="stressLevel"
+    name="stress"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
-    (tdsChange)="handleChange($event, 'stress')"
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
   ></tds-slider>
 
   <h4>Read-Only</h4>
@@ -38,15 +41,15 @@
     formControlName="balance"
     ngDefaultControl
     label="..work/life balance."
-    name="workLifeBalance"
+    name="balance"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
-    (tdsChange)="handleChange($event, 'balance')"
-
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
   ></tds-slider>
 </section>
 </ng-container>

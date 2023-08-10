@@ -45,19 +45,19 @@ export default class FormComponent implements OnInit {
     sodertalje: new FormControl(false),
     sergel: new FormControl(false),
     homeOffice: new FormControl(false),
-    building260: new FormControl(false)
+    building260: new FormControl({ value: false, disabled: true})
   })
 
   dropdownField: FormGroup = new FormGroup({
     country: new FormControl(''),
-    norwegianTown: new FormControl({ value: null, disabled: true}),
-    swedishTown: new FormControl({ value: null, disabled: true}),
+    norwegianTown: new FormControl({ value: '', disabled: true}),
+    swedishTown: new FormControl({ value: '', disabled: true}),
   })
 
   sliderField: FormGroup = new FormGroup({
-    happines: new FormControl(5),
-    stress: new FormControl({ value: '', disabled: true}),
-    balance: new FormControl({ value: '', disabled: true}),
+    happines: new FormControl('5'),
+    stress: new FormControl({ value: '0', disabled: true}),
+    balance: new FormControl({ value: '0', disabled: true}),
   })
 
 
