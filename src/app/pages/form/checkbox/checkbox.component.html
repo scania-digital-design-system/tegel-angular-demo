@@ -3,16 +3,35 @@
     <div>
       <h5>Which offices do you work from?</h5>
       <div>
-        <tds-checkbox value="checkbox" (tdsChange)="handleCheckboxChange('checkbox')">
+        <tds-checkbox
+          name="sodertalje"
+          [checkboxGroup]="checkboxGroup"
+          value="checkbox"
+        >
           <span slot="label">Södertälje 321</span>
         </tds-checkbox>
-        <tds-checkbox value="sergel" (tdsChange)="handleCheckboxChange('sergel')">
+        <tds-checkbox
+          name="sergel"
+          value="sergel"
+          [checkboxGroup]="checkboxGroup"
+
+        >
           <span slot="label">Sergel</span>
         </tds-checkbox>
-        <tds-checkbox value="homeOffice" (tdsChange)="handleCheckboxChange('homeOffice')">
+        <tds-checkbox
+          name="homeOffice"
+          value="homeOffice"
+          [checkboxGroup]="checkboxGroup"
+
+        >
           <span slot="label">Home Office</span>
         </tds-checkbox>
-        <tds-checkbox value="building260" (tdsChange)="handleCheckboxChange('building260')">
+        <tds-checkbox
+          name="building260"
+          value="building260"
+          [checkboxGroup]="checkboxGroup"
+
+          >
           <span slot="label">Building 260</span>
         </tds-checkbox>
       </div>
