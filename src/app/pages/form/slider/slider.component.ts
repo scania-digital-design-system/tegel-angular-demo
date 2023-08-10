@@ -1,12 +1,11 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SliderDirective } from 'src/app/directives/slider.directive';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, SliderDirective],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
