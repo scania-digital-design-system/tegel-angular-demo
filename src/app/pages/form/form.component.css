@@ -1,0 +1,5 @@
+.side-by-side {
+    grid-column-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
