@@ -40,3 +40,7 @@ section.form-section {
   gap: 48px;
   margin-bottom: 48px;
 }
+
+fieldset {
+  all: unset;
+}
