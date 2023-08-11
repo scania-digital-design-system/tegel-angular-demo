@@ -7,6 +7,7 @@ import {BatchActionsTableComponent} from './batch-actions-table.component'
 import {SortableTableComponent} from './sortable-table.component'
 import {FilterTableComponent} from './filter-table.component'
 import {PaginationTableComponent} from './pagination-table.component'
+import {ExpandableTableComponent} from './expandable-table.component'
 @Component({
   selector: 'app-table-page',
   template: `
@@ -15,6 +16,7 @@ import {PaginationTableComponent} from './pagination-table.component'
     <app-sortable-table [tableData]="data"></app-sortable-table>
     <app-filter-table [tableData]="data"></app-filter-table>
     <app-pagination-table [tableData]="data"></app-pagination-table>
+    <app-expandable-table></app-expandable-table>
   `,
   styles: [``],
   standalone: true,
@@ -23,7 +25,8 @@ import {PaginationTableComponent} from './pagination-table.component'
     BatchActionsTableComponent,
     SortableTableComponent,
     FilterTableComponent,
-    PaginationTableComponent
+    PaginationTableComponent,
+    ExpandableTableComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

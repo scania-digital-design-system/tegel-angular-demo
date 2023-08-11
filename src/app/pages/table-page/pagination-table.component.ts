@@ -21,7 +21,7 @@ import {TableData} from './table-data'
         <tds-header-cell column-key="mileage" column-title="Mileage" text-align="right"></tds-header-cell>
       </tds-table-header>
       <tds-table-body #paginationTableBody></tds-table-body>
-      <tds-table-footer default-page="1" pages="4" pagination (tdsPageChange)="test($event)"></tds-table-footer>
+      <tds-table-footer default-page="1" pages="4" pagination (tdsPageChange)="paginate($event)"></tds-table-footer>
     </tds-table>
   `,
   styles: [``],
@@ -43,7 +43,7 @@ export class PaginationTableComponent implements AfterViewInit {
     this.renderer2.setAttribute(this.paginationTableBody.nativeElement, 'body-data', JSON.stringify(this.tableData.slice(start, start + rowsPerPage)))
   }
 
-  test($event: any) {
+  paginate($event: any) {
     this.setPage($event.detail.paginationValue)
   }
 }
