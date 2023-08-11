@@ -8,6 +8,7 @@ import {
   AfterViewInit, Input
 } from '@angular/core'
 import {TableData} from './table-data'
+
 @Component({
   selector: 'app-basic-table',
   template: `
@@ -19,7 +20,7 @@ import {TableData} from './table-data'
         <tds-header-cell column-key="country" column-title="Country"></tds-header-cell>
         <tds-header-cell column-key="mileage" column-title="Mileage"></tds-header-cell>
       </tds-table-header>
-      <tds-table-body #tableBody></tds-table-body>
+      <tds-table-body #basicTableBody></tds-table-body>
     </tds-table>
   `,
   styles: [``],
@@ -27,11 +28,11 @@ import {TableData} from './table-data'
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BasicTableComponent implements AfterViewInit {
-  @ViewChild('tableBody', { static: false}) tableBody: ElementRef
+  @ViewChild('basicTableBody', { static: false}) basicTableBody: ElementRef
   renderer2 = inject(Renderer2)
   @Input() tableData: TableData[]
 
   ngAfterViewInit(): void {
-    this.renderer2.setAttribute(this.tableBody.nativeElement, 'body-data', JSON.stringify(this.tableData))
+    this.renderer2.setAttribute(this.basicTableBody.nativeElement, 'body-data', JSON.stringify(this.tableData))
   }
 }
