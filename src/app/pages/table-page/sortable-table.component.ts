@@ -14,6 +14,7 @@ import {TableData} from './table-data'
   template: `
     <h1>Sortable Table</h1>
     <tds-table vertical-dividers="false" compact-design="false" enable-responsive="false">
+      <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type" sortable="true"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name" sortable="true"></tds-header-cell>

@@ -5,19 +5,22 @@ import {
 import {BasicTableComponent} from './basic-table.component'
 import {BatchActionsTableComponent} from './batch-actions-table.component'
 import {SortableTableComponent} from './sortable-table.component'
+import {FilterTableComponent} from './filter-table.component'
 @Component({
   selector: 'app-table-page',
   template: `
     <app-basic-table [tableData]="data"></app-basic-table>
     <app-batch-actions-table [tableData]="data"></app-batch-actions-table>
     <app-sortable-table [tableData]="data"></app-sortable-table>
+    <app-filter-table [tableData]="data"></app-filter-table>
   `,
   styles: [``],
   standalone: true,
   imports: [
     BasicTableComponent,
     BatchActionsTableComponent,
-    SortableTableComponent
+    SortableTableComponent,
+    FilterTableComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
