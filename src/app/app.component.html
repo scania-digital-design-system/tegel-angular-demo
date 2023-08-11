@@ -7,8 +7,8 @@
     
       <tds-header-title>{{ title }} </tds-header-title>
     
-      <tds-header-item [attr.selected]="isActive('/components')">
-        <a routerLink="/components">Components</a>
+      <tds-header-item [attr.selected]="isActive('/web-components')">
+        <a routerLink="/web-components">Components</a>
       </tds-header-item>
     
       <tds-header-item [selected]="isActive('/form')">
@@ -17,10 +17,10 @@
         <tds-header-dropdown ref="{headerDropdown}" [attr.selected]="isActive('/tabs')">
           <span slot="label">Tabs</span>
           <tds-header-dropdown-list>
-            <tds-header-dropdown-list-item [attr.selected]="isActive('/components')">
+            <tds-header-dropdown-list-item [attr.selected]="isActive('/web-components')">
               <a routerLink="/tabs-buttons">Buttons</a>
             </tds-header-dropdown-list-item>
-            <tds-header-dropdown-list-item [attr.selected]="isActive('/components')">
+            <tds-header-dropdown-list-item [attr.selected]="isActive('/web-components')">
               <a routerLink="tabs-links">Links</a>
             </tds-header-dropdown-list-item>
           </tds-header-dropdown-list>
@@ -61,8 +61,8 @@
             Table
           </a>
         </tds-side-menu-item>
-        <tds-side-menu-item class="mobile-nav-item" [attr.selected]="isActive('/components')">
-          <a routerLink="/components" (click)="toggleMobileSideMenu()">
+        <tds-side-menu-item class="mobile-nav-item" [attr.selected]="isActive('/web-components')">
+          <a routerLink="/web-components" (click)="toggleMobileSideMenu()">
             <tds-icon name="tool" size="24"></tds-icon>
             Components
           </a>
@@ -110,8 +110,10 @@
       </tds-side-menu>
       <main class="tds-u-h-100 tds-u-w-100">
         <div class="tds-u-h-100 tds-u-p3">
-          <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
-          <app-mode-variant-switcher (modeVariantToggle)="handleModeVariantToggle()"></app-mode-variant-switcher>
+          <div class="switcher-container">
+            <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
+            <app-mode-variant-switcher (modeVariantToggle)="handleModeVariantToggle()"></app-mode-variant-switcher>
+          </div>
           <router-outlet></router-outlet>
         </div>
       </main>
