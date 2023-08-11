@@ -64,30 +64,25 @@ export class AdvancedFormComponent {
 
   essayLengthValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value as string;
-    
+
     if (value.length < 50) {
       this.isEssayInvalid = true; // Set the property to true if validation fails
       return { state: 'error' };
-    } 
+    }
     return null; // Validation passed
   }
 
 
   submitForm(event: Event) {
-    event.preventDefault()
 
 
 
-    console.log('textfield', this.textFieldGroup.value);
-
+    // console.log('textfield', this.textFieldGroup.value);
     console.log('dropdownField', this.dropdownField.value);
-
+    console.log('dropdownField', this.dropdownField.getRawValue());
     console.log('checkboxField', this.checkboxField.value);
-
-    console.log('radioButtonField', this.radioButtonField.value);
-
-    console.log('textareaField', this.textareaField.value);
-
-    console.log('sliderField', this.sliderField.value);
+    // console.log('radioButtonField', this.radioButtonField.value);
+    // console.log('textareaField', this.textareaField.value);
+    // console.log('sliderField', this.sliderField.value);
   }
 }

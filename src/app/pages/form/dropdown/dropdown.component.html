@@ -3,7 +3,6 @@
     <tds-dropdown
       formControlName="country"
       ngDefaultControl
-      dropdown-directive
       mode-variant="secondary"
       name="country"
       label="Which country you want to select?"
@@ -11,7 +10,6 @@
       placeholder="Country select"
       size="lg"
       open-direction="down"
-      (tdsChange)="handleChange($event)"
     >
       <tds-dropdown-option value="sweden"> Sweden </tds-dropdown-option>
       <tds-dropdown-option
@@ -27,7 +25,6 @@
       formControlName="norwegianTown"
       ngDefaultControl
       #norwayDropdown
-      dropdown-directive
       mode-variant="secondary"
       name="norwayTown"
       label="Which towns have you visited in Norway?"
@@ -37,18 +34,15 @@
       open-direction="down"
 
     >
-      <ng-container *ngFor="let town of nowegianTowns; let idx = index">
-        <tds-dropdown-option [value]="town.value">
-          {{ town.label }}
-        </tds-dropdown-option>
-      </ng-container>
+      <tds-dropdown-option *ngFor="let town of nowegianTowns; let idx = index" value="{{town.value}}">
+        {{ town.label }}
+      </tds-dropdown-option>
     </tds-dropdown>
 
     <tds-dropdown
       formControlName="swedishTown"
       ngDefaultControl
       #swedenDropdown
-      dropdown-directive
       mode-variant="secondary"
       name="favoriteSweTown"
       label="Select your favorite Swedish town."
