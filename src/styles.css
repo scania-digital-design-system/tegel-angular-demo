@@ -2,6 +2,21 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
 @import 'utility-classes.css'; 
 
+.tds-mode-dark {
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-958);
+}
+
+.tds-mode-dark.tds-mode-primary {
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-958);
+}
+.tds-mode-dark.tds-mode-secondary {
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-900);
+}
+
+
 body {
   min-height: 100vh;
   display: flex;

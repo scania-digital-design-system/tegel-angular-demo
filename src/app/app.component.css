@@ -1,6 +1,5 @@
 main {
   overflow-y: auto;
-  background-color: var(--tds-white);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -29,6 +28,17 @@ main {
 tds-header {
   position: sticky;
   top: 0px;
+}
+
+.switcher-container {
+  position: absolute;
+  height: 60px;
+  top: calc(96px + 68px);
+  right: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 @media (min-width: 992px) {

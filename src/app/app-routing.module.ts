@@ -15,7 +15,6 @@ const routes = [
 {
   path: 'form',
   loadComponent: () => import('./pages/form/form.component'),
-
 },
   { path: 'web-components', component: ComponentsComponent },
   { path: 'page-two', component: PageTwoComponent },
