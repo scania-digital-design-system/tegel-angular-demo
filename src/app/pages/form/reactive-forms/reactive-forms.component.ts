@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { TextInputComponent } from '../text-input/text-input.component';
-import { DropdownComponent } from '../dropdown/dropdown.component';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
-import { RadioButtonComponent } from '../radio-button/radio-button.component';
-import { SliderComponent } from '../slider/slider.component';
-import { TextareaComponent } from '../textarea/textarea.component';
+import { TextInputComponent } from '@pages/form/text-input/text-input.component';
+import { DropdownComponent } from '@pages/form/dropdown/dropdown.component';
+import { CheckboxComponent } from '@pages/form/checkbox/checkbox.component';
+import { RadioButtonComponent } from '@pages/form/radio-button/radio-button.component';
+import { SliderComponent } from '@pages/form/slider/slider.component';
+import { TextareaComponent } from '@pages/form/textarea/textarea.component';
 
 @Component({
-  selector: 'app-advanced-form',
+  selector: 'app-reactive-forms',
   standalone: true,
-  templateUrl: './advanced-form.component.html',
-  styleUrls: ['./advanced-form.component.css'],
+  templateUrl: './reactive-forms.component.html',
+  styleUrls: ['./reactive-forms.component.css'],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -25,7 +25,7 @@ import { TextareaComponent } from '../textarea/textarea.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AdvancedFormComponent {
+export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;
 
   textFieldGroup: FormGroup = new FormGroup({

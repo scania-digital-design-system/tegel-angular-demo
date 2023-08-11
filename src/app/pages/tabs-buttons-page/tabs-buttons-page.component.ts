@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
-import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-tabs-buttons-page',
@@ -9,6 +9,6 @@ import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent],
 })
-export class TabsButtonsPageComponent {
+export default class TabsButtonsPageComponent {
 
 }

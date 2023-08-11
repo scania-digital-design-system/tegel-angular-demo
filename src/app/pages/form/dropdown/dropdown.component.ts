@@ -25,13 +25,13 @@ export class DropdownComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dropdownGroup.get('country')?.valueChanges
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(e => {
-        if (e === 'sweden') {
+      .subscribe(countryValue => {
+        if (countryValue === 'sweden') {
           this.dropdownGroup.get('norwegianTown')?.disable()
           this.dropdownGroup.get('swedishTown')?.enable()
           this.norwayDropdown.nativeElement.reset().then(_ => {})
         }
-        if (e === 'norway') {
+        if (countryValue === 'norway') {
           this.dropdownGroup.get('swedishTown')?.disable()
           this.dropdownGroup.get('norwegianTown')?.enable()
           this.swedenDropdown.nativeElement.reset().then(_ => {})

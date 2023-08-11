@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./error-page.component.css'],
     standalone: true
 })
-export class ErrorPageComponent {
+export default class ErrorPageComponent {
 
 }
