@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { ComponentsComponent } from './pages/components/components.component';
 import { PageTwoComponent } from './pages/page-two/page-two.component';
@@ -9,7 +8,7 @@ import { TextPageComponent } from './pages/text-page/text-page.component';
 import { ChipsPageComponent } from './pages/chips-page/chips-page.component';
 import { TabsButtonsPageComponent } from './pages/tabs-buttons-page/tabs-buttons-page.component';
 import { TabsLinksPageComponent } from './pages/tabs-links-page/tabs-links-page.component';
-import { TablePageComponent } from './pages/table-page/table-page.component';
+import {TablePageComponent} from './pages/table-page/table-page.component'
 
 const routes = [
   { path: '', component: HomeComponent }, // Home aka start page
