@@ -1,0 +1,11 @@
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-3">
+    <form (submit)="submitForm($event)">
+        <app-text-input [textFieldGroup]="textFieldGroup"></app-text-input>
+        <app-dropdown [dropdownGroup]="dropdownField"> </app-dropdown>
+        <app-checkbox [checkboxGroup]="checkboxField"></app-checkbox>
+        <app-radio-button [radioButtonGroup]="radioButtonField"></app-radio-button>
+        <app-textarea [textareaGroup]="textareaField"></app-textarea>
+        <app-slider [sliderGroup]="sliderField"></app-slider>
+        <tds-button type="submit" text="Submit"></tds-button>
+    </form>
+</div>
