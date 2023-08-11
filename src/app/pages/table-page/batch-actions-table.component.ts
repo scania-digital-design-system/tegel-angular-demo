@@ -8,6 +8,8 @@ import {
   AfterViewInit, Input
 } from '@angular/core'
 import {TableData} from './table-data'
+import {ModalDirective} from '../../directives/modal.directive'
+import {ModalComponent} from '../../components/modal/modal.component'
 @Component({
   selector: 'app-batch-actions-table',
   template: `
@@ -26,13 +28,16 @@ import {TableData} from './table-data'
       </tds-table-header>
       <tds-table-body #tableBody></tds-table-body>
     </tds-table>
+    <ng-template modal-dr />
   `,
   styles: [``],
+  imports:[ModalDirective],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BatchActionsTableComponent implements AfterViewInit {
   @ViewChild('tableBody', { static: false}) tableBody: ElementRef
+  @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective
   renderer2 = inject(Renderer2)
   @Input() tableData: TableData[]
 
@@ -41,6 +46,6 @@ export class BatchActionsTableComponent implements AfterViewInit {
   }
 
   download() {
-    console.log(this.tableBody.nativeElement.getAttribute('data-selected-rows'))
+    this.modalDirective.showModal(this.tableBody.nativeElement.getAttribute('data-selected-rows'))
   }
 }
