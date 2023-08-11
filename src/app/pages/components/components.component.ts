@@ -7,9 +7,8 @@ import { BlockComponent } from 'src/app/components/block/block.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
 import { CardComponent } from 'src/app/components/card/card.component';
-import { TextFieldComponent } from 'src/app/components/text-field/text-field.component';
-import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 import TextareaComponent from 'src/app/components/textarea/textarea.component';
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
     selector: 'app-components',
