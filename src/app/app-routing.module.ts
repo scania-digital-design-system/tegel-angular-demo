@@ -9,6 +9,7 @@ import { TextPageComponent } from './pages/text-page/text-page.component';
 import { ChipsPageComponent } from './pages/chips-page/chips-page.component';
 import { TabsButtonsPageComponent } from './pages/tabs-buttons-page/tabs-buttons-page.component';
 import { TabsLinksPageComponent } from './pages/tabs-links-page/tabs-links-page.component';
+import { TablePageComponent } from './pages/table-page/table-page.component';
 
 const routes = [
   { path: '', component: HomeComponent }, // Home aka start page
@@ -22,6 +23,7 @@ const routes = [
   { path: 'chips', component: ChipsPageComponent },
   { path: 'tabs-buttons', component: TabsButtonsPageComponent },
   { path: 'tabs-links', component: TabsLinksPageComponent },
+  { path: 'table', component: TablePageComponent },
   { path: '404', component: ErrorPageComponent },
   { path: '**', redirectTo: '404', pathMatch: 'full' }, // Wildcard route
 ] satisfies Routes;
