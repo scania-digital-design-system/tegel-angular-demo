@@ -4,17 +4,20 @@ import {
 } from '@angular/core'
 import {BasicTableComponent} from './basic-table.component'
 import {BatchActionsTableComponent} from './batch-actions-table.component'
+import {SortableTableComponent} from './sortable-table.component'
 @Component({
   selector: 'app-table-page',
   template: `
     <app-basic-table [tableData]="data"></app-basic-table>
     <app-batch-actions-table [tableData]="data"></app-batch-actions-table>
+    <app-sortable-table [tableData]="data"></app-sortable-table>
   `,
   styles: [``],
   standalone: true,
   imports: [
     BasicTableComponent,
-    BatchActionsTableComponent
+    BatchActionsTableComponent,
+    SortableTableComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

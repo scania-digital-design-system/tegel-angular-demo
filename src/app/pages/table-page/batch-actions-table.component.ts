@@ -9,7 +9,7 @@ import {
 } from '@angular/core'
 import {TableData} from './table-data'
 import {ModalDirective} from '../../directives/modal.directive'
-import {ModalComponent} from '../../components/modal/modal.component'
+
 @Component({
   selector: 'app-batch-actions-table',
   template: `
