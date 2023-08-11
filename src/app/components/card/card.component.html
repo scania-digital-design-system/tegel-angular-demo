@@ -1,0 +1,38 @@
+<div class="card-container">
+  <div class="tds-headline-02 tds-u-pb1">Card</div>
+  <tds-card header="Card" subheader="Simple Card">
+    <div slot="body">This is a simple Card example</div>
+  </tds-card>
+  <div class="split-cards">
+    <tds-card header="Card" subheader="Card with image">
+      <img class="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src={{cardImagePath}} />
+      <div slot="bottom">
+        <p class="tds-text-grey-958">
+          The bottom section can have a
+          <tds-link>
+            <a href="/"> link.</a>
+          </tds-link>
+          This Card has its image-placement below-header.
+        </p>
+      </div>
+    </tds-card>
+    <tds-card image-placement="above-header" header="Card" subheader="Card with image" [bodyImg]="cardImagePath"
+      body-image-alt="Alt">
+      <div slot="bottom">
+        <p class="tds-text-grey-958">
+          This is the bottom section, this Card has its image-placement above-header below.
+        </p>
+      </div>
+    </tds-card>
+  </div>
+  <div class="card-carousel">
+    <ng-container *ngFor="let _ of [0, 1, 2, 3]; let idx = index">
+      <tds-card [header]="'Card'" [clickable]="true" [subheader]="'Simple Card'" [body-divider]="true"
+        (tdsClick)="handleCardClick($event)">
+        <div slot="body">
+          These Cards are part of a carousel, and can be scrolled. They are also using the body slot in the Card.
+        </div>
+      </tds-card>
+    </ng-container>
+  </div>
+</div>

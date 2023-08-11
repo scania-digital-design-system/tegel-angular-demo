@@ -7,6 +7,7 @@ import { BlockComponent } from 'src/app/components/block/block.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
 import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 @Component({
     selector: 'app-components',
@@ -21,6 +22,7 @@ import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.componen
         BlockComponent,
         BreadcrumbsComponent,
         CheckboxComponent,
+        CardComponent,
         FormsModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
