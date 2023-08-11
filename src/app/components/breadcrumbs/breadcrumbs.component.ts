@@ -12,7 +12,7 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class BreadcrumbsComponent {
+export default class BreadcrumbsComponent {
   segments: Array<{ title: string; path: string }> = []; // Initialize an empty array
 
   constructor(private router: Router) {

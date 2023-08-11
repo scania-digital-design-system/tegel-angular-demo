@@ -3,13 +3,13 @@ import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
-import { AdvancedFormComponent } from '../advanced-form/advanced-form.component';
+import  ReactiveFormsComponent from '@pages/form/reactive-forms/reactive-forms.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import { RadioButtonComponent } from '../radio-button/radio-button.component';
 import { SliderComponent } from '../slider/slider.component';
 import { TextInputComponent } from '../text-input/text-input.component';
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-simple-form',
@@ -19,7 +19,7 @@ import { TextInputComponent } from '../text-input/text-input.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AdvancedFormComponent,
+    ReactiveFormsComponent,
     TextInputComponent,
     CheckboxComponent,
     RadioButtonComponent,
@@ -29,7 +29,7 @@ import { TextInputComponent } from '../text-input/text-input.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class SimpleFormComponent {
+export default class SimpleFormComponent {
 
   nowegianTowns = norwayData;
   swedishTowns = swedenData;
@@ -55,7 +55,7 @@ export class SimpleFormComponent {
   }
 
   handleTextAreaChange(event: any) {
-    this.textAreaDisabled = !(event.detail.target.value);    
+    this.textAreaDisabled = !(event.detail.target.value);
   }
 
   handleDropdownChange(event: any) {

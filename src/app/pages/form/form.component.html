@@ -1,13 +1,23 @@
 <article>
   <h1>Form examples</h1>
-  <h3>Simple Form</h3>
-  <p>This form uses the native form element and therefor it works out of the box with our components.</p>
-  <tds-block>
-<!--     <app-simple-form></app-simple-form>-->
-  </tds-block>
-  <h3>Advanced Form</h3>
-  <p>This form is built using Angular Reactive forms. It needs some manual work to make it fully function with our components</p>
-  <tds-block>
-    <app-advanced-form></app-advanced-form>
-  </tds-block>
+  <section>
+    <tds-navigation-tabs>
+      <tds-navigation-tab>
+        <a routerLink="simpleform">Simple form</a>
+      </tds-navigation-tab>
+      <tds-navigation-tab>
+        <a routerLink="reactive-forms">Reactive forms</a>
+      </tds-navigation-tab>
+      <tds-navigation-tab>
+        <a routerLink="template-driven-forms">Template-driven forms</a>
+      </tds-navigation-tab>
+    </tds-navigation-tabs>
+  </section>
+
+  <section>
+    <tds-block>
+      <router-outlet>
+      </router-outlet>
+    </tds-block>
+  </section>
 </article>

@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
 } from '@angular/forms';
-import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
-import { AdvancedFormComponent } from './advanced-form/advanced-form.component';
-import { SimpleFormComponent } from './simple-form/simple-form.component';
+import  ReactiveFormsComponent  from './reactive-forms/reactive-forms.component';
+import { RouterModule } from '@angular/router';
+import SimpleFormComponent from 'src/app/pages/form/simple-form/simple-form.component';
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-form',
@@ -16,10 +17,11 @@ import { SimpleFormComponent } from './simple-form/simple-form.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AdvancedFormComponent,
+    ReactiveFormsComponent,
     BreadcrumbsComponent,
     SimpleFormComponent,
-    AdvancedFormComponent
+    ReactiveFormsComponent,
+    RouterModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './form.component.html',
