@@ -1,9 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild, OnInit, OnDestroy} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownDirective } from 'src/app/directives/dropdown.directive';
 import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {Subject, takeUntil} from 'rxjs'
 
 @Component({
   selector: 'app-dropdown',
@@ -13,30 +14,33 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./dropdown.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class DropdownComponent {
+export class DropdownComponent implements OnInit, OnDestroy {
   nowegianTowns = norwayData
   swedishTowns = swedenData
   @ViewChild('norwayDropdown', { static: true }) norwayDropdown!: ElementRef<HTMLTdsDropdownElement>;
   @ViewChild('swedenDropdown', { static: true }) swedenDropdown!: ElementRef<HTMLTdsDropdownElement>;
   @Input() dropdownGroup: FormGroup;
+  private onDestroy$: Subject<void> = new Subject<void>()
 
+  ngOnInit(): void {
+    this.dropdownGroup.get('country')?.valueChanges
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(e => {
+        if (e === 'sweden') {
+          this.dropdownGroup.get('norwegianTown')?.disable()
+          this.dropdownGroup.get('swedishTown')?.enable()
+          this.norwayDropdown.nativeElement.reset().then(_ => {})
+        }
+        if (e === 'norway') {
+          this.dropdownGroup.get('swedishTown')?.disable()
+          this.dropdownGroup.get('norwegianTown')?.enable()
+          this.swedenDropdown.nativeElement.reset().then(_ => {})
+        }
+      })
+  }
 
-  
-  
-  handleChange(event:any){
-    if(event.detail.value === 'norway'){
-      this.norwayDropdown.nativeElement.disabled = false;
-      this.swedenDropdown.nativeElement.disabled = true;
-      this.dropdownGroup.get('norwegianTown')?.enable()
-      this.dropdownGroup.get('swedishTown')?.disable()
-      this.swedenDropdown.nativeElement.reset()
-    } else if(event.detail.value === 'sweden'){
-      this.swedenDropdown.nativeElement.disabled = false;
-      this.norwayDropdown.nativeElement.disabled = true;
-      this.dropdownGroup.get('swedishTown')?.enable()
-      this.dropdownGroup.get('norwegianTown')?.disable()
-      this.norwayDropdown.nativeElement.reset()
-
-    }
+  ngOnDestroy(): void {
+    this.onDestroy$.next()
+    this.onDestroy$.complete()
   }
 }
