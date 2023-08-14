@@ -12,8 +12,7 @@ main {
   gap: 32px;
   width: 100%;
   max-width: 600px;
-  justify-content: center;
-  padding: 128px 0;
+  
 }
 
 .side-menu-and-main {
