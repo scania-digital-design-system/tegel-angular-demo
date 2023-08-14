@@ -14,7 +14,7 @@ import {ModalDirective} from '../../directives/modal.directive'
   selector: 'app-batch-actions-table',
   template: `
     <h1>Batch Actions</h1>
-    <tds-table enable-multiselect vertical-dividers="false" compact-design="false" enable-responsive="false">
+    <tds-table id="batchTable" enable-multiselect vertical-dividers="false" compact-design="false" enable-responsive="false">
       <tds-table-toolbar table-title="Batch action">
         <div slot="end">
           <tds-button type="primary" size="sm" text="Download" (click)="download()"></tds-button>
