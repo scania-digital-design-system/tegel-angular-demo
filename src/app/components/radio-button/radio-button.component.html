@@ -15,9 +15,9 @@
             [name]="fieldset.name"
             [value]="field.name"
             [radio-id]="field.id"
-            [attr.required]="fieldset.required"
-            [attr.disabled]="isFieldDisabled(field)"
-            [attr.checked]="isFieldPreselected(field)"
+            [required]="fieldset.required"
+            [disabled]="isFieldDisabled(field)"
+            [checked]="isFieldPreselected(field)"
           >
             <span slot="label">
               {{ field.name }}
