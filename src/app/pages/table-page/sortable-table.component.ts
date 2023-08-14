@@ -13,7 +13,7 @@ import {TableData} from './table-data'
   selector: 'app-sortable-table',
   template: `
     <h1>Sortable Table</h1>
-    <tds-table vertical-dividers="false" compact-design="false" enable-responsive="false">
+    <tds-table vertical-dividers="false" compact-design="false" enable-responsive="false" (tdsSortChange)="sort($event)">
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type" sortable="true"></tds-header-cell>
@@ -35,5 +35,9 @@ export class SortableTableComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.renderer2.setAttribute(this.sortableTableBody.nativeElement, 'body-data', JSON.stringify(this.tableData))
+  }
+
+  sort($event: any) {
+    $event.stopPropagation()
   }
 }
