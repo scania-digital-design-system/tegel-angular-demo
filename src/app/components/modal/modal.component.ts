@@ -1,30 +1,24 @@
-import {
-  CUSTOM_ELEMENTS_SCHEMA,
-  Component, Input,
-} from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
+
 @Component({
   selector: 'app-modal',
-  template: `
-    <tds-modal
-      selector="#my-modal-button"
-      id="my-modal"
-      show
-      size="lg"
-      actions="static"
-    >
-      <h5 class="tds-modal-headline" slot="header">
-        Batch Actions example
-      </h5>
-      <span slot="body">
-      <p>Downloaded data:</p>
-        {{content}}
-      </span>
-    </tds-modal>
-  `,
-  styles: [``],
   standalone: true,
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ModalComponent {
-  @Input() content: string
+export default class ModalComponent {
+  @ViewChild('myHoverModal', { static: true }) hoverModalRef: ElementRef<HTMLTdsModalElement> | undefined;
+
+  
+
+  showModal(event: Event){
+    const element = event.target as HTMLTdsModalElement
+    element.showModal()
+  }
+
+  hideModal(){
+    if(this.hoverModalRef)
+        this.hoverModalRef.nativeElement.closeModal()
+  }
 }
