@@ -115,7 +115,9 @@
             <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
             <app-mode-variant-switcher (modeVariantToggle)="handleModeVariantToggle()"></app-mode-variant-switcher>
           </div>
-          <router-outlet></router-outlet>
+          <div class="main-container">
+            <router-outlet></router-outlet>
+          </div>
         </div>
       </main>
     </div>

@@ -5,11 +5,12 @@ main {
   flex-grow: 1;
 }
 
-.wrapper {
+.main-container {
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
   max-width: 600px;
   justify-content: center;
   padding: 128px 0;
