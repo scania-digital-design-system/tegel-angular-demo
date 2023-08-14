@@ -10,6 +10,7 @@ import {PaginationTableComponent} from './pagination-table.component'
 import {ExpandableTableComponent} from './expandable-table.component'
 import {TableService} from './table.service'
 import {AsyncPipe} from '@angular/common'
+
 @Component({
   selector: 'app-table-page',
   template: `
@@ -18,7 +19,7 @@ import {AsyncPipe} from '@angular/common'
     <app-sortable-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-sortable-table>
     <app-filter-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-filter-table>
     <app-pagination-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-pagination-table>
-    <app-expandable-table></app-expandable-table>
+    <app-expandable-table [tableData]="(tableService.getExpandableData() | async) ?? []"></app-expandable-table>
   `,
   styles: [``],
   standalone: true,

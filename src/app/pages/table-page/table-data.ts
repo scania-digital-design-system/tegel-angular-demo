@@ -3,4 +3,5 @@ export interface TableData {
   driver: string
   country: string
   mileage: number
+  expandableData?: string
 }

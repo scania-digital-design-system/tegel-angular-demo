@@ -1,7 +1,9 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
-  Component,
+  Component, Input
 } from '@angular/core'
+import {TableData} from './table-data'
+import {KeyValuePipe, NgForOf, NgIf} from '@angular/common'
 
 @Component({
   selector: 'app-expandable-table',
@@ -15,34 +17,28 @@ import {
         <tds-header-cell column-key="mileage" column-title="Mileage" text-align="right"></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="Test value 1" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 2" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 3" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 4" cell-key="mileage"></tds-body-cell>
-          <div slot="expand-row">Hello world 1</div>
-        </tds-table-body-row-expandable>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="Test value 5" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 6" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 7" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 8" cell-key="mileage"></tds-body-cell>
-          <div slot="expand-row">Hello to you too</div>
-        </tds-table-body-row-expandable>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="Test value 9" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 10" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 11" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="Test value 12" cell-key="mileage"></tds-body-cell>
-          <div slot="expand-row"><tds-button type="primary" text="Call to action"></tds-button></div>
+        <tds-table-body-row-expandable *ngFor="let item of tableData">
+          <tds-body-cell cell-key="truck">{{item.truck}}</tds-body-cell>
+          <tds-body-cell cell-key="driver">{{item.driver}}</tds-body-cell>
+          <tds-body-cell cell-key="country">{{item.country}}</tds-body-cell>
+          <tds-body-cell cell-key="mileage">{{item.mileage}}</tds-body-cell>
+          <div slot="expand-row">
+            {{item.expandableData}}
+          </div>
         </tds-table-body-row-expandable>
       </tds-table-body>
     </tds-table>
   `,
   styles: [``],
   standalone: true,
+  imports: [
+    NgForOf,
+    KeyValuePipe,
+    NgIf,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ExpandableTableComponent {
-
+  @Input() tableData: TableData[]
 }
+
