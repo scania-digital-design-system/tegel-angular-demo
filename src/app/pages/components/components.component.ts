@@ -13,6 +13,7 @@ import TextFieldComponent from '@components/text-field/text-field.component';
 import PopoverCanvasComponent from '@components/popover-canvas/popover-canvas.component';
 import ModalComponent from 'src/app/components/modal/modal.component';
 import DatetimeComponent from '@components/datetime/datetime.component';
+import RadioButtonComponent from 'src/app/components/radio-button/radio-button.component';
 
 @Component({
     selector: 'app-components',
@@ -32,6 +33,7 @@ import DatetimeComponent from '@components/datetime/datetime.component';
         TextFieldComponent,
         PopoverCanvasComponent,
         TextareaComponent,
+        RadioButtonComponent,
         FormsModule,
         ModalComponent
     ],
