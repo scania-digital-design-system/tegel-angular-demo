@@ -25,7 +25,7 @@ import TextareaComponent from 'src/app/components/textarea/textarea.component';
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
-        TextFieldComponent,
+        TextareaComponent,
         TextareaComponent,
         FormsModule,
     ],
