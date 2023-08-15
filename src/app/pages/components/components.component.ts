@@ -8,6 +8,7 @@ import { ButtonComponent } from 'src/app/components/button/button.component';
 import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
 import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
 import { CardComponent } from 'src/app/components/card/card.component';
+import { TextFieldComponent } from 'src/app/components/text-field/text-field.component';
 
 @Component({
     selector: 'app-components',
@@ -23,6 +24,7 @@ import { CardComponent } from 'src/app/components/card/card.component';
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
+        TextFieldComponent,
         FormsModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
