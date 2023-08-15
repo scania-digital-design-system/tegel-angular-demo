@@ -21,6 +21,18 @@
     flex-direction: column;
 }
 
+.tds-u-flex-wrap {
+    flex-wrap: wrap;
+}
+
 .tds-u-flex-gap-1 {
     gap: 8px;
+}
+
+.tds-u-flex-gap-2 {
+    gap: 16px;
+}
+
+.tds-u-flex-gap-3 {
+    gap: 24px;
 }

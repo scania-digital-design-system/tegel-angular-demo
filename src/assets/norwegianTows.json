@@ -1,0 +1,52 @@
+[
+    {
+      "value": "oslo",
+      "label": "Oslo",
+      "disabled": false
+    },
+    {
+      "value": "bergen",
+      "label": "Bergen",
+      "disabled": false
+    },
+    {
+      "value": "stavanger",
+      "label": "Stavanger",
+      "disabled": false
+    },
+    {
+      "value": "trondheim",
+      "label": "Trondheim",
+      "disabled": true
+    },
+    {
+      "value": "drammen",
+      "label": "Drammen",
+      "disabled": false
+    },
+    {
+      "value": "fredrikstad",
+      "label": "Fredrikstad",
+      "disabled": false
+    },
+    {
+      "value": "tromso",
+      "label": "Tromsø",
+      "disabled": false
+    },
+    {
+      "value": "sandnes",
+      "label": "Sandnes",
+      "disabled": false
+    },
+    {
+      "value": "alesund",
+      "label": "Ålesund",
+      "disabled": false
+    },
+    {
+      "value": "haugesund",
+      "label": "Haugesund",
+      "disabled": false
+    }
+  ]

@@ -33,3 +33,14 @@ body {
   align-items: center;
   height: var(--tds-header-height);
 }
+
+section.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+fieldset {
+  all: unset;
+}

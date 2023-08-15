@@ -1,31 +1,25 @@
-    <ng-container [formGroup]="textFieldGroup" >
-
-    <section >
-        <h4>Text Input</h4>
-        <tds-text-field
-        ngDefaultControl
-        mode-variant="secondary"
-        name="text-field"
-        label="Full name"
-        label-position="outside"
-        formControlName="firstName"
-        placeholder="John Doe"
-       >
-      </tds-text-field>
-    </section>
-
-    <section>
-      <tds-datetime
+<ng-container [formGroup]="textFieldGroup">
+  <section class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-3">
+    <tds-text-field
       ngDefaultControl
+      mode-variant="secondary"
+      name="text-field"
+      label="Full name"
+      label-position="outside"
+      formControlName="firstName"
+      placeholder="John Doe"
+    >
+    </tds-text-field>
+    <tds-datetime
+      ngDefaultControl
+      formControlName="dateOfBirth"
       mode-variant="secondary"
       label="Date of birth"
       name="dateOfBirth"
       type="date"
-      formControlName="dateOfBirth"
-      ></tds-datetime>
-    </section>
-
-    <section class="side-by-side-input">
+      [defaultValue]="getDefaultDate()"
+    ></tds-datetime>
+    <div class="side-by-side">
       <tds-text-field
         mode-variant="secondary"
         type="text"
@@ -40,13 +34,15 @@
         formControlName="phoneNumber"
       >
         <span slot="prefix">
-          <tds-icon name="phone" size="16px"></tds-icon>
+          <tds-icon
+            name="phone"
+            size="16px"
+          ></tds-icon>
         </span>
       </tds-text-field>
-
       <tds-text-field
-      ngDefaultControl
-      formControlName="address"
+        ngDefaultControl
+        formControlName="address"
         mode-variant="secondary"
         type="text"
         size="lg"
@@ -58,8 +54,12 @@
         placeholder="Majorvägen 32"
       >
         <span slot="prefix">
-          <tds-icon name="pin" size="16px"></tds-icon>
+          <tds-icon
+            name="pin"
+            size="16px"
+          ></tds-icon>
         </span>
       </tds-text-field>
-    </section>
-  </ng-container>
+    </div>
+  </section>
+</ng-container>

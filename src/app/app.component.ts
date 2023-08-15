@@ -1,10 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { Router, RouterOutlet,RouterLink } from '@angular/router';
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
 import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
-
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
     selector: 'app-root',
@@ -24,7 +23,7 @@ import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-varia
 })
 export class AppComponent {
   constructor(private router: Router) {}
-  
+
   title = 'Angular Demo';
   mobileNavOpen = false;
   mode: 'tds-mode-light' | 'tds-mode-dark' = 'tds-mode-light';

@@ -1,32 +1,36 @@
 <ng-container [formGroup]="checkboxGroup">
-
-  <h5>Which offices do you work from?</h5>
-  <tds-checkbox name="office" formControlName="sodertalje" ngDefaultControl>
-    <div slot="label">Södertälje 321</div>
-  </tds-checkbox>
-  <tds-checkbox value="sergel" name="office">
-    <div slot="label">Sergel</div>
-  </tds-checkbox>
-  <tds-checkbox value="homeoffice" name="office">
-    <div slot="label">Home office</div>
-  </tds-checkbox>
-  <tds-checkbox value="b260" name="office" disabled>
-    <div slot="label">Building 260</div>
-  </tds-checkbox>
-  <h5>How long have you been at Scania?</h5>
-  <tds-radio-button checked value="radio-1" name="yearsAtScania">
-    <div slot="label">0 - 6 months</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">6 months - 1 year</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">1 - 2 years</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">2 - 5 years</div>
-  </tds-radio-button>
-  <tds-radio-button value="radio-2" name="yearsAtScania">
-    <div slot="label">+ 5 years</div>
-  </tds-radio-button>
+    <div>
+      <h5>Which offices do you work from?</h5>
+      <div>
+        <tds-checkbox
+          name="sodertalje"
+          value="checkbox"
+          (tdsChange)="handleCheckboxChange($event, 'sodertalje')"
+        >
+          <span slot="label">Södertälje 321</span>
+        </tds-checkbox>
+        <tds-checkbox
+          name="sergel"
+          value="sergel"
+          (tdsChange)="handleCheckboxChange($event, 'sergel')"
+        >
+          <span slot="label">Sergel</span>
+        </tds-checkbox>
+        <tds-checkbox
+          name="homeOffice"
+          value="homeOffice"
+          (tdsChange)="handleCheckboxChange($event, 'homeOffice')"
+        >
+          <span slot="label">Home Office</span>
+        </tds-checkbox>
+        <tds-checkbox
+          name="building260"
+          value="building260"
+          (tdsChange)="handleCheckboxChange($event, 'building260')"
+          disabled
+        >
+          <span slot="label">Building 260</span>
+        </tds-checkbox>
+      </div>
+    </div>
 </ng-container>

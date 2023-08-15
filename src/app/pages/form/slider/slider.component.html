@@ -1,45 +1,55 @@
+<ng-container [formGroup]="sliderGroup">
 
-<section>
+  <div  class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-3 tds-u-mb3">
   <h3>Sliders</h3>
   <h5>Tell us how you feel about your..</h5>
   <tds-slider
-    ref={happinesSlider}
     label="..happiness at work"
-    name="happinessAtWork"
+    name="happines"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
+
   ></tds-slider>
 
   <h4>Disabled</h4>
   <tds-slider
-    ref={stressSlider}
+    #stressSlider
+    formControlName="stress"
+    ngDefaultControl
     label="..stress level  disabled slider"
-    name="stressLevel"
+    name="stress"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
-    disabled
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
   ></tds-slider>
 
   <h4>Read-Only</h4>
 
   <tds-slider
-    ref={workLifeSlider}
-    label="..work/life balance. read-only slider"
-    name="workLifeBalance"
+    #balanceSlider
+    formControlName="balance"
+    ngDefaultControl
+    label="..work/life balance."
+    name="balance"
     min="0"
     value="5"
     show-tick-numbers
     max="10"
     ticks="9"
     snap
-    read-only
+    [sliderGroup]="sliderGroup"
+    (tdsChange)="handleChange($event)"
   ></tds-slider>
-</section>
+</div>
+</ng-container>
