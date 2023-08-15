@@ -1,1 +1,65 @@
 <h1>Tabs Buttons</h1>
+<p>These tabs are using buttons and can be used to show/hide content.</p>
+<h2>Folder Tabs</h2>
+<div className="tds-u-mb3 tabs">
+  <tds-folder-tabs
+    mode-variant="secondary"
+    (tdsChange)="onFolderTabChange($event)"
+  >
+    <tds-folder-tab>
+      <button>First tab</button>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <button>Second tab is much longer</button>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <button>Third tab</button>
+    </tds-folder-tab>
+    <tds-folder-tab disabled>
+      <button>Fourth tab</button>
+    </tds-folder-tab>
+  </tds-folder-tabs>
+  {{ folderTabIndex }}
+</div>
+<h2>Inline Tabs</h2>
+<div className="tds-u-mb3 tabs">
+  <tds-inline-tabs
+    mode-variant="secondary"
+    (tdsChange)="onInlineTabChange($event)"
+  >
+    <tds-inline-tab>
+      <button>First tab</button>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <button>Second tab is much longer</button>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <button>Third tab</button>
+    </tds-inline-tab>
+    <tds-inline-tab disabled>
+      <button>Fourth tab</button>
+    </tds-inline-tab>
+  </tds-inline-tabs>
+  {{ inlineTabIndex }}
+</div>
+<h2>Navigation Tabs</h2>
+<div className="tds-u-mb3 tabs">
+  <tds-navigation-tabs
+    mode-variant="secondary"
+    (tdsChange)="onNavigationTabChange($event)"
+  >
+    <tds-navigation-tab>
+      <button>First tab</button>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <button>Second tab is much longer</button>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <button>Third tab</button>
+    </tds-navigation-tab>
+    <tds-navigation-tab disabled>
+      <button>Fourth tab</button>
+    </tds-navigation-tab>
+  </tds-navigation-tabs>
+  {{ navigationTabIndex }}
+</div>

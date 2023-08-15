@@ -1,1 +1,55 @@
 <h1>Tabs Links</h1>
+<p>
+  These tabs are linking to different pages (with different URLs), and this means that you can link
+  to an individual tab via a URL. Try clicking this
+  <a routerLink="inline-tabs">link</a>
+  and you'll land on a page for the second tab.
+</p>
+<div class="tds-u-pb3 tabs">
+  <tds-folder-tabs
+    *ngIf="fullPath.includes('folder-tabs')"
+    mode-variant="secondary"
+    selected-index="0"
+  >
+    <tds-folder-tab>
+      <a routerLink="folder-tabs">Folder tabs</a>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <a routerLink="inline-tabs">Inline tabs</a>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <a routerLink="navigation-tabs">Navigation tabs</a>
+    </tds-folder-tab>
+  </tds-folder-tabs>
+  <tds-inline-tabs
+    *ngIf="fullPath.includes('inline-tabs')"
+    mode-variant="secondary"
+    selected-index="1"
+  >
+    <tds-inline-tab>
+      <a routerLink="folder-tabs">Folder tabs</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="inline-tabs">Inline tabs</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="navigation-tabs">Navigation tabs</a>
+    </tds-inline-tab>
+  </tds-inline-tabs>
+  <tds-navigation-tabs
+    mode-variant="secondary"
+    *ngIf="fullPath.includes('navigation-tabs')"
+    selected-index="2"
+  >
+    <tds-navigation-tab>
+      <a routerLink="folder-tabs">Folder tabs</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="inline-tabs">Inline tabs</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="navigation-tabs">Navigation tabs</a>
+    </tds-navigation-tab>
+  </tds-navigation-tabs>
+  <router-outlet />
+</div>

@@ -32,6 +32,21 @@ const routes = [
   {
     path: 'tabs-links',
     loadComponent: () => import('@pages/tabs-links-page/tabs-links-page.component'),
+    children: [
+      {
+        path: 'folder-tabs',
+        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+      },
+      {
+        path: 'inline-tabs',
+        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+      },
+      {
+        path: 'navigation-tabs',
+        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+      },
+      { path: '', redirectTo: 'folder-tabs', pathMatch: 'full' },
+    ],
   },
   {
     path: 'table',
