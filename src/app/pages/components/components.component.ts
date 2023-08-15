@@ -24,7 +24,7 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
-        TextFieldComponent,
+        TextareaComponent,
         TextareaComponent,
         FormsModule,
     ],

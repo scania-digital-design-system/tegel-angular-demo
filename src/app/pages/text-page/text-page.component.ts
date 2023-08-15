@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import  BreadcrumbsComponent  from 'src/app/components/breadcrumbs/breadcrumbs.component';
 
 @Component({
