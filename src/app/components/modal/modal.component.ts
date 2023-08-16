@@ -9,16 +9,18 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angul
 })
 export default class ModalComponent {
   @ViewChild('myHoverModal', { static: true }) hoverModalRef: ElementRef<HTMLTdsModalElement> | undefined;
+  @ViewChild('myLgModal', { static: true }) myLgModal: ElementRef<HTMLTdsModalElement> | undefined;
 
   
 
-  showModal(event: Event){
-    const element = event.target as HTMLTdsModalElement
-    element.showModal()
+  showModal(){
+    if(this.hoverModalRef)
+      this.hoverModalRef.nativeElement.showModal()
+    
   }
 
   hideModal(){
-    if(this.hoverModalRef)
-        this.hoverModalRef.nativeElement.closeModal()
+    if(this.myLgModal)
+        this.myLgModal.nativeElement.closeModal()
   }
 }
