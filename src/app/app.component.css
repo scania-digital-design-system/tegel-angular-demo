@@ -9,17 +9,14 @@ main {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 32px;
   width: 100%;
   max-width: 600px;
-  
 }
 
 .side-menu-and-main {
   display: flex;
   flex-grow: 1;
 }
-
 
 .mobile-nav-item {
   display: none;
