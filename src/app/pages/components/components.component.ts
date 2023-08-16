@@ -10,6 +10,7 @@ import { CardComponent } from 'src/app/components/card/card.component';
 import TextareaComponent from 'src/app/components/textarea/textarea.component';
 import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 import TextFieldComponent from '@components/text-field/text-field.component';
+import PopoverCanvasComponent from '@components/popover-canvas/popover-canvas.component';
 
 @Component({
     selector: 'app-components',
@@ -26,6 +27,7 @@ import TextFieldComponent from '@components/text-field/text-field.component';
         CheckboxComponent,
         CardComponent,
         TextFieldComponent,
+        PopoverCanvasComponent,
         TextareaComponent,
         FormsModule,
     ],
