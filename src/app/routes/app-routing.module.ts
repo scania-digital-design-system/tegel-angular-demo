@@ -34,6 +34,10 @@ const routes = [
     loadComponent: () => import('@pages/tabs-links-page/tabs-links-page.component'),
   },
   {
+    path: 'table',
+    loadComponent: () => import('@pages/table-page/table-page.component'),
+  },
+  {
     path: '404',
     loadComponent: () => import('@pages/error-page/error-page.component'),
   },
