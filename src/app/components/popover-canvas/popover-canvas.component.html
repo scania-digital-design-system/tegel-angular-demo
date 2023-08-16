@@ -1,6 +1,6 @@
 <div>
-    <div className="tds-headline-03 tds-u-pb1">Canvas</div>
-    <div className="popover-container">
+    <div class="tds-headline-03 tds-u-pb1">Canvas</div>
+    <div class="popover-container">
       <tds-button
         aria-label="menu"
         only-icon
@@ -8,14 +8,14 @@
         size="sm"
         (click)="showPopover = !showPopover"
       >
-        <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
+        <tds-icon slot="icon" class="tds-btn-icon" size="16px" name="kebab"></tds-icon>
       </tds-button>
     </div>
 
-    <tds-popover-canvas placement="left" [show]="showPopover">
-      <div className="tds-u-p2">
-        <h2 className="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
-        <p className="tds-body-01">Where you can put anything you want!</p>
+    <tds-popover-canvas placement="top" [show]="showPopover">
+      <div class="tds-u-p2">
+        <h2 class="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
+        <p class="tds-body-01">Where you can put anything you want!</p>
         <tds-link>
           <a target="_blank" rel="noopener noreferrer" href="https://tegel.scania.com">
             Even links!
@@ -24,7 +24,7 @@
       </div>
     </tds-popover-canvas>
 
-    <div className="popover-container">
+    <div class="popover-container">
     <tds-button
     aria-label="menu"
     only-icon
@@ -34,14 +34,14 @@
   >
     <tds-icon
       slot="icon"
-      className="tds-btn-icon"
+      class="tds-btn-icon"
       size="16px"
       name="kebab"
     ></tds-icon>
   </tds-button>
 </div>
-<tds-popover-canvas placement="left" selector="#trigger">
-  <div className="tds-u-p2">
+<tds-popover-canvas placement="top" selector="#trigger">
+  <div class="tds-u-p2">
     <h2>A popover canvas!</h2>
     <p>Where you can put anything you want!</p>
     <p>
