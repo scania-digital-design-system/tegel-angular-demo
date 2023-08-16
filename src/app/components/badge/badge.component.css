@@ -1,0 +1,17 @@
+
+.button-badge-relative {
+  position: relative;
+}
+.button-badge-relative > tds-badge {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  right: auto;
+  z-index: 1;
+}
+.button-badge-relative > tds-badge[size="sm"] {
+  position: absolute;
+  top: -2.5px;
+  left: auto;
+  right: -2.5px;
+}
