@@ -1,13 +1,13 @@
 import {  Routes } from '@angular/router';
 
-import { ComponentsComponent } from './pages/components/components.component';
-import { PageTwoComponent } from './pages/page-two/page-two.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { TextPageComponent } from './pages/text-page/text-page.component';
-import { ChipsPageComponent } from './pages/chips-page/chips-page.component';
-import { TabsButtonsPageComponent } from './pages/tabs-buttons-page/tabs-buttons-page.component';
-import { TabsLinksPageComponent } from './pages/tabs-links-page/tabs-links-page.component';
+import ComponentsComponent from './pages/components/components.component';
+import PageTwoComponent from './pages/page-two/page-two.component';
+import HomeComponent from './pages/home/home.component';
+import ErrorPageComponent from './pages/error-page/error-page.component';
+import TextPageComponent from './pages/text-page/text-page.component';
+import ChipsPageComponent from './pages/chips-page/chips-page.component';
+import TabsButtonsPageComponent from './pages/tabs-buttons-page/tabs-buttons-page.component';
+import TabsLinksPageComponent from './pages/tabs-links-page/tabs-links-page.component';
 import { TextSubpageComponent } from './pages/text-subpage/text-subpage.component';
 
 const routes = [

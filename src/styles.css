@@ -27,6 +27,13 @@ body {
 	text-transform: capitalize;
 }
 
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
 
 .breadcrumbs {
   display: flex;
