@@ -19,35 +19,36 @@ import ToastComponent from '@components/toast/toast.component';
 import TooltipComponent from '@components/tooltip/tooltip.component';
 import PopoverMenuComponent from '@components/popover-menu/popover-menu.component';
 import SpinnerComponent from 'src/app/components/spinner/spinner.component';
+import MessageComponent from 'src/app/components/message/message.component';
 
 @Component({
-    selector: 'app-components',
-    templateUrl: './components.component.html',
-    styleUrls: ['./components.component.css'],
-    standalone: true,
-    imports: [
-        AccordionComponent,
-        BadgeComponent,
-        BannerComponent,
-        ButtonComponent,
-        BlockComponent,
-        BreadcrumbsComponent,
-        CheckboxComponent,
-        CardComponent,
-        DatetimeComponent,
-        DividerComponent,
-        TextFieldComponent,
-        PopoverCanvasComponent,
-        PopoverMenuComponent,
-        TextareaComponent,
-        ToastComponent,
-        TooltipComponent,
-        RadioButtonComponent,
-        FormsModule,
-        ModalComponent,
-        SpinnerComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-
+  selector: 'app-components',
+  templateUrl: './components.component.html',
+  styleUrls: ['./components.component.css'],
+  standalone: true,
+  imports: [
+    AccordionComponent,
+    BadgeComponent,
+    BannerComponent,
+    ButtonComponent,
+    BlockComponent,
+    BreadcrumbsComponent,
+    CheckboxComponent,
+    CardComponent,
+    DatetimeComponent,
+    DividerComponent,
+    TextFieldComponent,
+    PopoverCanvasComponent,
+    PopoverMenuComponent,
+    TextareaComponent,
+    ToastComponent,
+    TooltipComponent,
+    RadioButtonComponent,
+    FormsModule,
+    ModalComponent,
+    SpinnerComponent,
+    MessageComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export default class ComponentsComponent { }
+export default class ComponentsComponent {}
