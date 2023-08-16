@@ -7,6 +7,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
   styleUrls: ['./text-field.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TextFieldComponent {
+export default class TextFieldComponent {
 
 }
