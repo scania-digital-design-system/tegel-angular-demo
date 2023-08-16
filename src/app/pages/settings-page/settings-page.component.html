@@ -1,1 +1,27 @@
-<p>settings-page works!</p>
+<ng-container [formGroup]="formField">
+  <form
+    (submit)="submitForm($event)"
+    class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-2"
+  >
+    <tds-text-field
+      ngDefaultControl
+      formControlName="userName"
+      [placeholder]="userName"
+      [state]="userNameError ? 'error':'default'"
+      [helper]="userNameError ? 'The field cant be empty':null"
+    ></tds-text-field>
+    <tds-text-field
+      ngDefaultControl
+      formControlName="placeOfWork"
+      [placeholder]="placeOfWork"
+      [state]="placeOfWorkError ? 'error':'default'"
+      [helper]="placeOfWorkError ? 'The field cant be empty':null"
+    ></tds-text-field>
+    <tds-button
+      type="submit"
+      text="Save"
+      size="md"
+    >
+    </tds-button>
+  </form>
+</ng-container>
