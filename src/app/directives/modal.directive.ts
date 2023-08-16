@@ -1,5 +1,5 @@
 import {Directive, ViewContainerRef} from '@angular/core'
-import {ModalComponent} from '../components/modal/modal.component'
+import { TableModalComponent } from '@pages/table-page/table-modal.component';
 
 @Directive({
   selector: '[modal-dr]',
@@ -10,7 +10,7 @@ export class ModalDirective {
 
   showModal(content: string)  {
     this.viewContainerRef.clear();
-    const { instance } = this.viewContainerRef.createComponent<ModalComponent>(ModalComponent)
+    const { instance } = this.viewContainerRef.createComponent<TableModalComponent>(TableModalComponent)
     instance.content = content
   }
 }
