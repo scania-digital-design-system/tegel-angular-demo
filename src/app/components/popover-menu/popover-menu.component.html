@@ -8,6 +8,7 @@
           size="sm"
           (click)="toggleMenu = !toggleMenu"
           #trigger1
+          id="trigger1"
         >
           <tds-icon slot="icon" class="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
@@ -16,6 +17,7 @@
         placement="auto"
         [show]="toggleMenu"
         #popoverMenu1
+        id="popover-menu-1"
       >
         <ul class="tds-popover-menu-wrapper">
           <li>
