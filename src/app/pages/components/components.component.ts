@@ -9,6 +9,7 @@ import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.componen
 import { CardComponent } from 'src/app/components/card/card.component';
 import TextareaComponent from 'src/app/components/textarea/textarea.component';
 import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
+import TextFieldComponent from '@components/text-field/text-field.component';
 
 @Component({
     selector: 'app-components',
@@ -24,7 +25,7 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
-        TextareaComponent,
+        TextFieldComponent,
         TextareaComponent,
         FormsModule,
     ],
