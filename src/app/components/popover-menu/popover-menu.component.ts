@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,5 +12,14 @@ import { CommonModule } from '@angular/common';
 export default class PopoverMenuComponent {
 
   toggleMenu = false;
+
+  @ViewChild('popoverMenu1', { static: true }) 
+  popoverMenu1!: ElementRef<HTMLElement>;
+  @ViewChild('trigger1', { static: true }) 
+  trigger1: ElementRef<HTMLElement>;
+
+  this.popovermenu1.referenceEl = trigger1;
+
+  
 
 }
