@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
 import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
@@ -9,46 +15,47 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   templateUrl: './settings-page.component.html',
   styleUrls: ['./settings-page.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
 })
-export default class SettingsPageComponent implements OnInit {
+export default class SettingsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}
+  private onDestroy$: Subject<void> = new Subject<void>();
 
   userName = '';
   userNameError = false;
   placeOfWork = '';
   placeOfWorkError = false;
 
- 
-  
   formField: FormGroup = new FormGroup({
     userName: new FormControl('', Validators.minLength(10)),
     placeOfWork: new FormControl('', Validators.required),
   });
 
+  submitForm(event: SubmitEvent) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+
+    this.userNameError = this.formField.get('userName')?.value < 1;
+    this.placeOfWorkError = this.formField.get('placeOfWork')?.value < 1;
+
+    this.userStoreService.updateUserName(this.formField.get('userName')?.value);
+    this.userStoreService.updatePlaceOfWork(this.formField.get('placeOfWork')?.value);
+    form.reset();
+  }
+
 
   ngOnInit() {
-    this.userStoreService.userName$.subscribe((userName) => {
+    this.userStoreService.userName$.pipe(takeUntil(this.onDestroy$)).subscribe((userName) => {
       this.userName = userName;
     });
-
-    this.userStoreService.placeOfWork$.subscribe((placeOfWork) => {
+    this.userStoreService.placeOfWork$.pipe(takeUntil(this.onDestroy$)).subscribe((placeOfWork) => {
       this.placeOfWork = placeOfWork;
     });
   }
 
-
-  submitForm(event: SubmitEvent){
-    event.preventDefault()
-    const form = event.target as HTMLFormElement
-
-    this.userNameError = this.formField.get('userName')?.value < 1
-    this.placeOfWorkError = this.formField.get('placeOfWork')?.value < 1
-    
-    if(!this.userNameError && !this.placeOfWorkError){
-      this.userStoreService.updateUserName(this.formField.get('userName')?.value)
-      this.userStoreService.updatePlaceOfWork(this.formField.get('placeOfWork')?.value)
-      form.reset()
-    }
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
   }
+
 }

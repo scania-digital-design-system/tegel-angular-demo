@@ -57,7 +57,7 @@
           </tds-header-dropdown-list-item>
           <tds-header-dropdown-list-item>
             <a routerLink="notifications">
-              <tds-badge></tds-badge>
+              <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
               <div class="tds-u-pl1">Notifications</div>
             </a>
           </tds-header-dropdown-list-item>
@@ -133,14 +133,14 @@
               img-alt=""></tds-side-menu-user>
             <tds-side-menu-dropdown-list>
               <tds-side-menu-dropdown-list-item>
-                <a to="settings">
+                <a routerLink="settings">
                   <tds-icon name="settings"></tds-icon>
                   <div class="tds-u-pl1">Settings</div>
                 </a>
               </tds-side-menu-dropdown-list-item>
               <tds-side-menu-dropdown-list-item>
-                <a to="settings">
-                  <tds-badge></tds-badge>
+                <a routerLink="notifications">
+                  <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
                   <div class="tds-u-pl1">Notifications</div>
                 </a>
               </tds-side-menu-dropdown-list-item>

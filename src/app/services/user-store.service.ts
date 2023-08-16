@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Notification } from 'src/types';
 
 @Injectable({ providedIn: 'root' })
 export class UserStoreService {
@@ -9,26 +10,21 @@ export class UserStoreService {
   readonly placeOfWorkSubject = new BehaviorSubject<string>('IXI');
   placeOfWork$ = this.placeOfWorkSubject.asObservable();
 
-  readonly notificationsSubject = new BehaviorSubject<
+  readonly notificationsSubject = new BehaviorSubject<Notification[]>([
     {
-      notification: string;
-      type: 'error' | 'success' | 'information' | 'warning';
-    }[]
-  >([
-    {
-      notification: 'You need to update your username.',
+      content: 'You need to update your username.',
       type: 'error',
     },
     {
-      notification: 'Your vacation request has been approved.',
+      content: 'Your vacation request has been approved.',
       type: 'success',
     },
     {
-      notification: 'You need to update your password.',
+      content: 'You need to update your password.',
       type: 'error',
     },
     {
-      notification: 'Your username is about to expire.',
+      content: 'Your username is about to expire.',
       type: 'warning',
     },
   ]);

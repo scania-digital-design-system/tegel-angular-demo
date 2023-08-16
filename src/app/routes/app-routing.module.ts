@@ -57,6 +57,10 @@ const routes = [
     loadComponent: () => import('@pages/settings-page/settings-page.component'),
   },
   {
+    path: 'notifications',
+    loadComponent: () => import('@pages/notifications-page/notifications-page.component'),
+  },
+  {
     path: '404',
     loadComponent: () => import('@pages/error-page/error-page.component'),
   },
