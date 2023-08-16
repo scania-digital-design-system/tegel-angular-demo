@@ -10,4 +10,4 @@ import { TabsComponentComponent } from '../../components/tabs-component/tabs-com
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class PageTwoComponent {}
+export default class PageTwoComponent {}

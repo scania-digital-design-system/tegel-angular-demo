@@ -5,9 +5,10 @@ import { BadgeComponent } from 'src/app/components/badge/badge.component';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { BlockComponent } from 'src/app/components/block/block.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
-import { BreadcrumbsComponent } from 'src/app/components/breadcrumbs/breadcrumbs.component';
 import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
 import { CardComponent } from 'src/app/components/card/card.component';
+import TextareaComponent from 'src/app/components/textarea/textarea.component';
+import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
 
 @Component({
     selector: 'app-components',
@@ -23,9 +24,11 @@ import { CardComponent } from 'src/app/components/card/card.component';
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
+        TextareaComponent,
+        TextareaComponent,
         FormsModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class ComponentsComponent {}
+export default class ComponentsComponent {}

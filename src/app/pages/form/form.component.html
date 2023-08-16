@@ -1,17 +1,23 @@
 <article>
-  <h3>Form example</h3>
-  <tds-block>
-      <app-text-input [textFieldGroup]="textFormField"> </app-text-input>
-      <app-dropdown> </app-dropdown>
-      <app-checkbox [checkboxGroup]="checkboxField"></app-checkbox>
-      <app-slider></app-slider>
+  <h1>Form examples</h1>
+  <section>
+    <tds-navigation-tabs>
+      <tds-navigation-tab>
+        <a routerLink="simpleform">Simple form</a>
+      </tds-navigation-tab>
+      <tds-navigation-tab>
+        <a routerLink="reactive-forms">Reactive forms</a>
+      </tds-navigation-tab>
+      <tds-navigation-tab>
+        <a routerLink="template-driven-forms">Template-driven forms</a>
+      </tds-navigation-tab>
+    </tds-navigation-tabs>
+  </section>
 
-    <tds-button
-    size="sm"
-    fullbleed
-    text="Submit"
-    (click)="submitForm()"
-  ></tds-button>
-
-  </tds-block>
+  <section>
+    <tds-block>
+      <router-outlet>
+      </router-outlet>
+    </tds-block>
+  </section>
 </article>

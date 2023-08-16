@@ -1,0 +1,43 @@
+<ng-container [formGroup]="radioButtonGroup">
+    <div>
+      <h5>How long have you been at Scania?</h5>
+      <fieldset>
+        <tds-radio-button
+          checked
+          value="radio-1"
+          name="timeAtScania"
+          (tdsChange)="handleRadioChange($event,'timeAtScania')"
+        >
+          <div slot="label">0 - 6 months</div>
+        </tds-radio-button>
+        <tds-radio-button
+          value="radio-2"
+          name="timeAtScania"
+          (tdsChange)="handleRadioChange($event,'timeAtScania')"
+        >
+          <div slot="label">6 months - 1 year</div>
+        </tds-radio-button>
+        <tds-radio-button
+          value="radio-3"
+          name="timeAtScania"
+          (tdsChange)="handleRadioChange($event,'timeAtScania')"
+        >
+          <div slot="label">1 - 2 years</div>
+        </tds-radio-button>
+        <tds-radio-button
+          value="radio-4"
+          name="timeAtScania"
+          (tdsChange)="handleRadioChange($event,'timeAtScania')"
+        >
+          <div slot="label">2 - 5 years</div>
+        </tds-radio-button>
+        <tds-radio-button
+          value="radio-5"
+          name="timeAtScania"
+          (tdsChange)="handleRadioChange($event,'timeAtScania')"
+        >
+          <div slot="label">+ 5 years</div>
+        </tds-radio-button>
+      </fieldset>
+    </div>
+</ng-container>

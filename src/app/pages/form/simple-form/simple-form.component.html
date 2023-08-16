@@ -1,0 +1,139 @@
+<h3>Simple Form</h3>
+<p>This form uses the native form element and therefor it works out of the box with our components.</p>
+
+<form (submit)="handleSubmit($event)">
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-3">
+    <tds-text-field mode-variant="secondary" name="text-field" label="Full name" label-position="outside"
+      placeholder="John Doe"></tds-text-field>
+    <tds-datetime mode-variant="secondary" label="Date of birth" name="dateOfBirth" type="date"
+      default-value="2000-01-01"></tds-datetime>
+    <section class="side-by-side">
+      <tds-text-field mode-variant="secondary" type="text" size="lg" state="success" label="Phone number"
+        name="phoneNumber" label-position="outside" no-min-width placeholder="08 456 32">
+        <span slot="prefix">
+          <tds-icon name="phone" size="16px"></tds-icon>
+        </span>
+      </tds-text-field>
+
+      <tds-text-field #addressField mode-variant="secondary" type="text" size="lg" label="Address" name="homeAddress" [state]="addressState" [attr.helper]="addressState === 'error' ? 'Address is a mandatory field.' : null"
+        label-position="outside" no-min-width placeholder="Majorvägen 32" (tdsInput)="handleTextAreaChange($event)">
+        <span slot="prefix">
+          <tds-icon name="pin" size="16px"></tds-icon>
+        </span>
+      </tds-text-field>
+    </section>
+
+    <tds-dropdown mode-variant="secondary" name="country" label="Which country you want to select?"
+      label-position="outside" placeholder="Country select" size="lg" open-direction="up" default-value="sweden"
+      (tdsChange)="handleDropdownChange($event)">
+      <tds-dropdown-option value="sweden">Sweden</tds-dropdown-option>
+      <tds-dropdown-option disabled value="Finland">
+        Finland
+      </tds-dropdown-option>
+      <tds-dropdown-option value="norway">Norway</tds-dropdown-option>
+    </tds-dropdown>
+
+    <tds-dropdown mode-variant="secondary" name="norweiganTown" label="Which towns have you visited in Norway?"
+      label-position="outside" placeholder="Norweigan Town" helper="" size="lg" open-direction="auto" multiselect
+      [disabled]="selectedCountry !== 'norway'">
+      <ng-container *ngFor="let town of nowegianTowns; let idx = index">
+        <tds-dropdown-option [value]="town.value">
+          {{ town.label }}
+        </tds-dropdown-option>
+      </ng-container>
+    </tds-dropdown>
+    <tds-dropdown mode-variant="secondary" name="swedishTown" label="Select your favourite Swedish town"
+      label-position="outside" placeholder="Swedish Town" helper="" size="lg" open-direction="auto" filter
+      [disabled]="selectedCountry !== 'sweden'">
+      <ng-container *ngFor="let town of swedishTowns; let idx = index">
+        <tds-dropdown-option [value]="town.value">
+          {{ town.label }}
+        </tds-dropdown-option>
+      </ng-container>
+    </tds-dropdown>
+
+    <section>
+      <h5>Which offices do you work from?</h5>
+      <tds-checkbox value="sodertalje321" name="office" checked>
+        <div slot="label">Södertälje 321</div>
+      </tds-checkbox>
+      <tds-checkbox value="sergel" name="office">
+        <div slot="label">Sergel</div>
+      </tds-checkbox>
+      <tds-checkbox value="homeoffice" name="office">
+        <div slot="label">Home office</div>
+      </tds-checkbox>
+      <tds-checkbox value="b260" name="office" disabled>
+        <div slot="label">Building 260</div>
+      </tds-checkbox>
+      <h5>How long have you been at Scania?</h5>
+      <fieldset>
+        <tds-radio-button checked value="radio-1" name="yearsAtScania">
+          <div slot="label">0 - 6 months</div>
+        </tds-radio-button>
+        <tds-radio-button value="radio-2" name="yearsAtScania">
+          <div slot="label">6 months - 1 year</div>
+        </tds-radio-button>
+        <tds-radio-button value="radio-2" name="yearsAtScania">
+          <div slot="label">1 - 2 years</div>
+        </tds-radio-button>
+        <tds-radio-button value="radio-2" name="yearsAtScania">
+          <div slot="label">2 - 5 years</div>
+        </tds-radio-button>
+        <tds-radio-button value="radio-2" name="yearsAtScania">
+          <div slot="label">+ 5 years</div>
+        </tds-radio-button>
+      </fieldset>
+    </section>
+
+    <section class="tds-u-mt3">
+      <h5>Textarea</h5>
+      <tds-textarea mode-variant="secondary" name="occupationalEssay" [state]="occupationalEssayState"
+        label="What do you do at Scania? (Minimum 50 chars)" label-position="outside" [helper]="occupationalEssayHelper"
+        [disabled]="textAreaDisabled"></tds-textarea>
+    </section>
+
+    <section>
+      <h5>Tell us how you feel about your..</h5>
+      <tds-slider (tdsChange)="handleSliderChange()"  label="..happiness at work" name="happinessAtWork" min="0" value="5"
+        show-tick-numbers max="10" ticks="9" snap></tds-slider>
+      <tds-slider  label="..stress level" name="stressLevel" min="0" value="5" show-tick-numbers
+        max="10" ticks="9" snap [disabled]="stressSliderDisabled"></tds-slider>
+      <tds-slider  label="..work/life balance." name="workLifeBalance" min="0" value="5"
+        show-tick-numbers max="10" ticks="9" snap [read-only]="balanceSliderDisabled"></tds-slider>
+    </section>
+    <section>
+      <h5>What topics would you like to learn more about?</h5>
+      <div class="chips tds-u-flex tds-u-flex-gap-1 tds-u-flex-wrap">
+        <tds-chip value="webDevelopment" type="checkbox" name="insterest">
+          <div slot="label">Web developement</div>
+        </tds-chip>
+        <tds-chip value="ciCd" type="checkbox" name="insterest">
+          <div slot="label">CI/CD</div>
+        </tds-chip>
+        <tds-chip value="docker" type="checkbox" name="insterest">
+          <div slot="label">Docker</div>
+        </tds-chip>
+        <tds-chip value="Kafka" type="checkbox" name="insterest">
+          <div slot="label">Kafka</div>
+        </tds-chip>
+        <tds-chip value="beDevelopment" type="checkbox" name="insterest">
+          <div slot="label">Backend development</div>
+        </tds-chip>
+        <tds-chip value="python" type="checkbox" name="insterest">
+          <div slot="label">Python</div>
+        </tds-chip>
+        <tds-chip value="js" type="checkbox" name="insterest">
+          <div slot="label">Javascript</div>
+        </tds-chip>
+        <tds-chip value="angular" type="checkbox" name="insterest">
+          <div slot="label">Angular</div>
+        </tds-chip>
+        <tds-chip value="react" type="checkbox" name="insterest">
+          <div slot="label">React</div>
+        </tds-chip>
+      </div>
+    </section>
+    <tds-button type="submit" text="Submit"></tds-button>
+  </div>
+</form>

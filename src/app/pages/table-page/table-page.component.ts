@@ -35,6 +35,6 @@ import {AsyncPipe} from '@angular/common'
   providers: [TableService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TablePageComponent {
+export default class TablePageComponent {
   tableService = inject(TableService)
 }

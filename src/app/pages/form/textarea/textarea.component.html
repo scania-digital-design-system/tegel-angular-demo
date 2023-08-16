@@ -1,0 +1,14 @@
+<ng-container [formGroup]="textareaGroup">
+  <tds-textarea
+  ngDefaultControl
+  formControlName="occupationalEssay"
+  [state]="textareaGroup.status === 'INVALID' ? 'error' : 'default'" 
+  [helper]="textareaGroup.status === 'INVALID' ? '(Minimum 50 chars)' : 'Cool story, bro.'" 
+  mode-variant="secondary"
+  name="occupationalEssay"
+  label="What do you do at Scania?"
+  label-position="outside"
+  >
+</tds-textarea>
+ 
+</ng-container>

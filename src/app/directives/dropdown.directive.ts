@@ -3,7 +3,7 @@ import { Directive, ElementRef, forwardRef, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Directive({
-  selector: 'dropdown-directive',
+  selector: 'tds-dropdown',
   standalone: true,
   providers: [
     {
