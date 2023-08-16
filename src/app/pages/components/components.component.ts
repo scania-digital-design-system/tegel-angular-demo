@@ -12,6 +12,7 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
 import TextFieldComponent from '@components/text-field/text-field.component';
 import PopoverCanvasComponent from '@components/popover-canvas/popover-canvas.component';
 import ModalComponent from 'src/app/components/modal/modal.component';
+import DatetimeComponent from '@components/datetime/datetime.component';
 
 @Component({
     selector: 'app-components',
@@ -27,6 +28,7 @@ import ModalComponent from 'src/app/components/modal/modal.component';
         BreadcrumbsComponent,
         CheckboxComponent,
         CardComponent,
+        DatetimeComponent,
         TextFieldComponent,
         PopoverCanvasComponent,
         TextareaComponent,
