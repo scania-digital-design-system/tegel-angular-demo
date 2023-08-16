@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextPageComponent } from './text-page.component';
+import TextPageComponent from './text-page.component';
 
 describe('TextPageComponent', () => {
   let component: TextPageComponent;

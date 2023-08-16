@@ -53,6 +53,10 @@ const routes = [
     loadComponent: () => import('@pages/table-page/table-page.component'),
   },
   {
+    path: 'settings',
+    loadComponent: () => import('@pages/settings-page/settings-page.component'),
+  },
+  {
     path: '404',
     loadComponent: () => import('@pages/error-page/error-page.component'),
   },
