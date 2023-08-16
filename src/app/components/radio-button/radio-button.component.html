@@ -1,0 +1,44 @@
+<div>
+  <div class="tds-headline-02 tds-u-pb2">Radio Button</div>
+  <form
+    (submit)="onSubmit($event)"
+    #formRef
+  >
+    <ng-container *ngFor="let fieldset of processedData">
+      <fieldset
+        [attr.key]="fieldset.name"
+        class="tds-u-pb2"
+      >
+        <legend class="tds-headline-05 tds-u-pb1">{{ fieldset.title }}</legend>
+        <ng-container *ngFor="let field of fieldset.fields">
+          <tds-radio-button
+            [name]="fieldset.name"
+            [value]="field.name"
+            [radio-id]="field.id"
+            [required]="fieldset.required"
+            [disabled]="isFieldDisabled(field)"
+            [checked]="isFieldPreselected(field)"
+          >
+            <span slot="label">
+              {{ field.name }}
+              <ng-container *ngIf="isFieldDisabled(field)"> (out of stock!)</ng-container>
+            </span>
+          </tds-radio-button>
+        </ng-container>
+      </fieldset>
+    </ng-container>
+    <tds-button
+      text="Place order"
+      type="submit"
+    ></tds-button>
+    <ng-container *ngIf="submittedData">
+      <p class="tds-headline-03">Thank you for your order.</p>
+      <pre>
+        Reciept:
+        <ng-container *ngFor="let dish of submittedData; let idx = index">
+          {{ dish }}: {{ (idx + 1) * 10000 }} SEK
+        </ng-container>
+      </pre>
+    </ng-container>
+  </form>
+</div>
