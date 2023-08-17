@@ -137,7 +137,7 @@
           </div>
         </section>
       </tds-block>
-      <div class="spinner-container">
+      <div *ngIf="sendingStatus" class="spinner-container">
         <tds-spinner size="md" variant="standard"></tds-spinner>
       </div>
     <tds-button type="submit" text="Submit"></tds-button>
