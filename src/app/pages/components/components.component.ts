@@ -14,6 +14,7 @@ import PopoverCanvasComponent from '@components/popover-canvas/popover-canvas.co
 import ModalComponent from 'src/app/components/modal/modal.component';
 import DatetimeComponent from '@components/datetime/datetime.component';
 import RadioButtonComponent from 'src/app/components/radio-button/radio-button.component';
+import { DividerComponent } from '@components/divider/divider.component';
 
 @Component({
     selector: 'app-components',
@@ -30,6 +31,7 @@ import RadioButtonComponent from 'src/app/components/radio-button/radio-button.c
         CheckboxComponent,
         CardComponent,
         DatetimeComponent,
+        DividerComponent,
         TextFieldComponent,
         PopoverCanvasComponent,
         TextareaComponent,
