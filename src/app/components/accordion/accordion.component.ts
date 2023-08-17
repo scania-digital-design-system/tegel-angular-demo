@@ -7,7 +7,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Output, EventEmitter } from '@angula
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
 export class AccordionComponent {
   @Output() iconPositionChange = new EventEmitter<'end' | 'start'>();
 
@@ -21,7 +20,7 @@ export class AccordionComponent {
       return; // Do nothing if the accordion is disabled
     }
 
-    this.expandedItem = this.expandedItem === item ? '' : item;
+    console.log(`Accordion item ${item} is toggled!`);
   }
 
   handleIconPositionChange(newPosition: 'end' | 'start'): void {
