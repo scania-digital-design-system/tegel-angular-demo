@@ -1,0 +1,26 @@
+.form {
+    position: relative;
+
+    tds-block {
+        transition: filter 250ms ease;
+    }
+
+    .spinner-container {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: bottom 250ms ease,  opacity 250ms ease;
+    }
+
+    &.form-sending {
+        tds-block {
+            filter: blur(4px);
+        }
+        .spinner-container {
+            opacity: 1;
+            bottom: 100px;
+        }
+    }
+}

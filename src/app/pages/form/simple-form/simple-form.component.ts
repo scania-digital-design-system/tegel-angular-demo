@@ -14,7 +14,7 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
 @Component({
   selector: 'app-simple-form',
   templateUrl: './simple-form.component.html',
-  styleUrls: ['./simple-form.component.css'],
+  styleUrls: ['./simple-form.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -46,6 +46,7 @@ export default class SimpleFormComponent {
   occupationalEssayHelper: undefined | 'You dont have enough characters.' = undefined;
   stressSliderDisabled = true;
   balanceSliderDisabled = true;
+  sendingStatus = false;
 
 
   constructor() {}
@@ -76,6 +77,12 @@ export default class SimpleFormComponent {
       this.occupationalEssayState = 'default';
       this.occupationalEssayHelper = undefined;
       this.addressState = 'default';
+
+      this.sendingStatus = true;
+
+          setTimeout(() => {
+            this.sendingStatus = false;
+          }, 3000);
 
       formData.forEach((value, key) => {
         console.log('Key:', key, 'Value:', value);
