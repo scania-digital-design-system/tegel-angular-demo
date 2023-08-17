@@ -15,6 +15,7 @@ import ModalComponent from 'src/app/components/modal/modal.component';
 import DatetimeComponent from '@components/datetime/datetime.component';
 import RadioButtonComponent from 'src/app/components/radio-button/radio-button.component';
 import { DividerComponent } from '@components/divider/divider.component';
+import ToastComponent from '@components/toast/toast.component';
 
 @Component({
     selector: 'app-components',
@@ -35,6 +36,7 @@ import { DividerComponent } from '@components/divider/divider.component';
         TextFieldComponent,
         PopoverCanvasComponent,
         TextareaComponent,
+        ToastComponent,
         RadioButtonComponent,
         FormsModule,
         ModalComponent

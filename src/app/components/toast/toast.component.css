@@ -1,0 +1,6 @@
+.toast-container {
+    position: fixed;
+    bottom: var(--tds-spacing-element-32);
+    right: var(--tds-spacing-element-32);
+    z-index: 700;
+}
