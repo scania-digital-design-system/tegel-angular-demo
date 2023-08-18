@@ -1,0 +1,25 @@
+<div>
+  <h4>{{ orientation.charAt(0).toUpperCase() + orientation.slice(1) }} Stepper</h4>
+  <section [class]="orientation + '-stepper'">
+    <tds-stepper [labelPosition]="labelPosition" [size]="orientation === 'horizontal' ? 'sm' : 'lg'" [orientation]="orientation">
+      <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+        <tds-step [state]="getState(index)" [index]="(index + 1).toString()">
+          <div slot="label">Step {{ index + 1 }}</div>
+        </tds-step>
+      </ng-container>
+    </tds-stepper>
+
+    <form>
+      <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+        <tds-text-field
+          [disabled]="completedSteps < index"
+          [placeholder]="'Step ' + (index + 1)"
+          [state]="errorStepIndex === index ? 'error' : 'default'"
+          [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined"
+          (tdsInput)="onTdsInput(index, $event)"
+          (tdsChange)="onTdsChange(index, $event)">
+        </tds-text-field>
+      </ng-container>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,22 @@
+section.vertical-stepper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+section.vertical-stepper form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+section.horizontal-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section.horizontal-stepper form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
