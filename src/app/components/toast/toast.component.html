@@ -1,0 +1,32 @@
+<div>
+  <div class="tds-headline-02 tds-u-pb1">Toast</div>
+  <p>You can show or hide the toasts with the toggle below.</p>
+  <tds-toggle (tdsToggle)="toggleToasts()">
+    <span slot="label">{{ hideToasts ? 'Hide' : 'Show' }}</span>
+  </tds-toggle>
+
+  <div *ngIf="hideToasts" class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-1">
+    <tds-toast
+      variant="warning"
+      header="Warning Toast!"
+    >
+    </tds-toast>
+    <tds-toast
+      variant="information"
+      header="Information Toast!"
+    >
+    </tds-toast>
+    <tds-toast
+      variant="error"
+      header="Error Toast!"
+    >
+    </tds-toast>
+    <tds-toast
+      variant="success"
+      header="Success Toast!"
+      (tdsClose)="preventClose($event)"
+    >
+      <div slot="subheader">(Closing prevented!)</div>
+    </tds-toast>
+  </div>
+</div>
