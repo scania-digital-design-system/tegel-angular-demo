@@ -17,6 +17,7 @@ import RadioButtonComponent from 'src/app/components/radio-button/radio-button.c
 import { DividerComponent } from '@components/divider/divider.component';
 import ToastComponent from '@components/toast/toast.component';
 import TooltipComponent from '@components/tooltip/tooltip.component';
+import PopoverMenuComponent from '@components/popover-menu/popover-menu.component';
 
 @Component({
     selector: 'app-components',
@@ -36,6 +37,7 @@ import TooltipComponent from '@components/tooltip/tooltip.component';
         DividerComponent,
         TextFieldComponent,
         PopoverCanvasComponent,
+        PopoverMenuComponent,
         TextareaComponent,
         ToastComponent,
         TooltipComponent,
@@ -46,4 +48,4 @@ import TooltipComponent from '@components/tooltip/tooltip.component';
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export default class ComponentsComponent {}
+export default class ComponentsComponent { }
