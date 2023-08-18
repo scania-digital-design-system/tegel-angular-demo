@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopoverMenuComponent } from './popover-menu.component';
+import PopoverMenuComponent from './popover-menu.component';
 
 describe('PopoverMenuComponent', () => {
   let component: PopoverMenuComponent;
