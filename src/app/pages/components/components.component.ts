@@ -18,6 +18,7 @@ import { DividerComponent } from '@components/divider/divider.component';
 import ToastComponent from '@components/toast/toast.component';
 import TooltipComponent from '@components/tooltip/tooltip.component';
 import PopoverMenuComponent from '@components/popover-menu/popover-menu.component';
+import SpinnerComponent from 'src/app/components/spinner/spinner.component';
 
 @Component({
     selector: 'app-components',
@@ -43,7 +44,8 @@ import PopoverMenuComponent from '@components/popover-menu/popover-menu.componen
         TooltipComponent,
         RadioButtonComponent,
         FormsModule,
-        ModalComponent
+        ModalComponent,
+        SpinnerComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

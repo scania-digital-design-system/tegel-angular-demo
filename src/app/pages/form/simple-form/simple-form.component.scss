@@ -1,0 +1,18 @@
+.form {
+    tds-block {
+        transition: filter 250ms ease;
+    }
+
+    .spinner-container {
+        margin: 0 auto;
+        transform: translateX(-50%);
+        transition: bottom 250ms ease,  opacity 250ms ease;
+    }
+
+    &.form-sending {
+        tds-block {
+            filter: blur(4px);
+        }
+        
+    }
+}
