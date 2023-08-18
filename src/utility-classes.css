@@ -17,6 +17,15 @@
     align-items: center;
 }
 
+
+.tds-u-align-center {
+    align-items: center;
+}
+
+.tds-u-justify-center {
+    justify-content: center;
+}
+
 .tds-u-flex-dir-col {
     flex-direction: column;
 }
