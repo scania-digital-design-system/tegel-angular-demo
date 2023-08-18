@@ -4,6 +4,7 @@ import { Router, RouterOutlet,RouterLink } from '@angular/router';
 import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
 import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
 import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
+import { BannerComponent } from '@components/banner/banner.component';
 
 @Component({
     selector: 'app-root',
@@ -14,6 +15,7 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
         RouterLink,
         RouterOutlet,
         FooterComponent,
+        BannerComponent,
         BreadcrumbsComponent,
         ModeSwitcherComponent,
         ModeVariantSwitcherComponent
