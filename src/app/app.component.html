@@ -1,6 +1,15 @@
 <div class="{{ mode }}">
   <div class="{{ modeVariant }}">
-    <tds-header>
+    <tds-banner variant="information" icon="info" header="Angular demo" persistent>
+      <div slot="subheader">
+        This is a demo page in Angular using
+        <tds-link>
+          <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+            @scania/tegel
+          </a>
+        </tds-link>
+      </div>
+    </tds-banner>    <tds-header>
       <tds-header-hamburger id="demo-hamburger" aria-label="Open application drawer" aria-haspopup="true"
         aria-expanded="false" (click)="toggleMobileSideMenu()"></tds-header-hamburger>
     
