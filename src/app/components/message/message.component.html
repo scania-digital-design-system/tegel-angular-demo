@@ -1,0 +1,47 @@
+<h2 class="tds-headline-02 tds-u-pb1">Message</h2>
+<h4 class="tds-u-pb1">Message types</h4>
+<div class="tds-u-pb1">
+  <tds-toggle
+    [checked]="useIcon"
+    (tdsToggle)="handleUseIconToggle($event)"
+  >
+    <div slot="label">With Icon</div>
+  </tds-toggle>
+</div>
+<div class="tds-u-pb1">
+  <tds-toggle
+    [checked]="useMinimal"
+    (tdsToggle)="handleUseMinimalToggle($event)"
+  >
+    <div slot="label">Minimal</div>
+  </tds-toggle>
+</div>
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-1">
+  <tds-message
+    [noIcon]="!useIcon"
+    [minimal]="useMinimal"
+    variant="information"
+    header="Message header"
+    mode-variant="inherit from parent"
+  >
+    <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+  </tds-message>
+  <tds-message
+    [noIcon]="!useIcon"
+    [minimal]="useMinimal"
+    variant="error"
+    header="Message header"
+    mode-variant="inherit from parent"
+  >
+    <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+  </tds-message>
+  <tds-message
+    [noIcon]="!useIcon"
+    [minimal]="useMinimal"
+    variant="success"
+    header="Message header"
+    mode-variant="inherit from parent"
+  >
+    <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+  </tds-message>
+</div>
