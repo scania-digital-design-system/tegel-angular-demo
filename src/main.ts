@@ -9,7 +9,9 @@ import routes from '@routes/app-routing.module';
 bootstrapApplication(AppComponent, {
     providers: [
       importProvidersFrom(
-        RouterModule.forRoot(routes),
+        RouterModule.forRoot(routes, {
+          scrollPositionRestoration: 'enabled'
+        }),
         BrowserModule
         )
     ]
