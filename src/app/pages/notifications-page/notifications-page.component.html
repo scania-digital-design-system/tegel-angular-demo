@@ -1,0 +1,20 @@
+<h2>{{ notifications.length > 0 ? 'Notifications' : 'No new notifications' }}</h2>
+
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-2">
+    <div *ngFor="let notification of notifications; let i = index">
+        <tds-message [variant]="notification.type" [header]="'Notification ' + i">
+            {{ notification.content }}
+        </tds-message>
+    </div>
+</div>
+<tds-modal #notificationsModal selector="#clearNotificationBtn">
+    <span slot="header">Are you sure?</span>
+    <div slot="body">
+        This will remove all your notifications. Make sure you have addressed them before.
+      </div>
+    <tds-button (click)="clearNotifications()" slot="actions" variant="danger" text="Delete" size="md"></tds-button>
+    <tds-button data-dismiss-modal slot="actions" variant="primary" text="Cancel" size="md"></tds-button>
+</tds-modal>
+<div *ngIf="notifications.length">
+    <tds-button id="clearNotificationBtn" class="tds-u-mt2" size="md" text="Clear notification"></tds-button>
+</div>

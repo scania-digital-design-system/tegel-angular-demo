@@ -27,6 +27,12 @@ tds-header {
   top: 0px;
 }
 
+.user-dropdown [slot='icon'] tds-badge{
+    position: absolute;
+    top: 12px;
+    right: 18px;
+}
+
 .switcher-container {
   position: absolute;
   height: 60px;

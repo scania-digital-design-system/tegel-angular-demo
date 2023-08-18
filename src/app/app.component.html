@@ -12,16 +12,16 @@
     </tds-banner>    <tds-header>
       <tds-header-hamburger id="demo-hamburger" aria-label="Open application drawer" aria-haspopup="true"
         aria-expanded="false" (click)="toggleMobileSideMenu()"></tds-header-hamburger>
-    
+
       <tds-header-title>{{ title }} </tds-header-title>
-    
+
       <tds-header-item [attr.selected]="isActive('/web-components')">
         <a routerLink="/web-components">Components</a>
       </tds-header-item>
-    
+
       <tds-header-item [selected]="isActive('/form')">
         <a routerLink="/form">Form</a>
-    
+
         <tds-header-dropdown ref="{headerDropdown}" [attr.selected]="isActive('/tabs')">
           <span slot="label">Tabs</span>
           <tds-header-dropdown-list>
@@ -40,7 +40,30 @@
       <tds-header-item [selected]="isActive('/chips')">
         <a routerLink="/chips">Chips</a>
       </tds-header-item>
-    
+
+      <tds-header-dropdown slot="end" no-dropdown-icon class="user-dropdown">
+        <div slot="icon">
+          <img src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg" alt="User menu." />
+          <tds-badge size="sm"></tds-badge>
+        </div>
+        <tds-header-dropdown-list size="lg">
+          <tds-header-dropdown-list-user header="{{ userName }}"
+            subheader="{{ placeOfWork }}"></tds-header-dropdown-list-user>
+          <tds-header-dropdown-list-item>
+            <a routerLink="settings">
+              <tds-icon name="settings"></tds-icon>
+              <div class="tds-u-pl1">Settings</div>
+            </a>
+          </tds-header-dropdown-list-item>
+          <tds-header-dropdown-list-item>
+            <a routerLink="notifications">
+              <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
+              <div class="tds-u-pl1">Notifications</div>
+            </a>
+          </tds-header-dropdown-list-item>
+        </tds-header-dropdown-list>
+      </tds-header-dropdown>
+
       <tds-header-brand-symbol slot="end">
         <a routerLink="/" aria-label="Scania - red gryphon on blue shield"></a>
       </tds-header-brand-symbol>
@@ -48,9 +71,9 @@
     <div class="side-menu-and-main">
       <tds-side-menu aria-label="Side menu" persistent open="{{ mobileNavOpen }}">
         <tds-side-menu-overlay slot="overlay"></tds-side-menu-overlay>
-    
+
         <tds-side-menu-close-button slot="close-button" (click)="toggleMobileSideMenu()"></tds-side-menu-close-button>
-    
+
         <tds-side-menu-item [attr.selected]="isActive('/about')">
           <a routerLink="/about" (click)="toggleMobileSideMenu()">
             <tds-icon name="info" size="24"></tds-icon>
@@ -81,39 +104,50 @@
             Form
           </a>
         </tds-side-menu-item>
-    
-        <tds-side-menu-dropdown class="mobile-nav-item" [defaultOpen]="isActive('/tabs')" [selected]="isActive('/tabs')">
+
+        <tds-side-menu-dropdown class="mobile-nav-item" [defaultOpen]="isActive('/tabs')"
+          [selected]="isActive('/tabs')">
           <tds-icon slot="button-icon" name="folder" size="24"></tds-icon>
           <span slot="button-label">Tabs</span>
           <tds-side-menu-dropdown-list>
             <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
               <a (click)="toggleMobileSideMenu()" routerLink="/tabs-buttons">Button</a>
             </tds-side-menu-dropdown-list-item>
-            <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-link')">
-              <a (click)="toggleMobileSideMenu()" routerLink="/tabs-links">Link</a>
+            <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-a')">
+              <a (click)="toggleMobileSideMenu()" routerLink="/tabs-links">a</a>
             </tds-side-menu-dropdown-list-item>
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
-    
-    
-    
-        <tds-side-menu-item  class="mobile-nav-item" [attr.selected]="isActive('/text')">
+
+        <tds-side-menu-item class="mobile-nav-item" [attr.selected]="isActive('/text')">
           <a routerLink="/text" (click)="toggleMobileSideMenu()">
             <tds-icon name="document" size="24"></tds-icon>
             Text
           </a>
         </tds-side-menu-item>
-    
-    
-        <tds-side-menu-item slot="end">
-          <button>
-            <tds-side-menu-user heading="Name Namesson" subheading="Company name">
-              <img slot="image" src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-                alt="User menu." />
-            </tds-side-menu-user>
-          </button>
-        </tds-side-menu-item>
-    
+
+        <div slot="end">
+          <tds-side-menu-dropdown>
+            <tds-side-menu-user slot="button-label" heading="{{ userName }}" subheading="{{ placeOfWork }}"
+              img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+              img-alt=""></tds-side-menu-user>
+            <tds-side-menu-dropdown-list>
+              <tds-side-menu-dropdown-list-item>
+                <a routerLink="settings">
+                  <tds-icon name="settings"></tds-icon>
+                  <div class="tds-u-pl1">Settings</div>
+                </a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item>
+                <a routerLink="notifications">
+                  <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
+                  <div class="tds-u-pl1">Notifications</div>
+                </a>
+              </tds-side-menu-dropdown-list-item>
+            </tds-side-menu-dropdown-list>
+          </tds-side-menu-dropdown>
+        </div>
+
         <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
       </tds-side-menu>
       <main class="tds-u-h-100 tds-u-w-100">
@@ -130,8 +164,5 @@
       </main>
     </div>
     <app-footer></app-footer>
-
-
-
   </div>
 </div>
