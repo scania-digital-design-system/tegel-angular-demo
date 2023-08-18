@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 const routes = [
   {
     path: '',
-    loadComponent: () => import('@pages/home/home.component'),
-  }, // Home aka start page
+    loadComponent: () => import('@pages/components/components.component'),
+  },
   {
     path: 'form',
     loadChildren: () => import('./form-routes'),
