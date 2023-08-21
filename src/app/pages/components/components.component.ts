@@ -20,6 +20,7 @@ import TooltipComponent from '@components/tooltip/tooltip.component';
 import PopoverMenuComponent from '@components/popover-menu/popover-menu.component';
 import SpinnerComponent from 'src/app/components/spinner/spinner.component';
 import MessageComponent from 'src/app/components/message/message.component';
+import { ToggleComponent } from '@components/toggle/toggle.component';
 
 @Component({
   selector: 'app-components',
@@ -48,6 +49,7 @@ import MessageComponent from 'src/app/components/message/message.component';
     ModalComponent,
     SpinnerComponent,
     MessageComponent,
+    ToggleComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
