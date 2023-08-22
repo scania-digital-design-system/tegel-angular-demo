@@ -46,6 +46,10 @@ export class AppComponent implements OnInit, OnDestroy {
     return this.router.url === url;
   }
 
+  onSubRoute(url:string): boolean {
+    return window.location.href.includes(url)
+  }
+
   toggleMobileSideMenu() {
     this.mobileNavOpen = !this.mobileNavOpen;
   }
