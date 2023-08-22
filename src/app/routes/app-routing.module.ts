@@ -49,6 +49,14 @@ const routes = [
     ],
   },
   {
+    path: 'about',
+    loadComponent: () => import('@pages/about-page/about-page.component'),
+  },
+  {
+    path: 'stepper',
+    loadComponent: () => import('@pages/stepper-page/stepper-page.component'),
+  },
+  {
     path: 'table',
     loadComponent: () => import('@pages/table-page/table-page.component'),
   },
@@ -59,10 +67,6 @@ const routes = [
   {
     path: 'notifications',
     loadComponent: () => import('@pages/notifications-page/notifications-page.component'),
-  },
-  {
-    path: 'stepper',
-    loadComponent: () => import('@pages/stepper-page/stepper-page.component'),
   },
   {
     path: '404',
