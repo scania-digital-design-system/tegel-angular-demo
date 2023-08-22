@@ -16,5 +16,5 @@
     <tds-button data-dismiss-modal slot="actions" variant="primary" text="Cancel" size="md"></tds-button>
 </tds-modal>
 <div *ngIf="notifications.length">
-    <tds-button id="clearNotificationBtn" class="tds-u-mt2" size="md" text="Clear notification"></tds-button>
+    <tds-button (click)="openModal()" class="tds-u-mt2" size="md" text="Clear notification"></tds-button>
 </div>

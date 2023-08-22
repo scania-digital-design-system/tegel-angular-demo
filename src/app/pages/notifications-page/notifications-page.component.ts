@@ -32,6 +32,10 @@ export default class NotificationsPageComponent implements OnInit, OnDestroy {
     this.onDestroy$.complete();
   }
 
+  openModal(){
+    this.notificationsModal?.nativeElement.showModal()
+  }
+
   clearNotifications(){
     if(this.notificationsModal){
       this.notificationsModal.nativeElement.closeModal();
