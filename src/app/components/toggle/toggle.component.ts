@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  ElementRef,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-toggle',
@@ -16,23 +9,15 @@ import {
       toggle-id="example-toggle"
       headline="Test this toggle, observe Console for results"
       size="lg"
-      #toggleComponent
+      (tdsToggle)="handleTdsToggle($event)"
     >
       <div slot="label">Click on me!</div>
     </tds-toggle>
   `,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ToggleComponent implements AfterViewInit {
-  @ViewChild('toggleComponent', { static: true }) toggleComponent: ElementRef;
-
-  constructor(private renderer: Renderer2) {}
-
-  ngAfterViewInit() {
-    const webComponent = this.toggleComponent.nativeElement;
-
-    this.renderer.listen(webComponent, 'tdsToggle', (event) => {
-      console.log('tdsToggle event received', event.detail);
-    });
+export class ToggleComponent {
+  handleTdsToggle(event: CustomEvent) {
+    console.log('tdsToggle event received', event.detail);
   }
 }
