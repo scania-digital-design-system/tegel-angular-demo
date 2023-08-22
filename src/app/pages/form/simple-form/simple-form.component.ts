@@ -30,10 +30,9 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class SimpleFormComponent {
-
   nowegianTowns = norwayData;
   swedishTowns = swedenData;
-  selectedCountry = null;
+  selectedCountry = 'sweden';
   textAreaDisabled = true;
   @ViewChild('norwayDropdown', { static: true })
   norwayDropdown!: ElementRef<HTMLTdsDropdownElement>;
@@ -48,19 +47,22 @@ export default class SimpleFormComponent {
   balanceSliderDisabled = true;
   sendingStatus = false;
 
-
   constructor() {}
 
-  handleSliderChange(){
-    this.balanceSliderDisabled, this.stressSliderDisabled = false;
+  handleSliderChange() {
+    this.balanceSliderDisabled, (this.stressSliderDisabled = false);
   }
 
   handleTextAreaChange(event: any) {
-    this.textAreaDisabled = !(event.detail.target.value);
+    this.textAreaDisabled = !event.detail.target.value;
   }
 
   handleDropdownChange(event: any) {
     this.selectedCountry = event.detail.value;
+  }
+
+  handleSelectedNorweiganTownsChange(event: any) {
+    console.log('handleSelectedNorweiganTownsChange', event);
   }
 
   handleSubmit(event: Event) {
@@ -68,10 +70,10 @@ export default class SimpleFormComponent {
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     const occupationalEssay = formData.get('occupationalEssay') as string;
-    if(occupationalEssay?.length < 50){
+    if (occupationalEssay?.length < 50) {
       this.occupationalEssayState = 'error';
       this.occupationalEssayHelper = 'You dont have enough characters.';
-    } else if(this.addressField.nativeElement.value.length < 1){
+    } else if (this.addressField.nativeElement.value.length < 1) {
       this.addressState = 'error';
     } else {
       this.occupationalEssayState = 'default';
@@ -80,9 +82,9 @@ export default class SimpleFormComponent {
 
       this.sendingStatus = true;
 
-          setTimeout(() => {
-            this.sendingStatus = false;
-          }, 3000);
+      setTimeout(() => {
+        this.sendingStatus = false;
+      }, 3000);
 
       formData.forEach((value, key) => {
         console.log('Key:', key, 'Value:', value);
