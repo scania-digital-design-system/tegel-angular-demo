@@ -1,51 +1,116 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
-  ElementRef,
+  AfterViewInit,
   ViewChild,
-  inject,
-  Renderer2,
-  AfterViewInit, Input
-} from '@angular/core'
-import {TableData} from './table-data'
-import {ModalDirective} from '../../directives/modal.directive'
+  ElementRef,
+} from '@angular/core';
+import { ModalDirective } from '../../directives/modal.directive';
+import exampleData from './exampleData.json';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-batch-actions-table',
   template: `
     <h1>Batch Actions</h1>
-    <tds-table id="batchTable" multiselect vertical-dividers="false" compact-design="false" responsive="false">
+    <tds-table
+      #table
+      id="batchTable"
+      multiselect
+      vertical-dividers="false"
+      compact-design="false"
+      responsive="false"
+    >
       <tds-table-toolbar table-title="Batch action">
         <div slot="end">
-          <tds-button type="primary" size="sm" text="Download" (click)="download()"></tds-button>
+          <tds-button
+            (click)="download()"
+            type="primary"
+            size="sm"
+            text="Download"
+          ></tds-button>
         </div>
       </tds-table-toolbar>
-      <tds-table-header>
-        <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
-        <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
-        <tds-header-cell column-key="country" column-title="Country"></tds-header-cell>
-        <tds-header-cell column-key="mileage" column-title="Mileage"></tds-header-cell>
+      <tds-table-header
+        multiselect
+        (tdsSelectAll)="selectAll($event)"
+        [allSelected]="allSelected"
+      >
+        <tds-header-cell
+          cell-key="truck"
+          cell-value="Truck type"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="driver"
+          cell-value="Driver name"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="country"
+          cell-value="Country"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="mileage"
+          cell-value="Mileage"
+        ></tds-header-cell>
       </tds-table-header>
-      <tds-table-body #tableBody></tds-table-body>
+      <tds-table-body>
+        <tds-table-body-row
+          *ngFor="let row of tableData"
+          selected="{{ row.selected }}"
+          (tdsSelect)="handleRowSelect(row.id, $event)"
+        >
+          <tds-body-cell cell-key="truck">
+            {{ row.truck }}
+          </tds-body-cell>
+          <tds-body-cell cell-key="driver">
+            {{ row.driver }}
+          </tds-body-cell>
+          <tds-body-cell cell-key="country">
+            {{ row.country }}
+          </tds-body-cell>
+          <tds-body-cell cell-key="mileage">
+            {{ row.mileage }}
+          </tds-body-cell>
+        </tds-table-body-row>
+      </tds-table-body>
     </tds-table>
     <ng-template modal-dr />
   `,
   styles: [``],
-  imports:[ModalDirective],
+  imports: [ModalDirective, CommonModule],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class BatchActionsTableComponent implements AfterViewInit {
-  @ViewChild('tableBody', { static: false}) tableBody: ElementRef
-  @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective
-  renderer2 = inject(Renderer2)
-  @Input() tableData: TableData[]
+export class BatchActionsTableComponent {
+  @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective;
+  @ViewChild('table', { static: false }) tableRef: ElementRef;
 
-  ngAfterViewInit(): void {
-    this.renderer2.setAttribute(this.tableBody.nativeElement, 'body-data', JSON.stringify(this.tableData))
+  tableData = exampleData;
+
+  allSelected = this.tableData.every((row) => row.selected);
+
+  async download() {
+    this.modalDirective.showModal(
+      JSON.stringify(await this.tableRef.nativeElement.getSelectedRows()),
+    );
   }
 
-  download() {
-    this.modalDirective.showModal(this.tableBody.nativeElement.getAttribute('data-selected-rows'))
+  selectAll(event: any) {
+    const { checked } = event.detail;
+    this.tableData = this.tableData.map((row) => {
+      return {
+        ...row,
+        selected: checked,
+      };
+    });
+  }
+  handleRowSelect(rowId: number | string, event: any) {
+    this.tableData = this.tableData.map((row) => {
+      return {
+        ...row,
+        selected: row.id === rowId ? event.detail.checked : row.selected,
+      };
+    });
+    this.allSelected = this.tableData.every((row) => row.selected);
   }
 }
