@@ -7,8 +7,8 @@
       <tds-block>
         <tds-text-field mode-variant="secondary" name="text-field" label="Full name" label-position="outside"
           placeholder="John Doe"></tds-text-field>
-        <tds-datetime mode-variant="secondary" label="Date of birth" name="dateOfBirth" type="date"
-          default-value="2000-01-01"></tds-datetime>
+        <tds-datetime default-value="2023-08-01" min="2023-08-01" max="2024-01-31" mode-variant="secondary"
+          label="Date of birth" name="dateOfBirth" type="date"></tds-datetime>
         <section class="side-by-side">
           <tds-text-field mode-variant="secondary" type="text" size="lg" state="success" label="Phone number"
             name="phoneNumber" label-position="outside" no-min-width placeholder="08 456 32">
@@ -17,8 +17,10 @@
             </span>
           </tds-text-field>
 
-          <tds-text-field #addressField mode-variant="secondary" type="text" size="lg" label="Address" name="homeAddress" [state]="addressState" [attr.helper]="addressState === 'error' ? 'Address is a mandatory field.' : null"
-            label-position="outside" no-min-width placeholder="Majorvägen 32" (tdsInput)="handleTextAreaChange($event)">
+          <tds-text-field #addressField mode-variant="secondary" type="text" size="lg" label="Address"
+            name="homeAddress" [state]="addressState"
+            [attr.helper]="addressState === 'error' ? 'Address is a mandatory field.' : null" label-position="outside"
+            no-min-width placeholder="Majorvägen 32" (tdsInput)="handleTextAreaChange($event)">
             <span slot="prefix">
               <tds-icon name="pin" size="16px"></tds-icon>
             </span>
@@ -91,18 +93,18 @@
         <section class="tds-u-mt3">
           <h5>Textarea</h5>
           <tds-textarea mode-variant="secondary" name="occupationalEssay" [state]="occupationalEssayState"
-            label="What do you do at Scania? (Minimum 50 chars)" label-position="outside" [helper]="occupationalEssayHelper"
-            [disabled]="textAreaDisabled"></tds-textarea>
+            label="What do you do at Scania? (Minimum 50 chars)" label-position="outside"
+            [helper]="occupationalEssayHelper" [disabled]="textAreaDisabled"></tds-textarea>
         </section>
 
         <section>
           <h5>Tell us how you feel about your..</h5>
-          <tds-slider (tdsChange)="handleSliderChange()"  label="..happiness at work" name="happinessAtWork" min="0" value="5"
-            show-tick-numbers max="10" ticks="9" snap></tds-slider>
-          <tds-slider  label="..stress level" name="stressLevel" min="0" value="5" show-tick-numbers
-            max="10" ticks="9" snap [disabled]="stressSliderDisabled"></tds-slider>
-          <tds-slider  label="..work/life balance." name="workLifeBalance" min="0" value="5"
-            show-tick-numbers max="10" ticks="9" snap [read-only]="balanceSliderDisabled"></tds-slider>
+          <tds-slider (tdsChange)="handleSliderChange()" label="..happiness at work" name="happinessAtWork" min="0"
+            value="5" show-tick-numbers max="10" ticks="9" snap></tds-slider>
+          <tds-slider label="..stress level" name="stressLevel" min="0" value="5" show-tick-numbers max="10" ticks="9"
+            snap [disabled]="stressSliderDisabled"></tds-slider>
+          <tds-slider label="..work/life balance." name="workLifeBalance" min="0" value="5" show-tick-numbers max="10"
+            ticks="9" snap [read-only]="balanceSliderDisabled"></tds-slider>
         </section>
         <section>
           <h5>What topics would you like to learn more about?</h5>
@@ -140,7 +142,7 @@
       <div *ngIf="sendingStatus" class="spinner-container">
         <tds-spinner size="md" variant="standard"></tds-spinner>
       </div>
-    <tds-button type="submit" text="Submit"></tds-button>
+      <tds-button type="submit" text="Submit"></tds-button>
     </div>
   </form>
 </article>
