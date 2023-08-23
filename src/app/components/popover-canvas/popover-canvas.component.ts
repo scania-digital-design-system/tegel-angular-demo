@@ -7,10 +7,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './popover-canvas.component.html',
   styleUrls: ['./popover-canvas.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class PopoverCanvasComponent {
+  showPrinterInformation = false;
 
-  showPopover = false;
-
+  handleTogglePrinterInformation(event: any) {
+    this.showPrinterInformation = event.detail.checked;
+  }
 }

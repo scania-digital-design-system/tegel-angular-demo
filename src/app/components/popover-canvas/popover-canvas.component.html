@@ -6,13 +6,13 @@
         only-icon
         variant="ghost"
         size="sm"
-        (click)="showPopover = !showPopover"
+        #popoverButton
       >
         <tds-icon slot="icon" class="tds-btn-icon" size="16px" name="kebab"></tds-icon>
       </tds-button>
     </div>
 
-    <tds-popover-canvas placement="top" [show]="showPopover">
+    <tds-popover-canvas placement="top" [referenceEl]="popoverButton">
       <div class="tds-u-p2">
         <h2 class="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
         <p class="tds-body-01">Where you can put anything you want!</p>
@@ -23,36 +23,34 @@
         </tds-link>
       </div>
     </tds-popover-canvas>
-
-    <div class="popover-container">
-    <tds-button
-    aria-label="menu"
-    only-icon
-    id="trigger"
-    type="secondary"
-    size="sm"
-  >
-    <tds-icon
-      slot="icon"
-      class="tds-btn-icon"
-      size="16px"
-      name="kebab"
-    ></tds-icon>
-  </tds-button>
-</div>
-<tds-popover-canvas placement="top" selector="#trigger">
-  <div class="tds-u-p2">
-    <h2>A popover canvas!</h2>
-    <p>Where you can put anything you want!</p>
-    <p>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://tegel.scania.com"
+    
+    <div class="tds-u-flex tds-u-flex-gap-3">
+      <tds-button
+      aria-label="menu"
+      only-icon
+      id="positionReference"
+      type="secondary"
+      size="sm"
       >
-        Tegel Design System
-      </a>
-    </p>
-  </div>
-</tds-popover-canvas>
-  </div>
+        <tds-icon
+          slot="icon"
+          class="tds-btn-icon"
+          size="16px"
+          name="print"
+        ></tds-icon>
+      </tds-button>
+      <tds-toggle size="lg" (tdsToggle)="handleTogglePrinterInformation($event)">
+        <div slot="label">Show printer information</div>
+      </tds-toggle>
+    </div>
+    <!-- Use show when controlling visibility manually, also works when using referenceEl -->
+    <tds-popover-canvas placement="top" selector="#positionReference" [show]="showPrinterInformation">
+      <div class="tds-u-p2">
+        <h2 class="tds-headline-04">Printer Notification</h2>
+        <p>Your document, <em>"Unicorn_Dreams.pdf"</em>, has been queued.</p>
+        <p>Current Status: <strong>In Progress</strong></p>
+        <p>Please await completion. Do not turn off the device.</p>
+        <p>Contact the IT Support, if any errors occur.</p>
+      </div>
+    </tds-popover-canvas>
+</div>
