@@ -7,18 +7,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './popover-menu.component.html',
   styleUrls: ['./popover-menu.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
-export default class PopoverMenuComponent {
-  
-  toggleMenu = false;
-
-}
-
-
- 
-
- 
-
- 
+export default class PopoverMenuComponent {}
