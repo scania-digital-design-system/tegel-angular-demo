@@ -49,9 +49,8 @@ tds-header {
 }
 
 .switcher-container {
+  padding-top: 16px;
   position: absolute;
-  height: 60px;
-  top: calc(96px + 68px);
   right: 32px;
   z-index: 1;
   display: flex;
