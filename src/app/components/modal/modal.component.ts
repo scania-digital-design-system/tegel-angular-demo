@@ -5,22 +5,19 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angul
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class ModalComponent {
-  @ViewChild('myHoverModal', { static: true }) hoverModalRef: ElementRef<HTMLTdsModalElement> | undefined;
+  @ViewChild('myHoverModal', { static: true }) hoverModalRef:
+    | ElementRef<HTMLTdsModalElement>
+    | undefined;
   @ViewChild('myLgModal', { static: true }) myLgModal: ElementRef<HTMLTdsModalElement> | undefined;
 
-  
-
-  showModal(){
-    if(this.hoverModalRef)
-      this.hoverModalRef.nativeElement.showModal()
-    
+  showModal() {
+    if (this.hoverModalRef) this.hoverModalRef.nativeElement.showModal();
   }
 
-  hideModal(){
-    if(this.myLgModal)
-        this.myLgModal.nativeElement.closeModal()
+  hideModal() {
+    if (this.myLgModal) this.myLgModal.nativeElement.closeModal();
   }
 }
