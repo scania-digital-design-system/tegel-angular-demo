@@ -14,10 +14,6 @@ const routes = [
     loadComponent: () => import('@pages/components/components.component'),
   },
   {
-    path: 'page-two',
-    loadComponent: () => import('@pages/page-two/page-two.component'),
-  },
-  {
     path: 'text',
     loadComponent: () => import('@pages/text-page/text-page.component'),
   },
