@@ -6,5 +6,9 @@ export type Notification = {
 declare global {
   interface HTMLElementEventMap {
     tdsToggle: CustomEvent;
+    tdsChange: CustomEvent;
+    tdsClose: CustomEvent;
+    tdsClick: CustomEvent;
+    tdsInput: CustomEvent;
   }
 }
