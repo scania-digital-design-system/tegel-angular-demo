@@ -8,11 +8,9 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, EventEmitter, Output } from '@angula
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ModeSwitcherComponent {
-
   @Output() modeToggle = new EventEmitter<void>();
-  
-  toggleMode(){
-    this.modeToggle.emit()
-    console.log('hej')
+
+  toggleMode() {
+    this.modeToggle.emit();
   }
 }
