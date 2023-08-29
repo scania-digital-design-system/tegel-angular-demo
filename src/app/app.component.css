@@ -1,8 +1,22 @@
+.mode-wrapper {
+ display: flex;
+ flex-direction: column;
+  overflow-y: hidden;
+}
+
+.mode-variant-wrapper  {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 main {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 .main-container {
@@ -16,6 +30,7 @@ main {
 .side-menu-and-main {
   display: flex;
   flex-grow: 1;
+  overflow-y: hidden;
 }
 
 .mobile-nav-item {
@@ -24,7 +39,7 @@ main {
 
 tds-header {
   position: sticky;
-  top: 0px;
+  top: 0;
 }
 
 .user-dropdown [slot='icon'] tds-badge{
@@ -46,7 +61,7 @@ tds-header {
 
 @media (min-width: 992px) {
   tds-side-menu {
-    height: calc(100vh - 64px);
+    height:100%;
     position: sticky;
     top: 64px;
     left: 0;
