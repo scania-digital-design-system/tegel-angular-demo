@@ -1,7 +1,5 @@
-
 <div class="mode-wrapper {{ mode }}">
   <div class="mode-variant-wrapper {{ modeVariant }}">
-
     <tds-banner
       variant="information"
       icon="info"
@@ -27,37 +25,6 @@
       ></tds-header-hamburger>
 
       <tds-header-title>{{ title }} </tds-header-title>
-
-      <tds-header-item [selected]="isActive('/web-components')">
-        <a routerLink="/web-components">Components</a>
-      </tds-header-item>
-
-      <tds-header-item [selected]="onSubRoute('/form')">
-        <a routerLink="/form">Form</a>
-      </tds-header-item>
-      <tds-header-item>
-        <tds-header-dropdown
-          ref="{headerDropdown}"
-          [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')"
-        >
-          <span slot="label">Tabs</span>
-          <tds-header-dropdown-list>
-            <tds-header-dropdown-list-item [selected]="isActive('/tabs-buttons')">
-              <a routerLink="/tabs-buttons">Buttons</a>
-            </tds-header-dropdown-list-item>
-            <tds-header-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
-              <a routerLink="tabs-links">Links</a>
-            </tds-header-dropdown-list-item>
-          </tds-header-dropdown-list>
-        </tds-header-dropdown>
-      </tds-header-item>
-
-      <tds-header-item [selected]="isActive('/text')">
-        <a routerLink="/text">Text</a>
-      </tds-header-item>
-      <tds-header-item [selected]="isActive('/chips')">
-        <a routerLink="/chips">Chips</a>
-      </tds-header-item>
 
       <tds-header-dropdown
         slot="end"
@@ -106,7 +73,6 @@
         aria-label="Side menu"
         persistent
         open="{{ mobileNavOpen }}"
-
       >
         <tds-side-menu-overlay
           (click)="toggleMobileSideMenu()"
@@ -117,6 +83,75 @@
           slot="close-button"
           (click)="toggleMobileSideMenu()"
         ></tds-side-menu-close-button>
+
+        <tds-side-menu-item [selected]="isActive('/web-components')">
+          <a
+            routerLink="/web-components"
+            (click)="toggleMobileSideMenu()"
+          >
+            <tds-icon
+              name="heart"
+              size="24"
+            ></tds-icon>
+            Components
+          </a>
+        </tds-side-menu-item>
+
+        <tds-side-menu-item [selected]="isActive('/form')">
+          <a
+            routerLink="/form"
+            (click)="toggleMobileSideMenu()"
+          >
+            <tds-icon
+              name="document"
+              size="24"
+            ></tds-icon>
+            Form
+          </a>
+        </tds-side-menu-item>
+
+        <tds-side-menu-dropdown [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')">
+          <tds-icon
+            slot="button-icon"
+            name="meatballs"
+            size="24"
+          ></tds-icon>
+          <span slot="button-label">Tabs</span>
+          <tds-side-menu-dropdown-list>
+            <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
+              <a routerLink="/tabs-buttons">Buttons</a>
+            </tds-side-menu-dropdown-list-item>
+            <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
+              <a routerLink="tabs-links">Links</a>
+            </tds-side-menu-dropdown-list-item>
+          </tds-side-menu-dropdown-list>
+        </tds-side-menu-dropdown>
+
+        <tds-side-menu-item [selected]="isActive('/text')">
+          <a
+            routerLink="/text"
+            (click)="toggleMobileSideMenu()"
+          >
+            <tds-icon
+              name="burger"
+              size="24"
+            ></tds-icon>
+            Text
+          </a>
+        </tds-side-menu-item>
+
+        <tds-side-menu-item [selected]="isActive('/chips')">
+          <a
+            routerLink="/chips"
+            (click)="toggleMobileSideMenu()"
+          >
+            <tds-icon
+              name="proportions_inactive"
+              size="24"
+            ></tds-icon>
+            Chips
+          </a>
+        </tds-side-menu-item>
 
         <tds-side-menu-item [selected]="isActive('/about')">
           <a
