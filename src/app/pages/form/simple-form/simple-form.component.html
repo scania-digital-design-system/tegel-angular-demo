@@ -8,7 +8,7 @@
   [ngClass]="sendingStatus ? 'form-sending' : ''"
 >
   <form (submit)="handleSubmit($event)">
-    <div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-3">
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap-3">
       <tds-block>
         <tds-text-field
           mode-variant="secondary"
@@ -243,7 +243,7 @@
         </section>
         <section>
           <h5>What topics would you like to learn more about?</h5>
-          <div class="chips tds-u-flex tds-u-flex-gap-1 tds-u-flex-wrap">
+          <div class="chips tds-u-flex tds-u-gap1 tds-u-flex-wrap">
             <tds-chip
               value="webDevelopment"
               type="checkbox"

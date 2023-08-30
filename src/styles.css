@@ -1,6 +1,6 @@
 /* @import "reset.css"; */
 @import url('@scania/tegel/dist/tegel/tegel.css');
-@import 'utility-classes.css'; 
+
 
 .tds-mode-dark {
   color: var(--tds-grey-100);
