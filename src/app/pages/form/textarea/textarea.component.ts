@@ -6,22 +6,20 @@ import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule } from '@angular
   selector: 'app-textarea',
   standalone: true,
   templateUrl: './textarea.component.html',
-  styleUrls: ['./textarea.component.css'],
   imports: [ReactiveFormsModule, CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class TextareaComponent {
   public fb = inject(NonNullableFormBuilder);
   onTouched: any = () => {};
-  
+
   @Input() textareaGroup: FormGroup;
 
   disabled = false;
-  state = 'default'
+  state = 'default';
   helper = undefined;
 
-  ngOnInit(){
+  ngOnInit() {
     console.log(this.textareaGroup);
-    
   }
 }

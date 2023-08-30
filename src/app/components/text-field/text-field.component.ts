@@ -4,9 +4,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
   selector: 'app-text-field',
   standalone: true,
   templateUrl: './text-field.component.html',
-  styleUrls: ['./text-field.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export default class TextFieldComponent {
-
-}
+export default class TextFieldComponent {}

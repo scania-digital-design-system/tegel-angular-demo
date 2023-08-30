@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './popover-canvas.component.html',
-  styleUrls: ['./popover-canvas.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class PopoverCanvasComponent {

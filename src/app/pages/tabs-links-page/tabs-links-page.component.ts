@@ -7,7 +7,6 @@ import { untilDestroyedRef } from 'src/utils';
 @Component({
   selector: 'app-tabs-links-page',
   templateUrl: './tabs-links-page.component.html',
-  styleUrls: ['./tabs-links-page.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent, RouterLink, RouterOutlet, CommonModule],

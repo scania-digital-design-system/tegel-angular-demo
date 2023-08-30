@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Output, EventEmitter } from '@angula
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

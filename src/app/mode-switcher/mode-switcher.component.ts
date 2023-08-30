@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, EventEmitter, Output } from '@angula
 @Component({
   selector: 'app-mode-switcher',
   templateUrl: './mode-switcher.component.html',
-  styleUrls: ['./mode-switcher.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

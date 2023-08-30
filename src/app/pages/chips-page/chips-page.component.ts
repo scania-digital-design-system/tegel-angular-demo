@@ -5,7 +5,6 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
 @Component({
   selector: 'app-chips-page',
   templateUrl: './chips-page.component.html',
-  styleUrls: ['./chips-page.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent, CommonModule],
@@ -54,12 +53,12 @@ export default class ChipsPageComponent {
     },
   };
 
-  handleTdsChange(event: any){
-    console.log(event)
+  handleTdsChange(event: any) {
+    console.log(event);
   }
 
-  handleSubmit(event: Event){
-    event.preventDefault()
+  handleSubmit(event: Event) {
+    event.preventDefault();
     const formEl = event.target as HTMLFormElement;
     const elements = formEl.elements;
 
@@ -67,10 +66,13 @@ export default class ChipsPageComponent {
     const checkedBoxes = Array.from(checkboxNodeList).filter((checkbox: any) => checkbox.checked);
     const topics = checkedBoxes.map((checkbox: any) => checkbox.value);
 
-    this.submittedData = JSON.stringify({
-      topics,
-      size: (elements as any).size.value,
-    }, null, 2);
+    this.submittedData = JSON.stringify(
+      {
+        topics,
+        size: (elements as any).size.value,
+      },
+      null,
+      2,
+    );
   }
-
 }

@@ -4,7 +4,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angul
   selector: 'app-modal',
   standalone: true,
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class ModalComponent {

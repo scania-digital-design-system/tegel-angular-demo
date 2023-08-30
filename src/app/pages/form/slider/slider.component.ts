@@ -7,7 +7,6 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SliderComponent {

@@ -3,11 +3,9 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2, ElementRef } from '@angul
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
 export class BannerComponent {
   bannerVisibility = true;
 
@@ -16,7 +14,7 @@ export class BannerComponent {
   handleToggle() {
     this.bannerVisibility = !this.bannerVisibility;
     const bannerElement = this.elementRef.nativeElement.querySelector(
-      'tds-banner[persistent="true"]'
+      'tds-banner[persistent="true"]',
     );
 
     if (bannerElement) {
@@ -31,5 +29,4 @@ export class BannerComponent {
   handleClose(event: Event) {
     event.preventDefault();
   }
-
 }

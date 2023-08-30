@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { unslugify } from 'src/utils';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.css'],
   imports: [RouterLink, RouterOutlet, CommonModule],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

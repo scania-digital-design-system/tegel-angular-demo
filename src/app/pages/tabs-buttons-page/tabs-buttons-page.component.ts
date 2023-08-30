@@ -4,7 +4,6 @@ import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component'
 @Component({
   selector: 'app-tabs-buttons-page',
   templateUrl: './tabs-buttons-page.component.html',
-  styleUrls: ['./tabs-buttons-page.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent],

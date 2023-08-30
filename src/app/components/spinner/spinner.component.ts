@@ -6,9 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export default class SpinnerComponent {
-
-}
+export default class SpinnerComponent {}
