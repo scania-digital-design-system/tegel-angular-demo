@@ -13,8 +13,8 @@ import {TableData} from './table-data'
   selector: 'app-filter-table',
   template: `
     <h1>Search Table</h1>
-    <tds-table vertical-dividers="false" compact-design="false" enable-responsive="false">
-      <tds-table-toolbar table-title="Filter" enable-filtering></tds-table-toolbar>
+    <tds-table vertical-dividers="false" compact-design="false" responsive="false">
+      <tds-table-toolbar table-title="Filter" filter></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>

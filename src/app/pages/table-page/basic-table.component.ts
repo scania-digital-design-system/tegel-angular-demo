@@ -13,7 +13,7 @@ import {TableData} from './table-data'
   selector: 'app-basic-table',
   template: `
     <h1>Basic Table</h1>
-    <tds-table vertical-dividers="false" compact-design="false" enable-responsive="false">
+    <tds-table vertical-dividers="false" compact-design="false" responsive="false">
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>

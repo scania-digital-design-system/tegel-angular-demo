@@ -9,7 +9,7 @@ import {KeyValuePipe, NgForOf, NgIf} from '@angular/common'
   selector: 'app-expandable-table',
   template: `
     <h1>Expandable Table</h1>
-    <tds-table enable-expandable-rows vertical-dividers="false" compact-design="false" enable-responsive="false">
+    <tds-table expandable-rows vertical-dividers="false" compact-design="false" responsive="false">
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
