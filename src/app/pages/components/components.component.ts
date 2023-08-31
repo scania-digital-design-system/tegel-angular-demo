@@ -22,6 +22,7 @@ import SpinnerComponent from 'src/app/components/spinner/spinner.component';
 import MessageComponent from 'src/app/components/message/message.component';
 import { ToggleComponent } from '@components/toggle/toggle.component';
 import { BreadcrumbsComponent } from '@components/breadcrumbs/breadcrumbs.component';
+import ChipsComponent from '@components/chips/chips.component';
 
 @Component({
   selector: 'app-components',
@@ -52,6 +53,7 @@ import { BreadcrumbsComponent } from '@components/breadcrumbs/breadcrumbs.compon
     MessageComponent,
     ToggleComponent,
     BreadcrumbsComponent,
+    ChipsComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

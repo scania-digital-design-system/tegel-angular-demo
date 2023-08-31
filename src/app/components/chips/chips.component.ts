@@ -3,13 +3,13 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import BreadcrumbsComponent from '../../navigation/breadcrumbs/breadcrumbs.component';
 
 @Component({
-  selector: 'app-chips-page',
-  templateUrl: './chips-page.component.html',
+  selector: 'app-chips',
+  templateUrl: './chips.component.html',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent, CommonModule],
 })
-export default class ChipsPageComponent {
+export default class ChipsComponent {
   submittedData: string;
   data = {
     topic: {

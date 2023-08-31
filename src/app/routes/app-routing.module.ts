@@ -18,10 +18,6 @@ const routes = [
     loadComponent: () => import('@pages/text-page/text-page.component'),
   },
   {
-    path: 'chips',
-    loadComponent: () => import('@pages/chips-page/chips-page.component'),
-  },
-  {
     path: 'tabs-buttons',
     loadComponent: () => import('@pages/tabs-buttons-page/tabs-buttons-page.component'),
   },

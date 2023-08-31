@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChipsPageComponent } from './chips-page.component';
+import { ChipsComponent } from './chips.component';
 
 describe('ChipsPageComponent', () => {
   let component: ChipsPageComponent;
@@ -8,7 +8,7 @@ describe('ChipsPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ChipsPageComponent]
+      declarations: [ChipsPageComponent],
     });
     fixture = TestBed.createComponent(ChipsPageComponent);
     component = fixture.componentInstance;
