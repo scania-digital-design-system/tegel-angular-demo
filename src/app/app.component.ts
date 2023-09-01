@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit } from '@angular/core';
-import { FooterComponent } from './components/footer/footer.component';
-import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { FooterComponent } from "@components/footer/footer.component";
+import { Router, RouterOutlet, RouterLink, ActivatedRoute } from '@angular/router';
 import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
 import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
 import BreadcrumbsComponent from './navigation/breadcrumbs/breadcrumbs.component';
@@ -28,7 +28,7 @@ import { Notification } from 'src/types';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private router: Router, private userStoreService: UserStoreService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {}
   private onDestroy$: Subject<void> = new Subject<void>();
 
   title = 'Angular Demo';
@@ -61,6 +61,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleModeToggle() {
     this.mode = this.mode === 'tds-mode-light' ? 'tds-mode-dark' : 'tds-mode-light';
+  }
+
+  is404Page(): boolean {
+    // Check if the current route corresponds to the 404 page
+    return this.router.url === '/404';
   }
 
   ngOnInit() {

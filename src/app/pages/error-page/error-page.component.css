@@ -1,0 +1,29 @@
+.error-page {
+	display: flex;
+	margin: 376px;
+}
+
+.error-page__wrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.error-page__icon {
+	margin-top: 18px;
+}
+
+.error-page__info {
+	margin: 0 auto;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+h2 {
+	color: var(--tds-grey-958);
+}
+
+p {
+	color: var(--tds-grey-900);
+}
