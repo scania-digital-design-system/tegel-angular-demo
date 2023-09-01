@@ -27,6 +27,7 @@ import { DropdownComponent } from '@components/dropdown/dropdown.component';
 import { LinkComponent } from '@components/link/link.component';
 import StepperComponent from '@components/stepper/stepper.component';
 import { StepperExampleComponent } from '@components/stepper-example/stepper-example.component';
+import { TabsComponent } from '@components/tabs/tabs.component';
 
 @Component({
   selector: 'app-components',
@@ -62,6 +63,7 @@ import { StepperExampleComponent } from '@components/stepper-example/stepper-exa
     LinkComponent,
     StepperComponent,
     StepperExampleComponent,
+    TabsComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
