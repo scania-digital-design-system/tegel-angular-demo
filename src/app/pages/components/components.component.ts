@@ -23,6 +23,7 @@ import MessageComponent from 'src/app/components/message/message.component';
 import { ToggleComponent } from '@components/toggle/toggle.component';
 import { BreadcrumbsComponent } from '@components/breadcrumbs/breadcrumbs.component';
 import ChipsComponent from '@components/chips/chips.component';
+import { DropdownComponent } from '@components/dropdown/dropdown.component';
 
 @Component({
   selector: 'app-components',
@@ -54,6 +55,7 @@ import ChipsComponent from '@components/chips/chips.component';
     ToggleComponent,
     BreadcrumbsComponent,
     ChipsComponent,
+    DropdownComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
