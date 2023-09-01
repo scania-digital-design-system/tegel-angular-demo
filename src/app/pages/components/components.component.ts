@@ -25,6 +25,8 @@ import { BreadcrumbsComponent } from '@components/breadcrumbs/breadcrumbs.compon
 import ChipsComponent from '@components/chips/chips.component';
 import { DropdownComponent } from '@components/dropdown/dropdown.component';
 import { LinkComponent } from '@components/link/link.component';
+import StepperComponent from '@components/stepper/stepper.component';
+import { StepperExampleComponent } from '@components/stepper-example/stepper-example.component';
 
 @Component({
   selector: 'app-components',
@@ -58,6 +60,8 @@ import { LinkComponent } from '@components/link/link.component';
     ChipsComponent,
     DropdownComponent,
     LinkComponent,
+    StepperComponent,
+    StepperExampleComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
