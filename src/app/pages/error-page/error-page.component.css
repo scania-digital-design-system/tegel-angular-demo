@@ -1,23 +1,20 @@
 .error-page {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
 	display: flex;
-	margin: 376px;
+	justify-content: center;
+	align-items: center;
 }
 
 .error-page__wrapper {
 	display: flex;
-	flex-direction: row;
 	gap: 12px;
+	max-width: 688px;
 }
 
 .error-page__icon {
 	margin-top: 18px;
-}
-
-.error-page__info {
-	margin: 0 auto;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
 }
 
 h2 {
