@@ -8,7 +8,6 @@ import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CheckboxComponent } from 'src/app/components/checkbox/checkbox.component';
 import { CardComponent } from 'src/app/components/card/card.component';
 import TextareaComponent from 'src/app/components/textarea/textarea.component';
-import BreadcrumbsNavComponent from '../../navigation/breadcrumbs/breadcrumbs.component';
 import TextFieldComponent from '@components/text-field/text-field.component';
 import PopoverCanvasComponent from '@components/popover-canvas/popover-canvas.component';
 import ModalComponent from 'src/app/components/modal/modal.component';
