@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
@@ -7,22 +7,19 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2, ElementRef } from '@angul
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class BannerComponent {
-  bannerVisibility = true;
+  bannerVisibility: boolean = true;
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+  @ViewChild('defaultBanner', { static: true }) defaultBannerRef: ElementRef<HTMLTdsBannerElement>;
 
-  handleToggle() {
-    this.bannerVisibility = !this.bannerVisibility;
-    const bannerElement = this.elementRef.nativeElement.querySelector(
-      'tds-banner[persistent="true"]',
-    );
+  handleBannerVisibility() {
+    const defaultBannerElement = this.defaultBannerRef?.nativeElement;
 
-    if (bannerElement) {
-      if (this.bannerVisibility) {
-        bannerElement.hideBanner();
-      } else {
-        bannerElement.showBanner();
-      }
+    if (this.bannerVisibility) {
+      defaultBannerElement.hideBanner();
+      this.bannerVisibility = false;
+    } else {
+      defaultBannerElement.showBanner();
+      this.bannerVisibility = true;
     }
   }
 
