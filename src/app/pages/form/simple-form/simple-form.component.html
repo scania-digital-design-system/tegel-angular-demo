@@ -310,20 +310,32 @@
           </div>
         </section>
 
-        <div
-          *ngIf="sendingStatus"
-          class="spinner-container"
-        >
-          <tds-spinner
+        <section class="tds-u-mt3">
+          <tds-button
+            type="submit"
+            text="Submit"
             size="md"
-            variant="standard"
-          ></tds-spinner>
-        </div>
-        <tds-button
-          type="submit"
-          text="Submit"
-        ></tds-button>
+            fullbleed
+          ></tds-button>
+          <tds-button
+            class="tds-u-mt1"
+            type="reset"
+            text="Reset"
+            size="md"
+            fullbleed
+            variant="secondary"
+          ></tds-button>
+        </section>
       </tds-block>
     </div>
   </form>
+  <div
+    class="spinner-container"
+    *ngIf="sendingStatus"
+  >
+    <tds-spinner
+      size="md"
+      variant="standard"
+    ></tds-spinner>
+  </div>
 </article>
