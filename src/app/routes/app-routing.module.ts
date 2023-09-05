@@ -18,6 +18,10 @@ const routes = [
     loadComponent: () => import('@pages/text-page/text-page.component'),
   },
   {
+    path: 'text/text-subpage-with-long-name',
+    loadComponent: () => import('@pages/text-subpage/text-subpage.component'),
+  },
+  {
     path: 'tabs-buttons',
     loadComponent: () => import('@pages/tabs-buttons-page/tabs-buttons-page.component'),
   },

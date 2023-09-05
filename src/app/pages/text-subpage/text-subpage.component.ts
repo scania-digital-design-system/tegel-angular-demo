@@ -5,8 +5,7 @@ import TextPageComponent from '../text-page/text-page.component';
   selector: 'app-text-subpage',
   standalone: true,
   templateUrl: './text-subpage.component.html',
-  styleUrls: ['./text-subpage.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [TextPageComponent],
 })
-export class TextSubpageComponent {}
+export default class TextSubpageComponent {}
