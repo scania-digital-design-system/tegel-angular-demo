@@ -1,3 +1,7 @@
+#main-banner {
+  z-index: 399;
+}
+
 .mode-wrapper {
  display: flex;
  flex-direction: column;
