@@ -1,6 +1,6 @@
 <h2>{{ notifications.length > 0 ? 'Notifications' : 'No new notifications' }}</h2>
 
-<div class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-2">
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
     <div *ngFor="let notification of notifications; let i = index">
         <tds-message [variant]="notification.type" [header]="'Notification ' + i">
             {{ notification.content }}

@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { TextInputComponent } from '@pages/form/text-input/text-input.component';
 import { DropdownComponent } from '@pages/form/dropdown/dropdown.component';
 import { CheckboxComponent } from '@pages/form/checkbox/checkbox.component';
@@ -53,7 +60,10 @@ export default class ReactiveFormsComponent {
   });
 
   textareaField: FormGroup = new FormGroup({
-    occupationalEssay: new FormControl('', [Validators.minLength(50), this.essayLengthValidator.bind(this)]),
+    occupationalEssay: new FormControl('', [
+      Validators.minLength(50),
+      this.essayLengthValidator.bind(this),
+    ]),
   });
 
   sliderField: FormGroup = new FormGroup({
@@ -72,17 +82,15 @@ export default class ReactiveFormsComponent {
     return null; // Validation passed
   }
 
-
   submitForm(event: Event) {
+    event.preventDefault();
 
-
-
-    // console.log('textfield', this.textFieldGroup.value);
+    console.log('textfield', this.textFieldGroup.value);
     console.log('dropdownField', this.dropdownField.value);
     console.log('dropdownField', this.dropdownField.getRawValue());
     console.log('checkboxField', this.checkboxField.value);
-    // console.log('radioButtonField', this.radioButtonField.value);
-    // console.log('textareaField', this.textareaField.value);
-    // console.log('sliderField', this.sliderField.value);
+    console.log('radioButtonField', this.radioButtonField.value);
+    console.log('textareaField', this.textareaField.value);
+    console.log('sliderField', this.sliderField.value);
   }
 }

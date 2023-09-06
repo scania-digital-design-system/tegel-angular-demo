@@ -1,18 +1,24 @@
 .form {
+  tds-block {
+    transition: filter 250ms ease;
+  }
+
+  .spinner-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 110px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  &.form-sending {
     tds-block {
-        transition: filter 250ms ease;
+      filter: blur(4px);
     }
-
     .spinner-container {
-        margin: 0 auto;
-        transform: translateX(-50%);
-        transition: bottom 250ms ease,  opacity 250ms ease;
+      opacity: 1;
     }
-
-    &.form-sending {
-        tds-block {
-            filter: blur(4px);
-        }
-        
-    }
+  }
 }

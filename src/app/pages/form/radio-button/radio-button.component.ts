@@ -6,18 +6,15 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-radio-button',
   standalone: true,
   templateUrl: './radio-button.component.html',
-  styleUrls: ['./radio-button.component.css'],
   imports: [CommonModule, ReactiveFormsModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-
-
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RadioButtonComponent {
   @Input() radioButtonGroup: FormGroup;
 
-  handleRadioChange(event: any, name: string){
-    console.log(this.radioButtonGroup.get(name))
-    console.log(event.detail.value)
-    this.radioButtonGroup.get(name)?.setValue(event.detail.value)
+  handleRadioChange(event: any, name: string) {
+    console.log(this.radioButtonGroup.get(name));
+    console.log(event.detail.value);
+    this.radioButtonGroup.get(name)?.setValue(event.detail.value);
   }
 }

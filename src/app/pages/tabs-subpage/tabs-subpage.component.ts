@@ -6,7 +6,6 @@ import { untilDestroyedRef } from 'src/utils';
   selector: 'app-tabs-subpage',
   standalone: true,
   templateUrl: './tabs-subpage.component.html',
-  styleUrls: ['./tabs-subpage.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class TabsSubpageComponent {

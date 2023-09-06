@@ -1,3 +1,20 @@
+#main-banner {
+  z-index: 399;
+}
+
+.mode-wrapper {
+ display: flex;
+ flex-direction: column;
+  overflow-y: hidden;
+}
+
+.mode-variant-wrapper  {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 main {
   overflow-y: auto;
   display: flex;
@@ -16,6 +33,7 @@ main {
 .side-menu-and-main {
   display: flex;
   flex-grow: 1;
+  overflow-y: hidden;
 }
 
 .mobile-nav-item {
@@ -24,7 +42,7 @@ main {
 
 tds-header {
   position: sticky;
-  top: 0px;
+  top: 0;
 }
 
 .user-dropdown [slot='icon'] tds-badge{
@@ -34,9 +52,8 @@ tds-header {
 }
 
 .switcher-container {
+  padding-top: 16px;
   position: absolute;
-  height: 60px;
-  top: calc(96px + 68px);
   right: 32px;
   z-index: 1;
   display: flex;
@@ -46,7 +63,7 @@ tds-header {
 
 @media (min-width: 992px) {
   tds-side-menu {
-    height: calc(100vh - 64px);
+    height:100%;
     position: sticky;
     top: 64px;
     left: 0;

@@ -7,21 +7,20 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SliderComponent {
-
-  @Input() sliderGroup : FormGroup;
+  @Input() sliderGroup: FormGroup;
   @ViewChild('stressSlider', { static: true }) stressSlider!: ElementRef<HTMLTdsSliderElement>;
   @ViewChild('balanceSlider', { static: true }) balanceSlider!: ElementRef<HTMLTdsSliderElement>;
 
-  handleChange(event:any){
-    if(event.target.getAttribute('name') === 'happines'){
-      this.sliderGroup.get('stress')?.enable()
+  handleChange(event: CustomEvent) {
+    const target = event.target as HTMLTdsSliderElement;
+    if (target.getAttribute('name') === 'happines') {
+      this.sliderGroup.get('stress')?.enable();
       this.stressSlider.nativeElement.disabled = false;
-    } else if(event.target.getAttribute('name') === 'stress'){
-      this.sliderGroup.get('balance')?.enable()
+    } else if (target?.getAttribute('name') === 'stress') {
+      this.sliderGroup.get('balance')?.enable();
       this.balanceSlider.nativeElement.disabled = false;
     }
   }

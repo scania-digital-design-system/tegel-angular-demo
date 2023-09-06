@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { UserStoreService } from 'src/app/services/user-store.service';
 
@@ -13,7 +8,6 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   selector: 'app-settings-page',
   standalone: true,
   templateUrl: './settings-page.component.html',
-  styleUrls: ['./settings-page.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [ReactiveFormsModule, CommonModule],
 })
@@ -43,7 +37,6 @@ export default class SettingsPageComponent implements OnInit, OnDestroy {
     form.reset();
   }
 
-
   ngOnInit() {
     this.userStoreService.userName$.pipe(takeUntil(this.onDestroy$)).subscribe((userName) => {
       this.userName = userName;
@@ -57,5 +50,4 @@ export default class SettingsPageComponent implements OnInit, OnDestroy {
     this.onDestroy$.next();
     this.onDestroy$.complete();
   }
-
 }

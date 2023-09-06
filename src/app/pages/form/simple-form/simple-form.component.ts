@@ -3,13 +3,13 @@ import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import  ReactiveFormsComponent from '@pages/form/reactive-forms/reactive-forms.component';
+import ReactiveFormsComponent from '@pages/form/reactive-forms/reactive-forms.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import { RadioButtonComponent } from '../radio-button/radio-button.component';
 import { SliderComponent } from '../slider/slider.component';
 import { TextInputComponent } from '../text-input/text-input.component';
-import BreadcrumbsComponent from '@components/breadcrumbs/breadcrumbs.component';
+import BreadcrumbsComponent from '../../../navigation/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-simple-form',

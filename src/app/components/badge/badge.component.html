@@ -4,13 +4,11 @@
     value="1"
     size="lg"
   ></tds-badge>
-  <br />
 
   <tds-badge
     value="-5"
     size="lg"
   ></tds-badge>
-  <br />
 
   <tds-button>
     <span slot="label"> Inbox </span>
@@ -21,71 +19,71 @@
       ></tds-badge>
     </span>
   </tds-button>
-  <br /><br />
 
-  <tds-text-field
-    type="number"
-    size="sm"
-    state="success"
-    label="Number of emails"
-    name="emailCount"
-    label-position="outside"
-    no-min-width
-    placeholder="0"
-    ngDefaultControl
-    formControlName="emailCount"
-		[value]="emailCount"
-		(input)="updateEmailCount($event)"
-  ></tds-text-field>
+  <div class="tds-u-flex tds-u-gap3">
+    <tds-text-field
+      type="number"
+      size="lg"
+      state="success"
+      label="Number of emails"
+      name="emailCount"
+      label-position="outside"
+      no-min-width
+      placeholder="0"
+      ngDefaultControl
+      formControlName="emailCount"
+      [value]="emailCount"
+      (input)="updateEmailCount($event)"
+    ></tds-text-field>
 
-  <br />
+    <tds-button size="sm">
+      <span
+        slot="icon"
+        class="button-badge-relative"
+      >
+        <tds-icon
+          name="email"
+          size="24px"
+        ></tds-icon
+        ><tds-badge
+          [value]="emailCount"
+          size="lg"
+        ></tds-badge>
+      </span>
+    </tds-button>
+  </div>
 
-  <tds-button>
-    <span
-      slot="icon"
-      class="button-badge-relative"
-    >
-      <tds-icon
-        name="email"
-        size="24px"
-      ></tds-icon
-      ><tds-badge
-        [value]="emailCount"
-        size="lg"
-      ></tds-badge>
-    </span>
-  </tds-button>
+  <div class="tds-u-flex tds-u-gap3">
+    <tds-button>
+      <span
+        slot="icon"
+        class="button-badge-relative"
+      >
+        <tds-icon
+          name="heart"
+          size="24px"
+        ></tds-icon
+        ><tds-badge
+          value="5"
+          size="lg"
+        ></tds-badge>
+      </span>
+    </tds-button>
 
-  <tds-button>
-    <span
-      slot="icon"
-      class="button-badge-relative"
-    >
-      <tds-icon
-        name="heart"
-        size="24px"
-      ></tds-icon
-      ><tds-badge
-        value="5"
-        size="lg"
-      ></tds-badge>
-    </span>
-  </tds-button>
-  <br /><br />
-
-  <tds-button>
-    <span
-      slot="icon"
-      class="button-badge-relative"
-    >
-      <tds-icon
-        name="settings"
-        size="24px"
-      ></tds-icon
-      ><tds-badge
-        value="5"
-        size="sm"
-      ></tds-badge>
-    </span>
-  </tds-button>
+    <tds-button>
+      <span
+        slot="icon"
+        class="button-badge-relative"
+      >
+        <tds-icon
+          name="settings"
+          size="24px"
+        ></tds-icon
+        ><tds-badge
+          value="5"
+          size="sm"
+        ></tds-badge>
+      </span>
+    </tds-button>
+  </div>
 </div>

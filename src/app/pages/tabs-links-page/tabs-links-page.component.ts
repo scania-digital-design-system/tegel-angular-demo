@@ -1,13 +1,12 @@
 import { CommonModule, Location } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import BreadcrumbsComponent from 'src/app/components/breadcrumbs/breadcrumbs.component';
+import BreadcrumbsComponent from '../../navigation/breadcrumbs/breadcrumbs.component';
 import { untilDestroyedRef } from 'src/utils';
 
 @Component({
   selector: 'app-tabs-links-page',
   templateUrl: './tabs-links-page.component.html',
-  styleUrls: ['./tabs-links-page.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BreadcrumbsComponent, RouterLink, RouterOutlet, CommonModule],

@@ -5,17 +5,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CheckboxComponent {
-
   @Input() checkboxGroup: FormGroup;
 
-
-  handleCheckboxChange(event: any, name: string){
-    this.checkboxGroup.get(name)?.setValue(event.detail.checked)
+  handleCheckboxChange(event: any, name: string) {
+    this.checkboxGroup.get(name)?.setValue(event.detail.checked);
   }
 }

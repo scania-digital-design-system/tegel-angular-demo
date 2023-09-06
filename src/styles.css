@@ -1,6 +1,6 @@
-/* @import "reset.css"; */
+@import "reset.css";
 @import url('@scania/tegel/dist/tegel/tegel.css');
-@import 'utility-classes.css'; 
+
 
 .tds-mode-dark {
   color: var(--tds-grey-100);
@@ -50,4 +50,10 @@ section.form-section {
 
 fieldset {
   all: unset;
+}
+
+/*TODO: add to the list of utility classes */
+
+.tds-u-flex-wrap {
+  flex-wrap: wrap;
 }

@@ -14,16 +14,12 @@ const routes = [
     loadComponent: () => import('@pages/components/components.component'),
   },
   {
-    path: 'page-two',
-    loadComponent: () => import('@pages/page-two/page-two.component'),
-  },
-  {
     path: 'text',
     loadComponent: () => import('@pages/text-page/text-page.component'),
   },
   {
-    path: 'chips',
-    loadComponent: () => import('@pages/chips-page/chips-page.component'),
+    path: 'text/text-subpage-with-long-name',
+    loadComponent: () => import('@pages/text-subpage/text-subpage.component'),
   },
   {
     path: 'tabs-buttons',
