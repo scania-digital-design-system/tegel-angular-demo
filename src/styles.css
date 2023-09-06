@@ -51,9 +51,3 @@ section.form-section {
 fieldset {
   all: unset;
 }
-
-/*TODO: add to the list of utility classes */
-
-.tds-u-flex-wrap {
-  flex-wrap: wrap;
-}

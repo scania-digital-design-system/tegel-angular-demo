@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopoverCanvasComponent } from './popover-canvas.component';
+import PopoverCanvasComponent from './popover-canvas.component';
 
 describe('PopoverCanvasComponent', () => {
   let component: PopoverCanvasComponent;
@@ -8,7 +8,7 @@ describe('PopoverCanvasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [PopoverCanvasComponent]
+      imports: [PopoverCanvasComponent],
     });
     fixture = TestBed.createComponent(PopoverCanvasComponent);
     component = fixture.componentInstance;
