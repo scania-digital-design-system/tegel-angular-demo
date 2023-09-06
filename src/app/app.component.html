@@ -167,78 +167,8 @@
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
 
-        <tds-side-menu-item [selected]="isActive('/text')">
-          <a
-            routerLink="/text"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="document"
-              size="24"
-            ></tds-icon>
-            Text
-          </a>
-        </tds-side-menu-item>
 
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/web-components')"
-        >
-          <a
-            routerLink="/web-components"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="tool"
-              size="24"
-            ></tds-icon>
-            Components
-          </a>
-        </tds-side-menu-item>
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/form')"
-        >
-          <a
-            routerLink="/form"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="edit"
-              size="24"
-            ></tds-icon>
-            Form
-          </a>
-        </tds-side-menu-item>
 
-        <tds-side-menu-dropdown
-          class="mobile-nav-item"
-          [defaultOpen]="onSubRoute('/tabs')"
-          [selected]="onSubRoute('/tabs')"
-        >
-          <tds-icon
-            slot="button-icon"
-            name="folder"
-            size="24"
-          ></tds-icon>
-          <span slot="button-label">Tabs</span>
-          <tds-side-menu-dropdown-list>
-            <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
-              <a
-                (click)="toggleMobileSideMenu()"
-                routerLink="/tabs-buttons"
-                >Buttons</a
-              >
-            </tds-side-menu-dropdown-list-item>
-            <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
-              <a
-                (click)="toggleMobileSideMenu()"
-                routerLink="/tabs-links"
-                >Links</a
-              >
-            </tds-side-menu-dropdown-list-item>
-          </tds-side-menu-dropdown-list>
-        </tds-side-menu-dropdown>
 
         <tds-side-menu-item
           class="mobile-nav-item"
