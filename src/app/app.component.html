@@ -167,13 +167,7 @@
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
 
-
-
-
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/text')"
-        >
+        <tds-side-menu-item [selected]="isActive('/text')">
           <a
             routerLink="/text"
             (click)="toggleMobileSideMenu()"
@@ -219,21 +213,29 @@
       </tds-side-menu>
       <main class="tds-u-w-100">
         <div class="tds-u-h-100">
-        <div class="switcher-container" *ngIf="!is404Page()">
-          <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
-          <app-mode-variant-switcher
-            (modeVariantToggle)="handleModeVariantToggle()"
-          ></app-mode-variant-switcher>
-        </div>
-        <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
-          <nav-breadcrumbs *ngIf="!is404Page()"></nav-breadcrumbs>
-
-          <div [ngClass]="is404Page() ? 'tds-u-h-100' : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'">
-
-          <router-outlet></router-outlet>
+          <div
+            class="switcher-container"
+            *ngIf="!is404Page()"
+          >
+            <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
+            <app-mode-variant-switcher
+              (modeVariantToggle)="handleModeVariantToggle()"
+            ></app-mode-variant-switcher>
           </div>
-          <app-footer></app-footer>
-        </div>
+          <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
+            <nav-breadcrumbs *ngIf="!is404Page()"></nav-breadcrumbs>
+
+            <div
+              [ngClass]="
+                is404Page()
+                  ? 'tds-u-h-100'
+                  : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'
+              "
+            >
+              <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
+          </div>
         </div>
       </main>
     </div>
