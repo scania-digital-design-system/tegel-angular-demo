@@ -180,82 +180,6 @@
           </a>
         </tds-side-menu-item>
 
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/web-components')"
-        >
-          <a
-            routerLink="/web-components"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="tool"
-              size="24"
-            ></tds-icon>
-            Components
-          </a>
-        </tds-side-menu-item>
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/form')"
-        >
-          <a
-            routerLink="/form"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="edit"
-              size="24"
-            ></tds-icon>
-            Form
-          </a>
-        </tds-side-menu-item>
-
-        <tds-side-menu-dropdown
-          class="mobile-nav-item"
-          [defaultOpen]="onSubRoute('/tabs')"
-          [selected]="onSubRoute('/tabs')"
-        >
-          <tds-icon
-            slot="button-icon"
-            name="folder"
-            size="24"
-          ></tds-icon>
-          <span slot="button-label">Tabs</span>
-          <tds-side-menu-dropdown-list>
-            <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
-              <a
-                (click)="toggleMobileSideMenu()"
-                routerLink="/tabs-buttons"
-                >Buttons</a
-              >
-            </tds-side-menu-dropdown-list-item>
-            <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
-              <a
-                (click)="toggleMobileSideMenu()"
-                routerLink="/tabs-links"
-                >Links</a
-              >
-            </tds-side-menu-dropdown-list-item>
-          </tds-side-menu-dropdown-list>
-        </tds-side-menu-dropdown>
-
-        <tds-side-menu-item
-          class="mobile-nav-item"
-          [selected]="isActive('/text')"
-        >
-          <a
-            routerLink="/text"
-            (click)="toggleMobileSideMenu()"
-          >
-            <tds-icon
-              name="document"
-              size="24"
-            ></tds-icon>
-            Text
-          </a>
-        </tds-side-menu-item>
-
         <div slot="end">
           <tds-side-menu-dropdown>
             <tds-side-menu-user
@@ -288,19 +212,30 @@
         <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
       </tds-side-menu>
       <main class="tds-u-w-100">
-        <div class="switcher-container">
-          <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
-          <app-mode-variant-switcher
-            (modeVariantToggle)="handleModeVariantToggle()"
-          ></app-mode-variant-switcher>
-        </div>
-        <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
-          <nav-breadcrumbs></nav-breadcrumbs>
-
-          <div class="main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative">
-            <router-outlet></router-outlet>
+        <div class="tds-u-h-100">
+          <div
+            class="switcher-container"
+            *ngIf="!is404Page()"
+          >
+            <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
+            <app-mode-variant-switcher
+              (modeVariantToggle)="handleModeVariantToggle()"
+            ></app-mode-variant-switcher>
           </div>
-          <app-footer></app-footer>
+          <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
+            <nav-breadcrumbs *ngIf="!is404Page()"></nav-breadcrumbs>
+
+            <div
+              [ngClass]="
+                is404Page()
+                  ? 'tds-u-h-100'
+                  : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'
+              "
+            >
+              <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
+          </div>
         </div>
       </main>
     </div>

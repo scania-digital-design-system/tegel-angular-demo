@@ -1,0 +1,26 @@
+.error-page {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.error-page__wrapper {
+	display: flex;
+	gap: 12px;
+	max-width: 688px;
+}
+
+.error-page__icon {
+	margin-top: 18px;
+}
+
+h2 {
+	color: var(--tds-grey-900);
+}
+
+p {
+	color: var(--tds-grey-900);
+}
