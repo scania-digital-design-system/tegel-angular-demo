@@ -106,8 +106,6 @@ export class BatchActionsTableComponent {
     this.checkIfAllSelected();
   }
   handleRowSelect(rowId: number | string, event: any) {
-    const { checked } = event.detail;
-    console.log(event);
     this.tableData = this.tableData.map((row) => {
       return {
         ...row,
