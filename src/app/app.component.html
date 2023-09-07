@@ -1,7 +1,6 @@
 <div class="mode-wrapper {{ mode }}">
   <div class="mode-variant-wrapper {{ modeVariant }}">
     <tds-banner
-      id="main-banner"
       variant="information"
       icon="info"
       header="Angular demo"
@@ -152,11 +151,11 @@
 
         <tds-side-menu-dropdown [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')">
           <tds-icon
-            slot="button-icon"
+            slot="icon"
             name="folder"
             size="24"
           ></tds-icon>
-          <span slot="button-label">Tabs</span>
+          <span slot="label">Tabs</span>
           <tds-side-menu-dropdown-list>
             <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
               <a routerLink="/tabs-buttons">Buttons</a>
@@ -183,7 +182,7 @@
         <div slot="end">
           <tds-side-menu-dropdown>
             <tds-side-menu-user
-              slot="button-label"
+              slot="label"
               heading="{{ userName }}"
               subheading="{{ placeOfWork }}"
               img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"

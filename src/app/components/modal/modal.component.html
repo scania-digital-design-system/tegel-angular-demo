@@ -1,48 +1,126 @@
 <div>
-    <div class="tds-headline-02 tds-u-pb1">Modal</div>
-    <div class="tds-u-flex tds-u-gap1">
-        <tds-button id="my-modal-sm-button" text="Small Modal" size="sm"></tds-button>
-        <tds-modal header="The buttons for the Modal only works in the canvas tab" selector="#my-modal-sm-button"
-            id="my-modal" size="sm" actions="static">
-            <span slot="body">
-                The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
-                different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
-                never anything else?” he asked.
-            </span>
-            <tds-button slot="actions" data-dismiss-modal size="md" text="Save"></tds-button>
-            <tds-button slot="actions" data-dismiss-modal size="md" text="Delete" variant="danger"></tds-button>
-        </tds-modal>
-        <tds-button id="my-modal-md-button" text="Medium Modal" size="md"></tds-button>
-        <tds-modal header="The buttons for the Modal only works in the canvas tab" selector="#my-modal-md-button"
-            id="my-modal" size="md" actions="static">
-            <span slot="body">
-                The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
-                different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
-                never anything else?” he asked.
-            </span>
-            <tds-button slot="actions" data-dismiss-modal size="md" text="Save"></tds-button>
-            <tds-button slot="actions" data-dismiss-modal size="md" text="Delete" variant="danger"></tds-button>
-        </tds-modal>
-        <tds-button id="my-modal-lg-button" text="Large Modal"></tds-button>
-        <tds-modal #myLgModal header="The buttons for the Modal only works in the canvas tab" selector="#my-modal-lg-button"
-            id="my-modal" size="lg" actions="static">
-            <span slot="body">This is a Modal. This modal is closed programmatically. Instead of 'data-dismiss-modal'
-                buttons that close it on click. You can hover the button below to close the modal. It can
-                contain other components or just text.
-            </span>
-            <tds-button (mouseenter)="hideModal()" slot="actions" data-dismiss-modal size="md" text="Delete" variant="danger"></tds-button>
-        </tds-modal>
-    </div>
-    <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
-
-    <tds-icon (mouseenter)="showModal()" name="truck" size="20px"></tds-icon>
-    <tds-modal #myHoverModal header="The buttons for the Modal only works in the canvas tab"  id="my-modal"
-        size="md" actions="static">
-        <span slot="body">
-            The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
-            different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
-            never anything else?” he asked.
-        </span>
-        <tds-button slot="actions" data-dismiss-modal  size="md" text="Cancel" variant="danger"></tds-button>
+  <div class="tds-headline-02 tds-u-pb1">Modal</div>
+  <div class="tds-u-flex tds-u-gap1">
+    <tds-button
+      id="my-modal-sm-button"
+      text="Small Modal"
+      size="sm"
+    ></tds-button>
+    <tds-modal
+      header="The buttons for the Modal only works in the canvas tab"
+      selector="#my-modal-sm-button"
+      id="my-modal"
+      size="sm"
+      actions-position="static"
+    >
+      <span slot="body">
+        The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+        different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+        never anything else?” he asked.
+      </span>
+      <div
+        slot="actions"
+        class="tds-u-flex tds-u-gap1"
+      >
+        <tds-button
+          data-dismiss-modal
+          size="md"
+          text="Save"
+        ></tds-button>
+        <tds-button
+          data-dismiss-modal
+          size="md"
+          text="Delete"
+          variant="danger"
+        ></tds-button>
+      </div>
     </tds-modal>
+    <tds-button
+      id="my-modal-md-button"
+      text="Medium Modal"
+      size="md"
+    ></tds-button>
+    <tds-modal
+      header="The buttons for the Modal only works in the canvas tab"
+      selector="#my-modal-md-button"
+      id="my-modal"
+      size="md"
+      actions-position="static"
+    >
+      <span slot="body">
+        The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+        different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+        never anything else?” he asked.
+      </span>
+      <div
+        slot="actions"
+        class="tds-u-flex tds-u-gap1"
+      >
+        <tds-button
+          data-dismiss-modal
+          size="md"
+          text="Save"
+        ></tds-button>
+        <tds-button
+          data-dismiss-modal
+          size="md"
+          text="Delete"
+          variant="danger"
+        ></tds-button>
+      </div>
+    </tds-modal>
+    <tds-button
+      id="my-modal-lg-button"
+      text="Large Modal"
+    ></tds-button>
+    <tds-modal
+      #myLgModal
+      header="The buttons for the Modal only works in the canvas tab"
+      selector="#my-modal-lg-button"
+      id="my-modal"
+      size="lg"
+      actions-position="static"
+    >
+      <span slot="body"
+        >This is a Modal. This modal is closed programmatically. Instead of 'data-dismiss-modal'
+        buttons that close it on click. You can hover the button below to close the modal. It can
+        contain other components or just text.
+      </span>
+      <tds-button
+        (mouseenter)="hideModal()"
+        slot="actions"
+        data-dismiss-modal
+        size="md"
+        text="Delete"
+        variant="danger"
+      ></tds-button>
+    </tds-modal>
+  </div>
+  <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
+
+  <tds-icon
+    (mouseenter)="showModal()"
+    name="truck"
+    size="20px"
+  ></tds-icon>
+  <tds-modal
+    #myHoverModal
+    header="The buttons for the Modal only works in the canvas tab"
+    id="my-modal"
+    size="md"
+    actions="static"
+  >
+    <span slot="body">
+      The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+      different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+      never anything else?” he asked.
+    </span>
+    <tds-button
+      slot="actions"
+      data-dismiss-modal
+      size="md"
+      text="Cancel"
+      variant="danger"
+    ></tds-button>
+  </tds-modal>
 </div>
