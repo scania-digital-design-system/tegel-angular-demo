@@ -1,3 +1,7 @@
-<tds-toggle (tdsToggle)="toggleModeVariant()">
-    <div slot="label">Secondary variant</div>
+<tds-toggle
+  (tdsToggle)="toggleModeVariant()"
+  headline="Primary mode variant"
+  checked
+>
+  <div slot="label">{{ labelText }}</div>
 </tds-toggle>

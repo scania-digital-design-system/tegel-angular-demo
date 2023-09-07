@@ -1,3 +1,7 @@
-<tds-toggle (tdsToggle)="toggleMode()">
-    <div slot="label">Dark mode</div>
+<tds-toggle
+  (tdsToggle)="toggleMode()"
+  headline="Light mode"
+  checked
+>
+  <div slot="label">{{ labelText }}</div>
 </tds-toggle>
