@@ -5,7 +5,7 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
-import { ModalDirective } from '../../directives/modal.directive';
+import { ModalDirective } from '@directives/modal.directive';
 import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
 
@@ -76,7 +76,6 @@ import { CommonModule } from '@angular/common';
     </tds-table>
     <ng-template modal-dr />
   `,
-  styles: [``],
   imports: [ModalDirective, CommonModule],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -103,14 +102,25 @@ export class BatchActionsTableComponent {
         selected: checked,
       };
     });
+
+    this.checkIfAllSelected();
   }
   handleRowSelect(rowId: number | string, event: any) {
+    const { checked } = event.detail;
+    console.log(event);
     this.tableData = this.tableData.map((row) => {
       return {
         ...row,
         selected: row.id === rowId ? event.detail.checked : row.selected,
       };
     });
-    this.allSelected = this.tableData.every((row) => row.selected);
+
+    this.checkIfAllSelected();
+  }
+
+  checkIfAllSelected() {
+    const numberOfRows = this.tableData.length;
+    const numberOfSelected = this.tableData.filter((item) => item.selected === true).length;
+    this.allSelected = numberOfRows === numberOfSelected;
   }
 }

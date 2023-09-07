@@ -12,5 +12,7 @@ declare global {
     tdsInput: CustomEvent;
     tdsPageChange: CustomEvent;
     tdsSortChange: CustomEvent;
+    tdsSelect: CustomEvent;
+    tdsSelectAll: CustomEvent;
   }
 }
