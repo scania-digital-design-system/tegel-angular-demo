@@ -52,7 +52,7 @@ tds-header {
 }
 
 .switcher-container {
-  padding-top: 16px;
+  padding-top: 24px;
   position: absolute;
   right: 32px;
   z-index: 1;
