@@ -9,6 +9,7 @@ import { UserStoreService } from './services/user-store.service';
 import { Subject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Notification } from 'src/types';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { Notification } from 'src/types';
     ModeSwitcherComponent,
     ModeVariantSwitcherComponent,
     CommonModule,
+    TegelModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
