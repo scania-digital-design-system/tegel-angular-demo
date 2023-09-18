@@ -1,6 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import exampleData from './exampleData.json';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-sortable-table',
@@ -58,8 +59,7 @@ import exampleData from './exampleData.json';
   `,
   styles: [``],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule],
+  imports: [CommonModule, TegelModule],
 })
 export class SortableTableComponent {
   tableData = exampleData;

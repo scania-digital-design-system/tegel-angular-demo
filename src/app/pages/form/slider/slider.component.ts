@@ -1,13 +1,13 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {  Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TegelModule],
   templateUrl: './slider.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SliderComponent {
   @Input() sliderGroup: FormGroup;

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -14,6 +14,7 @@ import { CheckboxComponent } from '@pages/form/checkbox/checkbox.component';
 import { RadioButtonComponent } from '@pages/form/radio-button/radio-button.component';
 import { SliderComponent } from '@pages/form/slider/slider.component';
 import { TextareaComponent } from '@pages/form/textarea/textarea.component';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -29,8 +30,8 @@ import { TextareaComponent } from '@pages/form/textarea/textarea.component';
     RadioButtonComponent,
     TextareaComponent,
     SliderComponent,
+    TegelModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;

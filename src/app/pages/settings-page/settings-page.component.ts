@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TegelModule } from '@scania/tegel-angular';
 import { Subject, takeUntil } from 'rxjs';
 import { UserStoreService } from 'src/app/services/user-store.service';
 
@@ -8,8 +9,7 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   selector: 'app-settings-page',
   standalone: true,
   templateUrl: './settings-page.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, TegelModule],
 })
 export default class SettingsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}

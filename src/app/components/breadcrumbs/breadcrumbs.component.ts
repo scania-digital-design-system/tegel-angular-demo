@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -17,6 +18,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     </tds-breadcrumbs>
   `,
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class BreadcrumbsComponent {}

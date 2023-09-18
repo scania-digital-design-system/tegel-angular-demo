@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-stepper-example',
@@ -33,6 +34,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
       </tds-step>
     </tds-stepper>
   `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [ TegelModule]
 })
 export class StepperExampleComponent {}

@@ -1,10 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, EventEmitter, Output } from '@angular/core';
+import {  Component, EventEmitter, Output } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-mode-switcher',
   templateUrl: './mode-switcher.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class ModeSwitcherComponent {
   @Output() modeToggle = new EventEmitter<void>();

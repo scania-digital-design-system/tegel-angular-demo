@@ -1,5 +1,5 @@
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
+  
   Component,
   ViewChild,
   ElementRef,
@@ -7,6 +7,7 @@ import {
 import { ModalDirective } from '@directives/modal.directive';
 import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-batch-actions-table',
@@ -78,9 +79,8 @@ import { CommonModule } from '@angular/common';
     </tds-table>
     <ng-template modal-dr />
   `,
-  imports: [ModalDirective, CommonModule],
+  imports: [ModalDirective, CommonModule, TegelModule],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class BatchActionsTableComponent {
   @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective;

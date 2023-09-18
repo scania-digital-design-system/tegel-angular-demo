@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
+  
   Component,
   ElementRef,
   OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 import { Subject, takeUntil } from 'rxjs';
 import { UserStoreService } from 'src/app/services/user-store.service';
 import { Notification } from 'src/types';
@@ -15,8 +16,7 @@ import { Notification } from 'src/types';
   selector: 'app-notifications-page',
   standalone: true,
   templateUrl: './notifications-page.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule],
+  imports: [CommonModule, TegelModule],
 })
 export default class NotificationsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}

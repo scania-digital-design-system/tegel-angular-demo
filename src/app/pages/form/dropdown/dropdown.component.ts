@@ -1,5 +1,5 @@
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
+  
   Component,
   ElementRef,
   Input,
@@ -13,13 +13,13 @@ import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [CommonModule, DropdownDirective, ReactiveFormsModule],
+  imports: [CommonModule, DropdownDirective, ReactiveFormsModule, TegelModule],
   templateUrl: './dropdown.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DropdownComponent implements OnInit, OnDestroy {
   nowegianTowns = norwayData;

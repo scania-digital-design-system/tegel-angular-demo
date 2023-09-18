@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
+import {  Component, ElementRef, ViewChild } from '@angular/core';
 import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,7 @@ import { RadioButtonComponent } from '../radio-button/radio-button.component';
 import { SliderComponent } from '../slider/slider.component';
 import { TextInputComponent } from '../text-input/text-input.component';
 import BreadcrumbsComponent from '../../../navigation/breadcrumbs/breadcrumbs.component';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-simple-form',
@@ -26,8 +27,8 @@ import BreadcrumbsComponent from '../../../navigation/breadcrumbs/breadcrumbs.co
     SliderComponent,
     DropdownComponent,
     BreadcrumbsComponent,
+    TegelModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class SimpleFormComponent {
   nowegianTowns = norwayData;

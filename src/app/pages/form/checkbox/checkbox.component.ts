@@ -1,13 +1,13 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
+import {  Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TegelModule],
   templateUrl: './checkbox.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CheckboxComponent {
   @Input() checkboxGroup: FormGroup;

@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { Component,  ElementRef, ViewChild } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-toggle',
@@ -37,7 +38,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
       (click)="toggleProgrammatically()"
     ></tds-button>
   `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class ToggleComponent {
   @ViewChild('toggle1', { static: true }) toggle1: ElementRef<HTMLTdsToggleElement> | undefined;

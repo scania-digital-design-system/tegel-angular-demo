@@ -1,6 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
+import {  Component, Input } from '@angular/core';
 import { TableData } from './table-data';
 import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-expandable-table',
@@ -73,7 +74,6 @@ import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
   `,
   styles: [``],
   standalone: true,
-  imports: [NgForOf, KeyValuePipe, NgIf],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [NgForOf, KeyValuePipe, NgIf, TegelModule],
 })
 export class ExpandableTableComponent {}

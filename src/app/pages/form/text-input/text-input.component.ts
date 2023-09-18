@@ -1,14 +1,14 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit, forwardRef, inject } from '@angular/core';
+import {  Component, Input, OnInit, forwardRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, NG_VALUE_ACCESSOR, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-text-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TegelModule],
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

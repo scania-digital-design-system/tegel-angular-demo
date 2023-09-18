@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy } from '@angular/core';
+import {  Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { unslugify } from '../../../utils';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'nav-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  imports: [RouterLink, RouterOutlet, CommonModule],
+  imports: [RouterLink, RouterOutlet, CommonModule, TegelModule],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class BreadcrumbsNavComponent implements OnDestroy {
   segments: Array<{ title: string; path: string }> = []; // Initialize an empty array
