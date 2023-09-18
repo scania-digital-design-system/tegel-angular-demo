@@ -15,19 +15,6 @@ import { TegelModule } from '@scania/tegel-angular';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true,
-  imports: [
-    RouterLink,
-    RouterOutlet,
-    FooterComponent,
-    BannerComponent,
-    BreadcrumbsComponent,
-    ModeSwitcherComponent,
-    ModeVariantSwitcherComponent,
-    CommonModule,
-    TegelModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {}
