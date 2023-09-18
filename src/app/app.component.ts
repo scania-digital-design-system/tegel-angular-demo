@@ -1,13 +1,32 @@
 import {  Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FooterComponent } from "@components/footer/footer.component";
+import { Router, RouterOutlet, RouterLink, ActivatedRoute } from '@angular/router';
+import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
+import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
+import BreadcrumbsComponent from './navigation/breadcrumbs/breadcrumbs.component';
+import { BannerComponent } from '@components/banner/banner.component';
 import { UserStoreService } from './services/user-store.service';
 import { Subject, takeUntil } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { Notification } from 'src/types';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [
+    RouterLink,
+    RouterOutlet,
+    FooterComponent,
+    BannerComponent,
+    BreadcrumbsComponent,
+    ModeSwitcherComponent,
+    ModeVariantSwitcherComponent,
+    CommonModule,
+    TegelModule,
+  ],
 })
 export class AppComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {}
