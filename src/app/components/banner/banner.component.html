@@ -8,28 +8,20 @@
       variant="error"
       (tdsClose)="handleClose($event)"
     >
-      <div slot="subheader">Due to its tdsClose event being prevented.</div>
     </tds-banner>
     <tds-banner
       #informationBanner 
       icon="info"
       header="This Banner will close."
       variant="information"
-      subheader="And it also has a link."
     >
-      <tds-link slot="actions">
-        <a href="/">Link example</a>
-      </tds-link>
     </tds-banner>
     <tds-banner
       #defaultBanner
       id="my-banner"
       icon="save"
-      [header]="'Default banner'"
+      header="This the default Banner."
     >
-      <div slot="subheader">
-        You can toggle visibility of this one programmatically with toggle below
-      </div>
     </tds-banner>
   </div>
 
