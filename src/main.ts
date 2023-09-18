@@ -1,22 +1,7 @@
-import { defineCustomElements } from '@scania/tegel/loader';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { importProvidersFrom } from '@angular/core';
-import { AppComponent } from './app/app.component';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import routes from '@routes/app-routing.module';
-import { TegelModule } from '@scania/tegel-angular';
+import { AppModule } from './app/app.module';
 
-bootstrapApplication(AppComponent, {
-    providers: [
-      importProvidersFrom(
-        RouterModule.forRoot(routes, {
-          scrollPositionRestoration: 'enabled'
-        }),
-        BrowserModule,
-        TegelModule
-        )
-    ]
-})
-  .catch((err) => console.error(err));
 
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
