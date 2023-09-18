@@ -8,16 +8,14 @@ import { TegelModule } from '@scania/tegel-angular';
   imports: [TegelModule]
 })
 export default class ModalComponent {
-  @ViewChild('myHoverModal', { static: true }) hoverModalRef:
-    | ElementRef<HTMLTdsModalElement>
-    | undefined;
-  @ViewChild('myLgModal', { static: true }) myLgModal: ElementRef<HTMLTdsModalElement> | undefined;
+  @ViewChild('myHoverModal', { static: true }) hoverModalRef: HTMLTdsModalElement;
+  @ViewChild('myLgModal', { static: true }) myLgModal: HTMLTdsModalElement;
 
   showModal() {
-    if (this.hoverModalRef) this.hoverModalRef.nativeElement.showModal();
+    this.hoverModalRef.showModal();
   }
 
   hideModal() {
-    if (this.myLgModal) this.myLgModal.nativeElement.closeModal();
+    this.myLgModal.closeModal();
   }
 }

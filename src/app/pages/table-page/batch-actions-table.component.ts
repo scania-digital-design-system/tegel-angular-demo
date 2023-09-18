@@ -1,8 +1,6 @@
 import {
-  
   Component,
   ViewChild,
-  ElementRef,
 } from '@angular/core';
 import { ModalDirective } from '@directives/modal.directive';
 import exampleData from './exampleData.json';
@@ -84,7 +82,7 @@ import { TegelModule } from '@scania/tegel-angular';
 })
 export class BatchActionsTableComponent {
   @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective;
-  @ViewChild('table', { static: false }) tableRef: ElementRef;
+  @ViewChild('table', { static: false }) tableRef: HTMLTdsTableElement;
 
   tableData = exampleData;
 
@@ -92,7 +90,7 @@ export class BatchActionsTableComponent {
 
   async download() {
     this.modalDirective.showModal(
-      JSON.stringify(await this.tableRef.nativeElement.getSelectedRows(),  null, 2),
+      JSON.stringify(await this.tableRef.getSelectedRows(),  null, 2),
     );
   }
 

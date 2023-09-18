@@ -21,9 +21,7 @@ import { Notification } from 'src/types';
 export default class NotificationsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}
   private onDestroy$: Subject<void> = new Subject<void>();
-  @ViewChild('notificationsModal', { static: true }) notificationsModal:
-    | ElementRef<HTMLTdsModalElement>
-    | undefined;
+  @ViewChild('notificationsModal', { static: true }) notificationsModal: HTMLTdsModalElement;
 
   notifications: Notification[];
 
@@ -41,12 +39,12 @@ export default class NotificationsPageComponent implements OnInit, OnDestroy {
   }
 
   openModal() {
-    this.notificationsModal?.nativeElement.showModal();
+    this.notificationsModal.showModal();
   }
 
   clearNotifications() {
     if (this.notificationsModal) {
-      this.notificationsModal.nativeElement.closeModal();
+      this.notificationsModal.closeModal();
       this.userStoreService.clearNotifications();
     }
   }

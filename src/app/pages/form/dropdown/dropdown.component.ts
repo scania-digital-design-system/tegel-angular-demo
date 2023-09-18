@@ -25,9 +25,9 @@ export class DropdownComponent implements OnInit, OnDestroy {
   nowegianTowns = norwayData;
   swedishTowns = swedenData;
   @ViewChild('norwayDropdown', { static: true })
-  norwayDropdown!: ElementRef<HTMLTdsDropdownElement>;
+  norwayDropdown!: HTMLTdsDropdownElement;
   @ViewChild('swedenDropdown', { static: true })
-  swedenDropdown!: ElementRef<HTMLTdsDropdownElement>;
+  swedenDropdown!: HTMLTdsDropdownElement;
   @Input() dropdownGroup: FormGroup;
   private onDestroy$: Subject<void> = new Subject<void>();
 
@@ -39,12 +39,12 @@ export class DropdownComponent implements OnInit, OnDestroy {
         if (countryValue === 'sweden') {
           this.dropdownGroup.get('norwegianTown')?.disable();
           this.dropdownGroup.get('swedishTown')?.enable();
-          this.norwayDropdown.nativeElement.reset().then((_) => {});
+          this.norwayDropdown.reset().then((_) => {});
         }
         if (countryValue === 'norway') {
           this.dropdownGroup.get('swedishTown')?.disable();
           this.dropdownGroup.get('norwegianTown')?.enable();
-          this.swedenDropdown.nativeElement.reset().then((_) => {});
+          this.swedenDropdown.reset().then((_) => {});
         }
       });
   }

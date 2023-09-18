@@ -11,17 +11,17 @@ import { TegelModule } from '@scania/tegel-angular';
 })
 export class SliderComponent {
   @Input() sliderGroup: FormGroup;
-  @ViewChild('stressSlider', { static: true }) stressSlider!: ElementRef<HTMLTdsSliderElement>;
-  @ViewChild('balanceSlider', { static: true }) balanceSlider!: ElementRef<HTMLTdsSliderElement>;
+  @ViewChild('stressSlider', { static: true }) stressSlider!: HTMLTdsSliderElement;
+  @ViewChild('balanceSlider', { static: true }) balanceSlider!: HTMLTdsSliderElement;
 
   handleChange(event: CustomEvent) {
     const target = event.target as HTMLTdsSliderElement;
     if (target.getAttribute('name') === 'happines') {
       this.sliderGroup.get('stress')?.enable();
-      this.stressSlider.nativeElement.disabled = false;
+      this.stressSlider.disabled = false;
     } else if (target?.getAttribute('name') === 'stress') {
       this.sliderGroup.get('balance')?.enable();
-      this.balanceSlider.nativeElement.disabled = false;
+      this.balanceSlider.disabled = false;
     }
   }
 }
