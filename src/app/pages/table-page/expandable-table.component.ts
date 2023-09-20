@@ -1,7 +1,8 @@
 import {  Component, Input } from '@angular/core';
-import { TableData } from './table-data';
 import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
 import { TegelModule } from '@scania/tegel-angular';
+import exampleData from './exampleData.json';
+
 
 @Component({
   selector: 'app-expandable-table',
