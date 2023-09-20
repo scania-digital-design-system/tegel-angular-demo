@@ -2,11 +2,11 @@
   <div class="tds-headline-02 tds-u-pb1">Popover Menu</div>
   <div class="popover-container">
     <tds-button
+      id="popover-menu-button-a"
       aria-label="menu"
       only-icon
       variant="ghost"
       size="sm"
-      #trigger1
     >
       <tds-icon
         slot="icon"
@@ -16,9 +16,12 @@
       ></tds-icon>
     </tds-button>
   </div>
+
+  <!-- Note: On version 1.0.0 of the @scania/tegel-angular wrapper, the referenceEl property 
+    didn't work when passed a tds- element. So selector is used here instead. -->
   <tds-popover-menu
     placement="auto"
-    [referenceEl]="trigger1"
+    selector="#popover-menu-button-a"
   >
     <tds-popover-menu-item>
       <a href="tegel.scania.com">Action</a>
@@ -42,7 +45,6 @@
     </tds-popover-menu-item>
     <tds-popover-menu-item>
       <a href="tegel.scania.com">Action</a>
-    </tds-popover-menu-item>
     <tds-divider></tds-divider>
     <tds-popover-menu-item>
       <a href="tegel.scania.com">Action</a>
@@ -50,20 +52,6 @@
     <tds-popover-menu-item>
       <button>Action</button>
     </tds-popover-menu-item>
-  </tds-popover-menu>
-
-  <div class="popover-container">
-    <tds-button
-      aria-label="menu"
-      only-icon
-      id="triggerElement"
-      variant="primary"
-      size="sm"
-    >
-      <tds-icon
-        slot="icon"
-        class="tds-btn-icon"
-        size="16px"
         name="kebab"
       ></tds-icon>
     </tds-button>
