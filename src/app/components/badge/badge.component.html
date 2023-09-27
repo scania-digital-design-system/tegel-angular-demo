@@ -1,59 +1,27 @@
-<div>
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
   <div class="tds-headline-02 tds-u-pb1">Badge</div>
   <tds-badge
     value="1"
     size="lg"
   ></tds-badge>
-
   <tds-badge
-    value="-5"
+    [value]="emailCount"
     size="lg"
   ></tds-badge>
-
-  <tds-button>
-    <span slot="label"> Inbox </span>
-    <span slot="icon">
-      <tds-badge
-        value="1000"
-        size="lg"
-      ></tds-badge>
-    </span>
-  </tds-button>
-
-  <div class="tds-u-flex tds-u-gap3">
-    <tds-text-field
-      type="number"
-      size="lg"
-      state="success"
-      label="Number of emails"
-      name="emailCount"
-      label-position="outside"
-      no-min-width
-      placeholder="0"
-      ngDefaultControl
-      formControlName="emailCount"
-      [value]="emailCount"
-      (input)="updateEmailCount($event)"
-    ></tds-text-field>
-
-    <tds-button size="sm">
-      <span
-        slot="icon"
-        class="button-badge-relative"
-      >
-        <tds-icon
-          name="email"
-          size="24px"
-        ></tds-icon
-        ><tds-badge
-          [value]="emailCount"
-          size="lg"
-        ></tds-badge>
-      </span>
-    </tds-button>
-  </div>
-
-  <div class="tds-u-flex tds-u-gap3">
+  <tds-text-field
+    type="number"
+    size="lg"
+    state="success"
+    label="Number of emails"
+    name="emailCount"
+    label-position="outside"
+    placeholder="0"
+    ngDefaultControl
+    formControlName="emailCount"
+    [value]="emailCount"
+    (input)="updateEmailCount($event)"
+  ></tds-text-field>
+  <div class="tds-u-flex tds-u-gap2">
     <tds-button>
       <span
         slot="icon"
