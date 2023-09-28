@@ -1,7 +1,6 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
-  AfterViewInit,
   ViewChild,
   ElementRef,
 } from '@angular/core';
@@ -12,14 +11,16 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-batch-actions-table',
   template: `
-    <h1>Batch Actions</h1>
+    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Batch Actions</div>
+    <p>This Table uses the batch actions slot and multiselect in order to get data out of the table.</p>
     <tds-table
       #table
       id="batchTable"
       multiselect
       vertical-dividers="false"
       compact-design="false"
-      responsive="false"
+      responsive
+      no-min-width
     >
       <tds-table-toolbar table-title="Batch action">
         <div slot="end">
@@ -51,6 +52,7 @@ import { CommonModule } from '@angular/common';
         <tds-header-cell
           cell-key="mileage"
           cell-value="Mileage"
+          text-align="right"
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
@@ -68,7 +70,7 @@ import { CommonModule } from '@angular/common';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage">
+          <tds-body-cell cell-key="mileage"  style="text-align: right;">
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>
@@ -90,7 +92,7 @@ export class BatchActionsTableComponent {
 
   async download() {
     this.modalDirective.showModal(
-      JSON.stringify(await this.tableRef.nativeElement.getSelectedRows()),
+      JSON.stringify(await this.tableRef.nativeElement.getSelectedRows(),  null, 2),
     );
   }
 

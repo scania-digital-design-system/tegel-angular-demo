@@ -1,15 +1,16 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
-import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-basic-table',
   template: `
-    <h1>Basic Table</h1>
+    <div class="tds-headline-02 tds-u-pb1">Basic Table</div>
+    <p>This is a basic Table implementation.</p>
     <tds-table
       vertical-dividers="false"
       compact-design="false"
-      responsive="false"
+      responsive
+      no-min-width
     >
       <tds-table-header>
         <tds-header-cell
@@ -25,24 +26,44 @@ import { CommonModule } from '@angular/common';
           cell-value="Country"
         ></tds-header-cell>
         <tds-header-cell
+          text-align="right"
           cell-key="mileage"
           cell-value="Mileage"
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row *ngFor="let row of tableData">
+      <tds-table-body-row>
           <tds-body-cell cell-key="truck">
-            {{ row.truck }}
+            <div>This colum uses slots.</div>
           </tds-body-cell>
-          <tds-body-cell cell-key="driver">
-            {{ row.driver }}
+          <tds-body-cell
+            cell-value="This column uses the cell value prop."
+            cell-key="driver"
+          ></tds-body-cell>
+          <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
+          <tds-body-cell style="text-align: right;" cell-value="4000" cell-key="mileage"></tds-body-cell>
+        </tds-table-body-row>
+        <tds-table-body-row>
+          <tds-body-cell cell-key="truck">
+            <div>This colum uses slots.</div>
           </tds-body-cell>
-          <tds-body-cell cell-key="country">
-            {{ row.country }}
+          <tds-body-cell
+            cell-value="This column uses the cell value prop."
+            cell-key="driver"
+          ></tds-body-cell>
+          <tds-body-cell cell-value="Germany" cell-key="country"></tds-body-cell>
+          <tds-body-cell style="text-align: right;" cell-value="260" cell-key="mileage"></tds-body-cell>
+        </tds-table-body-row>
+        <tds-table-body-row>
+          <tds-body-cell cell-key="truck">
+            <div>This colum uses slots.</div>
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage">
-            {{ row.mileage }}
-          </tds-body-cell>
+          <tds-body-cell
+            cell-value="This column uses the cell value prop."
+            cell-key="driver"
+          ></tds-body-cell>
+          <tds-body-cell cell-value="Norway" cell-key="country"></tds-body-cell>
+          <tds-body-cell style="text-align: right;" cell-value="5889" cell-key="mileage"></tds-body-cell>
         </tds-table-body-row>
       </tds-table-body>
     </tds-table>
@@ -52,6 +73,4 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule],
 })
-export class BasicTableComponent {
-  tableData = exampleData;
-}
+export class BasicTableComponent {}

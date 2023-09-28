@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-filter-table',
   template: `
-    <h1>Search Table</h1>
+    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Filter Table</div>
+    <p>This Table can be filtered.</p>
     <tds-table
       vertical-dividers="false"
       compact-design="false"
-      responsive="false"
+      responsive
+      no-min-width
     >
       <tds-table-toolbar
         table-title="Filter"
@@ -32,6 +34,7 @@ import { CommonModule } from '@angular/common';
         <tds-header-cell
           cell-key="mileage"
           cell-value="Mileage"
+          text-align="right"
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
@@ -45,7 +48,7 @@ import { CommonModule } from '@angular/common';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage">
+          <tds-body-cell style="text-align:right;" cell-key="mileage">
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>

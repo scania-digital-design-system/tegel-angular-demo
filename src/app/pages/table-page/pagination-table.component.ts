@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-pagination-table',
   template: `
-    <h1>Pagination Table</h1>
+    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination Table</div>
+    <p>This Table uses pagination.</p>
     <tds-table
       vertical-dividers="false"
       compact-design="false"
-      responsive="false"
+      responsive
+      no-min-width
     >
       <tds-table-header>
         <tds-header-cell
@@ -41,7 +43,7 @@ import { CommonModule } from '@angular/common';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage">
+          <tds-body-cell style="text-align:right;" cell-key="mileage">
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>
