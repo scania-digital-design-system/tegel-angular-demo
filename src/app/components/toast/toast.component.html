@@ -2,31 +2,44 @@
   <div class="tds-headline-02 tds-u-pb1">Toast</div>
   <p>You can show or hide the toasts with the toggle below.</p>
   <tds-toggle (tdsToggle)="toggleToasts()">
-    <span slot="label">{{ hideToasts ? 'Hide' : 'Show' }}</span>
+    <span slot="label">{{ hideToasts ? 'Hide Toast' : 'Show Toast' }}</span>
   </tds-toggle>
 
-  <div *ngIf="hideToasts" class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+  <div
+    *ngIf="hideToasts"
+    class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-gap1"
+  >
     <tds-toast
-      variant="warning"
-      header="Warning Toast!"
+      variant="success"
+      header="Successful Toast!"
+      subheader="( Closing prevented ! )"
+      (tdsClose)="preventClose($event)"
     >
-    </tds-toast>
-    <tds-toast
-      variant="information"
-      header="Information Toast!"
-    >
+      <div slot="subheader">This Toasts can't be closed.</div>
     </tds-toast>
     <tds-toast
       variant="error"
       header="Error Toast!"
     >
+      <div slot="subheader">This Toasts can be closed.</div>
     </tds-toast>
     <tds-toast
-      variant="success"
-      header="Success Toast!"
-      (tdsClose)="preventClose($event)"
+      variant="information"
+      header="Information Toast!"
     >
-      <div slot="subheader">(Closing prevented!)</div>
+      <div slot="subheader">This Toasts has a link.</div>
+      <a
+        slot="actions"
+        href="/"
+      >
+        This is a link.
+      </a>
+    </tds-toast>
+    <tds-toast
+      variant="warning"
+      header="Warning Toast!"
+    >
+      <div slot="subheader">This Toast can be closed programmatically.</div>
     </tds-toast>
   </div>
 </div>
