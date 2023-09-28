@@ -50,7 +50,11 @@ export default class SimpleFormComponent {
   constructor() {}
 
   handleSliderChange() {
-    this.balanceSliderDisabled, (this.stressSliderDisabled = false);
+    this.stressSliderDisabled = false;
+  }
+
+  handleStressSliderChange() {
+    this.balanceSliderDisabled = false
   }
 
   handleTextAreaChange(event: any) {
