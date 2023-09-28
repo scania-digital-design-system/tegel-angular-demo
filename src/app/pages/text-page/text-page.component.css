@@ -1,0 +1,11 @@
+.text-page-container {
+    display: flex;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 0;
+    height: 100%;
+  }

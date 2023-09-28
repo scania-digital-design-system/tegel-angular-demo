@@ -8,6 +8,7 @@ import BreadcrumbsComponent from '../../navigation/breadcrumbs/breadcrumbs.compo
   templateUrl: './text-page.component.html',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styleUrls: ['./text-page.component.css'],
   imports: [BreadcrumbsComponent, RouterLink, RouterOutlet, CommonModule],
 })
 export default class TextPageComponent {
