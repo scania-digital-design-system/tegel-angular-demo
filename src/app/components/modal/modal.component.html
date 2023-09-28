@@ -12,26 +12,19 @@
       id="my-modal"
       size="sm"
       actions-position="static"
+      prevent
     >
       <span slot="body">
+        <p>Since this one is has "prevent=true" it won't close when you press the overlay.</p>
         The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
         different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
         never anything else?” he asked.
       </span>
-      <div
-        slot="actions"
-        class="tds-u-flex tds-u-gap1"
-      >
+      <div slot="actions">
         <tds-button
           data-dismiss-modal
           size="md"
-          text="Save"
-        ></tds-button>
-        <tds-button
-          data-dismiss-modal
-          size="md"
-          text="Delete"
-          variant="danger"
+          text="Cancel"
         ></tds-button>
       </div>
     </tds-modal>
@@ -52,20 +45,11 @@
         different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
         never anything else?” he asked.
       </span>
-      <div
-        slot="actions"
-        class="tds-u-flex tds-u-gap1"
-      >
+      <div slot="actions">
         <tds-button
           data-dismiss-modal
           size="md"
-          text="Save"
-        ></tds-button>
-        <tds-button
-          data-dismiss-modal
-          size="md"
-          text="Delete"
-          variant="danger"
+          text="Cancel"
         ></tds-button>
       </div>
     </tds-modal>
@@ -81,8 +65,8 @@
       size="lg"
       actions-position="static"
     >
-      <span slot="body"
-        >This is a Modal. This modal is closed programmatically. Instead of 'data-dismiss-modal'
+      <span slot="body">
+        This is a Modal. This modal is closed programmatically. Instead of 'data-dismiss-modal'
         buttons that close it on click. You can hover the button below to close the modal. It can
         contain other components or just text.
       </span>
@@ -91,8 +75,7 @@
         slot="actions"
         data-dismiss-modal
         size="md"
-        text="Delete"
-        variant="danger"
+        text="Cancel"
       ></tds-button>
     </tds-modal>
   </div>
@@ -116,11 +99,9 @@
       never anything else?” he asked.
     </span>
     <tds-button
-      slot="actions"
       data-dismiss-modal
       size="md"
       text="Cancel"
-      variant="danger"
     ></tds-button>
   </tds-modal>
 </div>
