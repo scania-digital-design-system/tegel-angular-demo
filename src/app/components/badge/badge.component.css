@@ -15,7 +15,3 @@
   left: auto;
   right: -2.5px;
 }
-
-div > * {
-  margin-bottom: 16px;
-}
