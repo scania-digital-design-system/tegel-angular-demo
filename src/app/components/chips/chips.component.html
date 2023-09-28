@@ -1,6 +1,6 @@
 <div class="tds-headline-02 tds-u-pb1">Chip</div>
 
-<legend class="tds-body-01 tds-u-pb1">Type button</legend>
+<legend class="tds-body-01 tds-u-pb1">Button</legend>
 <div class="tds-u-flex tds-u-gap1 tds-u-mb3">
   <tds-chip
     size="lg"
@@ -28,7 +28,7 @@
 
 <form (submit)="handleSubmit($event)">
   <fieldset class="tds-u-mb3">
-    <legend class="tds-body-01 tds-u-pb1">Type checkbox</legend>
+    <legend class="tds-body-01 tds-u-pb1">Checkbox</legend>
     <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
       <div *ngFor="let topic of data.topic.fields; let i = index">
         <tds-chip
@@ -45,7 +45,7 @@
   </fieldset>
 
   <fieldset class="tds-u-mb3">
-    <legend class="tds-body-01 tds-u-pb1">Type radio</legend>
+    <legend class="tds-body-01 tds-u-pb1">Radio Button</legend>
 
     <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
       <div *ngFor="let size of data.size.fields; let i = index">
