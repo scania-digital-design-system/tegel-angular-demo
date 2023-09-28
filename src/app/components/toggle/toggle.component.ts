@@ -4,26 +4,26 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
   selector: 'app-toggle',
   standalone: true,
   template: `
-    <h2 class="tds-headline-02 tds-u-pb1">Toggle</h2>
+    <div class="tds-headline-02 tds-u-pb1">Toggle</div>
     <div class="tds-u-flex tds-u-gap2">
       <tds-toggle
         #toggle1
         toggle-id="example-toggle"
-        headline="Test this toggle, observe Console for results"
+        headline="Headline"
         size="lg"
         (tdsToggle)="handleTdsToggle($event)"
       >
-        <div slot="label">Click on me!</div>
+        <div slot="label">Label</div>
       </tds-toggle>
 
       <tds-toggle
         #toggle2
         toggle-id="example-toggle"
-        headline="Disabled toggle"
+        headline="Headline"
         size="lg"
         disabled
       >
-        <div slot="label">Click on me!</div>
+        <div slot="label">Label</div>
       </tds-toggle>
     </div>
 
@@ -32,7 +32,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
     </p>
 
     <tds-button
-      text="Toggle!"
+      text="Press me!"
       size="md"
       (click)="toggleProgrammatically()"
     ></tds-button>
