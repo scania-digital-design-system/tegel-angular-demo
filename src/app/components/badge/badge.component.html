@@ -5,7 +5,7 @@
     size="lg"
   ></tds-badge>
   <tds-badge
-    [value]="emailCount"
+    value="-5"
     size="lg"
   ></tds-badge>
   <tds-text-field
@@ -22,6 +22,12 @@
     (input)="updateEmailCount($event)"
   ></tds-text-field>
   <div class="tds-u-flex tds-u-gap2">
+    <tds-button>
+      <span slot="icon" className="button-badge-relative">
+        <tds-icon name="email" size="24px"></tds-icon>
+        <tds-badge [value]="emailCount" size="lg"></tds-badge>
+      </span>
+    </tds-button>
     <tds-button>
       <span
         slot="icon"
