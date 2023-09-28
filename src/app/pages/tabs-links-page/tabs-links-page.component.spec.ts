@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TabsLinksPageComponent } from './tabs-links-page.component';
+import  TabsLinksPageComponent  from './tabs-links-page.component';
 
 describe('TabsLinksPageComponent', () => {
   let component: TabsLinksPageComponent;

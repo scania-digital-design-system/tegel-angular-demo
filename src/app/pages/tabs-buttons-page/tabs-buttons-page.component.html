@@ -1,6 +1,5 @@
-<h1>Tabs Buttons</h1>
+<h3>Tabs with buttons.</h3>
 <p>These tabs are using buttons and can be used to show/hide content.</p>
-<h2>Folder Tabs</h2>
 <div className="tds-u-mb3 tabs">
   <tds-folder-tabs
     mode-variant="secondary"
@@ -19,9 +18,8 @@
       <button>Fourth tab</button>
     </tds-folder-tab>
   </tds-folder-tabs>
-  {{ folderTabIndex }}
+  <app-tabs-subpage [pathIndex]="folderTabIndex"/>
 </div>
-<h2>Inline Tabs</h2>
 <div className="tds-u-mb3 tabs">
   <tds-inline-tabs
     mode-variant="secondary"
@@ -40,9 +38,8 @@
       <button>Fourth tab</button>
     </tds-inline-tab>
   </tds-inline-tabs>
-  {{ inlineTabIndex }}
+  <app-tabs-subpage [pathIndex]="inlineTabIndex"/>
 </div>
-<h2>Navigation Tabs</h2>
 <div className="tds-u-mb3 tabs">
   <tds-navigation-tabs
     mode-variant="secondary"
@@ -61,5 +58,5 @@
       <button>Fourth tab</button>
     </tds-navigation-tab>
   </tds-navigation-tabs>
-  {{ navigationTabIndex }}
+  <app-tabs-subpage [pathIndex]="navigationTabIndex"/>
 </div>

@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Inject, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { untilDestroyedRef } from 'src/utils';
 
@@ -9,12 +9,5 @@ import { untilDestroyedRef } from 'src/utils';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class TabsSubpageComponent {
-  currentRoute: string;
-  private untilDestroyed = untilDestroyedRef();
-
-  constructor(private route: ActivatedRoute) {
-    this.route.url.pipe(this.untilDestroyed()).subscribe((segments) => {
-      this.currentRoute = segments.join('/');
-    });
-  }
+  @Input() pathIndex: number;
 }
