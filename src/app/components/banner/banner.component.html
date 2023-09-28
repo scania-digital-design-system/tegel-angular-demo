@@ -2,6 +2,7 @@
   <div class="tds-headline-02 tds-u-pb1">Banner</div>
   <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
     <tds-banner
+      #errorBanner
       icon="error"
       header="This Banner won't close"
       variant="error"
@@ -10,6 +11,7 @@
       <div slot="subheader">Due to its tdsClose event being prevented.</div>
     </tds-banner>
     <tds-banner
+      #informationBanner 
       icon="info"
       header="This Banner will close."
       variant="information"
@@ -32,11 +34,11 @@
   </div>
 
   <div class="tds-u-mt2">
+    <p>You can also show and hide the banners using the toggle below.</p>
     <tds-toggle
       (tdsToggle)="handleBannerVisibility()"
-      [checked]="true"
     >
-      <div slot="label">Show last banner</div>
+      <div slot="label">{{ bannerVisibility ? 'Hide Banner' : 'Show Banner' }}</div>
     </tds-toggle>
   </div>
 </div>
