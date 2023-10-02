@@ -1,15 +1,15 @@
-<h3>Simple Form</h3>
-<p>
-  This form uses the native form element and therefor it works out of the box with our components.
-</p>
 
 <article
-  class="form"
-  [ngClass]="sendingStatus ? 'form-sending' : ''"
+class="form"
+[ngClass]="sendingStatus ? 'form-sending' : ''"
 >
-  <form (submit)="handleSubmit($event)">
-    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
-      <tds-block>
+<form (submit)="handleSubmit($event)">
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap3 tds-u-pt0">
+    <tds-block>
+      <h3>Simple Form</h3>
+      <p>
+        This form uses the native form element and therefor it works out of the box with our components.
+      </p>
         <tds-text-field
           mode-variant="secondary"
           name="text-field"
@@ -220,6 +220,7 @@
             thumb-size="sm"
           ></tds-slider>
           <tds-slider
+            (tdsChange)="handleStressSliderChange()"
             label="..stress level"
             name="stressLevel"
             min="0"
@@ -239,7 +240,7 @@
             max="10"
             ticks="9"
             snap
-            [read-only]="balanceSliderDisabled"
+            [readOnly]="balanceSliderDisabled"
           ></tds-slider>
         </section>
         <section>
@@ -311,24 +312,37 @@
           </div>
         </section>
 
-        <section class="tds-u-mt3">
-          <tds-button
-            type="submit"
-            text="Submit"
-            size="md"
-            fullbleed
-          ></tds-button>
-          <tds-button
-            class="tds-u-mt1"
-            type="reset"
-            text="Reset"
-            size="md"
-            fullbleed
-            variant="secondary"
-          ></tds-button>
-        </section>
       </tds-block>
     </div>
+    <section class="tds-u-flex-end tds-u-h-100 tds-u-mt2 tds-u-p2">
+      <tds-tooltip placement="right" selector="#anonymously" mouse-over-tooltip="true" show>
+        <p class="tds-detail-05 tds-u-m0 tooltip-paragraph">
+          This option is required in order to submit the form.
+        </p>
+      </tds-tooltip>
+      <tds-toggle id="privacy-toggle" required name="toggle" size="sm">
+        <span slot="label" id="anonymously">
+          Answer anonymously
+          <tds-icon name="info" size="16px"></tds-icon>
+        </span>
+      </tds-toggle>
+    </section>
+    <section class="tds-u-mt3">
+      <tds-button
+        type="submit"
+        text="Submit"
+        size="md"
+        fullbleed
+      ></tds-button>
+      <tds-button
+        class="tds-u-mt1"
+        type="reset"
+        text="Reset"
+        size="md"
+        fullbleed
+        variant="secondary"
+      ></tds-button>
+    </section>
   </form>
   <div
     class="spinner-container"
