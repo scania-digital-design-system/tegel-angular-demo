@@ -4,10 +4,10 @@ import { Notification } from 'src/types';
 
 @Injectable({ providedIn: 'root' })
 export class UserStoreService {
-  readonly userNameSubject = new BehaviorSubject<string>('Marcus Åström');
+  readonly userNameSubject = new BehaviorSubject<string>('Name Namesson');
   userName$ = this.userNameSubject.asObservable();
 
-  readonly placeOfWorkSubject = new BehaviorSubject<string>('IXI');
+  readonly placeOfWorkSubject = new BehaviorSubject<string>('Scania');
   placeOfWork$ = this.placeOfWorkSubject.asObservable();
 
   readonly notificationsSubject = new BehaviorSubject<Notification[]>([
