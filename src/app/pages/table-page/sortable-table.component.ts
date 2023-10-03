@@ -5,12 +5,14 @@ import exampleData from './exampleData.json';
 @Component({
   selector: 'app-sortable-table',
   template: `
-    <h1>Sortable Table</h1>
+    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Sortable Table</div>
+    <p>This Table is sortable.</p>
     <tds-table
       vertical-dividers="false"
       compact-design="false"
-      responsive="false"
+      responsive
       (tdsSort)="sort($event)"
+      no-min-width
     >
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
@@ -33,6 +35,7 @@ import exampleData from './exampleData.json';
           cell-key="mileage"
           cell-value="Mileage"
           sortable="true"
+          text-align="right"
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
@@ -46,7 +49,7 @@ import exampleData from './exampleData.json';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage">
+          <tds-body-cell cell-key="mileage" style="text-align: right;">
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>

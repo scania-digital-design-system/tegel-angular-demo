@@ -17,7 +17,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
       </h5>
       <span slot="body">
         <p>Downloaded data:</p>
-        {{ content }}
+        <pre>{{ content }}</pre>
       </span>
     </tds-modal>
   `,

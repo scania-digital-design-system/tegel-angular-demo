@@ -18,8 +18,8 @@ import {AsyncPipe} from '@angular/common'
     <app-batch-actions-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-batch-actions-table>
     <app-sortable-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-sortable-table>
     <app-filter-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-filter-table>
-    <app-pagination-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-pagination-table>
     <app-expandable-table [tableData]="(tableService.getExpandableData() | async) ?? []"></app-expandable-table>
+    <app-pagination-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-pagination-table>
   `,
   styles: [``],
   standalone: true,
