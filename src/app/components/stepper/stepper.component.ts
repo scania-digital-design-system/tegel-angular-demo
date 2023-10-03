@@ -41,7 +41,7 @@ export default class StepperComponent {
 
   onTdsChange(index: number, event: any): void {
     const value = event.detail.target.value;
-    if (value.length <= this.minInputLenght) {
+    if (value.length < this.minInputLenght) {
       this.errorStepIndex = index;
       this.completedSteps = index;
     }
