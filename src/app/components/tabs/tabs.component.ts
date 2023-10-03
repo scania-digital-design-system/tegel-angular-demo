@@ -5,8 +5,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   standalone: true,
   template: `
     <div class="tds-headline-02 tds-u-pb1">Tabs</div>
-
-    <p class="tds-body-01 tds-u-pt1">Folder tabs</p>
+    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</div>
     <tds-folder-tabs>
       <tds-folder-tab>
         <button>First tab</button>
@@ -22,7 +21,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
       </tds-folder-tab>
     </tds-folder-tabs>
 
-    <p class="tds-body-01 tds-u-pt1">Inline tabs</p>
+    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</div>
     <tds-inline-tabs>
       <tds-inline-tab>
         <button>First tab</button>
@@ -38,8 +37,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
       </tds-inline-tab>
     </tds-inline-tabs>
 
-    <p class="tds-body-01 tds-u-pt1">Navigation tabs</p>
-
+    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
     <tds-navigation-tabs>
       <tds-navigation-tab>
         <a href="#">First tab</a>
