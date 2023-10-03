@@ -31,7 +31,6 @@ import { TabsComponent } from '@components/tabs/tabs.component';
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
-  styleUrls: ['./components.component.css'],
   standalone: true,
   imports: [
     AccordionComponent,
