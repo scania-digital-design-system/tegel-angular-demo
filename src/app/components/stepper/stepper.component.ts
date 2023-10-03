@@ -12,7 +12,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 export default class StepperComponent {
   @Input() orientation: 'vertical' | 'horizontal' = 'horizontal'; // Set the initial orientation
   @Input() labelPosition: 'below' | 'aside' = 'aside'; // Set the label position as needed
-
+  minInputLenght = 5;
   completedSteps = 0;
   errorStepIndex: number | undefined;
 
@@ -33,7 +33,7 @@ export default class StepperComponent {
 
   onTdsInput(index: number, event: any): void {
     const value = event.detail.target.value;
-    if (value.length > 5) {
+    if (value.length >= this.minInputLenght) {
       this.completedSteps = index + 1;
       this.errorStepIndex = undefined;
     }
@@ -41,7 +41,7 @@ export default class StepperComponent {
 
   onTdsChange(index: number, event: any): void {
     const value = event.detail.target.value;
-    if (value.length < 5) {
+    if (value.length < this.minInputLenght) {
       this.errorStepIndex = index;
       this.completedSteps = index;
     }
