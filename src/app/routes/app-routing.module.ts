@@ -31,15 +31,15 @@ const routes = [
     children: [
       {
         path: 'first-tab',
-        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+        loadComponent: () => import('@pages/tabs-links-page/tabs-subpage/tabs-subpage.component'),
       },
       {
         path: 'second-tab',
-        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+        loadComponent: () => import('@pages/tabs-links-page/tabs-subpage/tabs-subpage.component'),
       },
       {
         path: 'third-tab',
-        loadComponent: () => import('@pages/tabs-subpage/tabs-subpage.component'),
+        loadComponent: () => import('@pages/tabs-links-page/tabs-subpage/tabs-subpage.component'),
       },
       { path: '', redirectTo: 'first-tab', pathMatch: 'full' },
     ],

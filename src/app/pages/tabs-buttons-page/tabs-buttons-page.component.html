@@ -1,6 +1,6 @@
 <h3>Tabs with buttons.</h3>
 <p>These tabs are using buttons and can be used to show/hide content.</p>
-<div className="tds-u-mb3 tabs">
+<div class="tds-u-pb3 tabs">
   <tds-folder-tabs
     mode-variant="secondary"
     (tdsChange)="onFolderTabChange($event)"
@@ -20,7 +20,7 @@
   </tds-folder-tabs>
   <app-tabs-subpage [pathIndex]="folderTabIndex"/>
 </div>
-<div className="tds-u-mb3 tabs">
+<div class="tds-u-pb3 tabs">
   <tds-inline-tabs
     mode-variant="secondary"
     (tdsChange)="onInlineTabChange($event)"
@@ -40,7 +40,7 @@
   </tds-inline-tabs>
   <app-tabs-subpage [pathIndex]="inlineTabIndex"/>
 </div>
-<div className="tds-u-mb3 tabs">
+<div class="tds-u-pb3 tabs">
   <tds-navigation-tabs
     mode-variant="secondary"
     (tdsChange)="onNavigationTabChange($event)"
