@@ -4,12 +4,13 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import BreadcrumbsComponent from '../../navigation/breadcrumbs/breadcrumbs.component';
 import { untilDestroyedRef } from 'src/utils';
 import { TegelModule } from '@scania/tegel-angular';
+import TabsSubpageComponent from '@pages/tabs-subpage/tabs-subpage.component';
 
 @Component({
   selector: 'app-tabs-links-page',
   templateUrl: './tabs-links-page.component.html',
   standalone: true,
-  imports: [BreadcrumbsComponent, RouterLink, RouterOutlet, CommonModule, TegelModule],
+  imports: [BreadcrumbsComponent, RouterLink, RouterOutlet, CommonModule, TegelModule, TabsSubpageComponent],
 })
 export default class TabsLinksPageComponent {
   fullPath: string;

@@ -1,7 +1,5 @@
-import {  Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {  Component, Input } from '@angular/core';
 import { TegelModule } from '@scania/tegel-angular';
-import { untilDestroyedRef } from 'src/utils';
 
 @Component({
   selector: 'app-tabs-subpage',
