@@ -38,7 +38,7 @@ fieldset {
 .breadcrumbs {
   display: flex;
   align-items: center;
-  height: var(--tds-header-height);
+  padding: 20px 0;
 }
 
 section.form-section {
