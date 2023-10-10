@@ -1,5 +1,6 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { DropdownDirective } from '@directives/dropdown.directive';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-dropdown',
@@ -29,7 +30,6 @@ import { DropdownDirective } from '@directives/dropdown.directive';
       <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
     </tds-dropdown>
   `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [DropdownDirective],
+  imports: [DropdownDirective, TegelModule],
 })
 export class DropdownComponent {}

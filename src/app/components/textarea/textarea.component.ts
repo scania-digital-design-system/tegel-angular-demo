@@ -1,9 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-textarea',
   standalone: true,
   templateUrl: './textarea.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export default class TextareaComponent {}

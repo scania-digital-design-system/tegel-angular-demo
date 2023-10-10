@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-radio-button',
   standalone: true,
   templateUrl: './radio-button.component.html',
   styleUrls: ['./radio-button.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule]
+  imports: [CommonModule, TegelModule]
 })
 export default class RadioButtonComponent {
   submittedData: string[];

@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,7 @@ import { RadioButtonComponent } from '../radio-button/radio-button.component';
 import { SliderComponent } from '../slider/slider.component';
 import { TextInputComponent } from '../text-input/text-input.component';
 import BreadcrumbsComponent from '../../../navigation/breadcrumbs/breadcrumbs.component';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-simple-form',
@@ -26,20 +27,15 @@ import BreadcrumbsComponent from '../../../navigation/breadcrumbs/breadcrumbs.co
     SliderComponent,
     DropdownComponent,
     BreadcrumbsComponent,
+    TegelModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class SimpleFormComponent {
   nowegianTowns = norwayData;
   swedishTowns = swedenData;
   selectedCountry = 'sweden';
   textAreaDisabled = true;
-  @ViewChild('norwayDropdown', { static: true })
-  norwayDropdown!: ElementRef<HTMLTdsDropdownElement>;
-  @ViewChild('swedenDropdown', { static: true })
-  swedenDropdown!: ElementRef<HTMLTdsDropdownElement>;
-  @ViewChild('addressField', { static: true })
-  addressField!: ElementRef<HTMLTdsTextFieldElement>;
+  @ViewChild('addressField', { static: true }) addressField!: HTMLTdsTextFieldElement;
   addressState: 'error' | 'default' = 'default';
   occupationalEssayState: 'error' | 'default' = 'default';
   occupationalEssayHelper: undefined | 'You dont have enough characters.' = undefined;
@@ -47,7 +43,7 @@ export default class SimpleFormComponent {
   balanceSliderDisabled = true;
   sendingStatus = false;
 
-  constructor() {}
+  constructor() { }
 
   handleSliderChange() {
     this.stressSliderDisabled = false;
@@ -77,7 +73,7 @@ export default class SimpleFormComponent {
     if (occupationalEssay?.length < 50) {
       this.occupationalEssayState = 'error';
       this.occupationalEssayHelper = 'You dont have enough characters.';
-    } else if (this.addressField.nativeElement.value.length < 1) {
+    } else if (this.addressField.value.length < 1) {
       this.addressState = 'error';
     } else {
       this.occupationalEssayState = 'default';

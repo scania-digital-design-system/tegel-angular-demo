@@ -1,9 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-divider',
   standalone: true,
   templateUrl: './divider.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class DividerComponent {}

@@ -1,13 +1,13 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import BreadcrumbsComponent from '../../navigation/breadcrumbs/breadcrumbs.component';
-import TabsSubpageComponent from '@pages/tabs-subpage/tabs-subpage.component';
+import { TegelModule } from '@scania/tegel-angular';
+import TabsSubpageComponent from '@pages/tabs-links-page/tabs-subpage/tabs-subpage.component';
 
 @Component({
   selector: 'app-tabs-buttons-page',
   templateUrl: './tabs-buttons-page.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [BreadcrumbsComponent, TabsSubpageComponent],
+  imports: [BreadcrumbsComponent, TegelModule, TabsSubpageComponent],
 })
 export default class TabsButtonsPageComponent {
   folderTabIndex: number = 0;

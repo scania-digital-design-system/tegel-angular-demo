@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import StepperComponent from '@components/stepper/stepper.component';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-stepper-page',
   templateUrl: './stepper-page.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule, StepperComponent],
+  imports: [CommonModule, StepperComponent, TegelModule],
 })
 export default class StepperPageComponent {}

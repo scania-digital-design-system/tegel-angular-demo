@@ -1,10 +1,11 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { Component,  ElementRef, ViewChild } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule] 
 })
 export class BannerComponent {
   bannerVisibility: boolean = true;

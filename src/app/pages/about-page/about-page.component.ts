@@ -1,9 +1,12 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-about-page',
   standalone: true,
   templateUrl: './about-page.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [
+    TegelModule
+  ]
 })
 export default class AboutPageComponent {}

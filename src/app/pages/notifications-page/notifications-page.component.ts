@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
+  
   Component,
   ElementRef,
   OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 import { Subject, takeUntil } from 'rxjs';
 import { UserStoreService } from 'src/app/services/user-store.service';
 import { Notification } from 'src/types';
@@ -15,15 +16,12 @@ import { Notification } from 'src/types';
   selector: 'app-notifications-page',
   standalone: true,
   templateUrl: './notifications-page.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule],
+  imports: [CommonModule, TegelModule],
 })
 export default class NotificationsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}
   private onDestroy$: Subject<void> = new Subject<void>();
-  @ViewChild('notificationsModal', { static: true }) notificationsModal:
-    | ElementRef<HTMLTdsModalElement>
-    | undefined;
+  @ViewChild('notificationsModal', { static: true }) notificationsModal: HTMLTdsModalElement;
 
   notifications: Notification[];
 
@@ -41,12 +39,12 @@ export default class NotificationsPageComponent implements OnInit, OnDestroy {
   }
 
   openModal() {
-    this.notificationsModal?.nativeElement.showModal();
+    this.notificationsModal.showModal();
   }
 
   clearNotifications() {
     if (this.notificationsModal) {
-      this.notificationsModal.nativeElement.closeModal();
+      this.notificationsModal.closeModal();
       this.userStoreService.clearNotifications();
     }
   }

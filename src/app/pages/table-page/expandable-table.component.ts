@@ -1,6 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
-import { TableData } from './table-data';
+import {  Component, Input } from '@angular/core';
 import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
+import { TegelModule } from '@scania/tegel-angular';
+import exampleData from './exampleData.json';
+
 
 @Component({
   selector: 'app-expandable-table',
@@ -58,7 +60,7 @@ import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
           <tds-body-cell cell-value="Guerra Bowman" cell-key="driver"></tds-body-cell>
           <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
           <tds-body-cell cell-value="11551" cell-key="mileage"></tds-body-cell>
-          <div className="tds-u-flex" slot="expand-row">
+          <div class="tds-u-flex" slot="expand-row">
             <p>The M-series is in stock!</p>
             <tds-button
               onclick="alert('Your order has been placed!');"
@@ -73,7 +75,6 @@ import { KeyValuePipe, NgForOf, NgIf } from '@angular/common';
   `,
   styles: [``],
   standalone: true,
-  imports: [NgForOf, KeyValuePipe, NgIf],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [NgForOf, KeyValuePipe, NgIf, TegelModule],
 })
 export class ExpandableTableComponent {}

@@ -2,11 +2,11 @@
   <div class="tds-headline-02 tds-u-pb1">Popover Canvas</div>
   <div class="popover-container">
     <tds-button
+      id="popover-canvas-button-a"
       aria-label="menu"
       only-icon
       variant="ghost"
       size="sm"
-      #popoverButton
     >
       <tds-icon
         slot="icon"
@@ -17,9 +17,11 @@
     </tds-button>
   </div>
 
+  <!-- Note: On version 1.0.0 of the @scania/tegel-angular wrapper, the referenceEl property 
+    didn't work when passed a tds- element. So selector is used here instead. -->
   <tds-popover-canvas
     placement="top"
-    [referenceEl]="popoverButton"
+    selector="#popover-canvas-button-a"
   >
     <div class="tds-u-p2">
       <div class="tds-headline-02 tds-u-mt0">A Popover Canvas!</div>
@@ -38,9 +40,9 @@
 
   <div class="tds-u-flex tds-u-gap3">
     <tds-button
+      id="popover-canvas-button-b"
       aria-label="menu"
       only-icon
-      id="positionReference"
       type="secondary"
       size="sm"
       disabled
@@ -63,7 +65,7 @@
     Here we use it to hide/show with the toggle instead of the button. -->
   <tds-popover-canvas
     placement="top"
-    selector="#positionReference"
+    selector="#popover-canvas-button-b"
     [show]="showPrinterInformation"
   >
     <div class="tds-u-p2">

@@ -1,11 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [RouterLink],
+  imports: [RouterLink, TegelModule],
 })
 export class FooterComponent {}

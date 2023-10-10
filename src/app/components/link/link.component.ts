@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-link',
@@ -13,6 +14,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
       >
     </tds-link>
   `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class LinkComponent {}

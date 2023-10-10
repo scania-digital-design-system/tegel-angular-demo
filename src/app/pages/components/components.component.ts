@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccordionComponent } from '@components/accordion/accordion.component';
 import { BadgeComponent } from 'src/app/components/badge/badge.component';
@@ -27,6 +27,7 @@ import { LinkComponent } from '@components/link/link.component';
 import StepperComponent from '@components/stepper/stepper.component';
 import { StepperExampleComponent } from '@components/stepper-example/stepper-example.component';
 import { TabsComponent } from '@components/tabs/tabs.component';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-components',
@@ -62,7 +63,7 @@ import { TabsComponent } from '@components/tabs/tabs.component';
     StepperComponent,
     StepperExampleComponent,
     TabsComponent,
+    TegelModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class ComponentsComponent {}

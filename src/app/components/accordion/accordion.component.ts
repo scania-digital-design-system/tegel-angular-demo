@@ -1,10 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Output, EventEmitter } from '@angular/core';
+import {  Component, Output, EventEmitter } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class AccordionComponent {
   @Output() iconPositionChange = new EventEmitter<'end' | 'start'>();

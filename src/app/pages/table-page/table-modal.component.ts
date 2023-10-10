@@ -1,4 +1,5 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
+import {  Component, Input } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 @Component({
   selector: 'app-table-modal',
   template: `
@@ -23,7 +24,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
   `,
   styles: [``],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class TableModalComponent {
   @Input() content: string;

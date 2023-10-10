@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-tabs',
@@ -53,6 +54,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
       </tds-navigation-tab>
     </tds-navigation-tabs>
   `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [TegelModule]
 })
 export class TabsComponent {}

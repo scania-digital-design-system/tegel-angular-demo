@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, inject } from '@angular/core';
+import {  Component, Input, inject } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-textarea',
   standalone: true,
   templateUrl: './textarea.component.html',
-  imports: [ReactiveFormsModule, CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [ReactiveFormsModule, CommonModule, TegelModule],
 })
 export class TextareaComponent {
   public fb = inject(NonNullableFormBuilder);

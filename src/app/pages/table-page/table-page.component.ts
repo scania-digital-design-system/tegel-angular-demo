@@ -1,5 +1,5 @@
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
+  
   Component, inject,
 } from '@angular/core'
 import {BasicTableComponent} from './basic-table.component'
@@ -10,16 +10,17 @@ import {PaginationTableComponent} from './pagination-table.component'
 import {ExpandableTableComponent} from './expandable-table.component'
 import {TableService} from './table.service'
 import {AsyncPipe} from '@angular/common'
+import { TegelModule } from '@scania/tegel-angular'
 
 @Component({
   selector: 'app-table-page',
   template: `
-    <app-basic-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-basic-table>
-    <app-batch-actions-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-batch-actions-table>
-    <app-sortable-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-sortable-table>
-    <app-filter-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-filter-table>
-    <app-expandable-table [tableData]="(tableService.getExpandableData() | async) ?? []"></app-expandable-table>
-    <app-pagination-table [tableData]="(tableService.getTruckData() | async) ?? []"></app-pagination-table>
+    <app-basic-table></app-basic-table>
+    <app-batch-actions-table></app-batch-actions-table>
+    <app-sortable-table></app-sortable-table>
+    <app-filter-table></app-filter-table>
+    <app-pagination-table></app-pagination-table>
+    <app-expandable-table></app-expandable-table>
   `,
   styles: [``],
   standalone: true,
@@ -30,10 +31,10 @@ import {AsyncPipe} from '@angular/common'
     FilterTableComponent,
     PaginationTableComponent,
     ExpandableTableComponent,
-    AsyncPipe
+    AsyncPipe,
+    TegelModule
   ],
   providers: [TableService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export default class TablePageComponent {
   tableService = inject(TableService)
