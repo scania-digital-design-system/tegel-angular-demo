@@ -65,12 +65,8 @@ const routes = [
     loadComponent: () => import('@pages/notifications-page/notifications-page.component'),
   },
   {
-    path: '404',
-    loadComponent: () => import('@pages/error-page/error-page.component'),
-  },
-  {
     path: '**',
-    redirectTo: '404',
+    loadComponent: () => import('@pages/error-page/error-page.component'),
     pathMatch: 'full',
   }, // Wildcard route
 ] satisfies Routes;

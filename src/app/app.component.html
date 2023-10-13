@@ -214,7 +214,7 @@
         <div class="tds-u-h-100">
           <div
             class="switcher-container"
-            *ngIf="!is404Page()"
+            *ngIf="!is404page"
           >
             <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
             <app-mode-variant-switcher
@@ -222,11 +222,11 @@
             ></app-mode-variant-switcher>
           </div>
           <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
-            <nav-breadcrumbs *ngIf="!is404Page()"></nav-breadcrumbs>
+            <nav-breadcrumbs *ngIf="!is404page"></nav-breadcrumbs>
 
             <div
               [ngClass]="
-                is404Page()
+                is404page
                   ? 'tds-u-h-100'
                   : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'
               "
