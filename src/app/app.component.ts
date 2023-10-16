@@ -1,6 +1,6 @@
 import {  Component, OnDestroy, OnInit } from '@angular/core';
 import { FooterComponent } from "@components/footer/footer.component";
-import { Router, RouterOutlet, RouterLink, ActivatedRoute } from '@angular/router';
+import { Router, RouterOutlet, RouterLink, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
 import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
 import BreadcrumbsComponent from './navigation/breadcrumbs/breadcrumbs.component';
@@ -29,7 +29,23 @@ import { TegelModule } from '@scania/tegel-angular';
   ],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        let currentRoute = this.route.root;
+        while (currentRoute.children[0] !== undefined) {
+          currentRoute = currentRoute.children[0];
+        }
+        const routeUrl = currentRoute.snapshot.routeConfig?.path;
+
+        if (routeUrl === '**') {
+          this.is404page = true;
+        } else {
+          this.is404page = false;
+        }
+      }
+    });
+  }
   private onDestroy$: Subject<void> = new Subject<void>();
 
   title = 'Angular Demo';
@@ -40,6 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
   userName = '';
   placeOfWork = '';
   notifications: Notification[];
+  is404page: boolean = false;
 
   isActive(url: string): boolean {
     return this.router.url === url;
@@ -62,11 +79,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleModeToggle() {
     this.mode = this.mode === 'tds-mode-light' ? 'tds-mode-dark' : 'tds-mode-light';
-  }
-
-  is404Page(): boolean {
-    // Check if the current route corresponds to the 404 page
-    return this.router.url === '/404';
   }
 
   ngOnInit() {
