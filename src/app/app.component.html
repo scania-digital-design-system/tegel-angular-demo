@@ -28,7 +28,7 @@
 
       <tds-header-dropdown
         slot="end"
-        no-dropdown-icon
+        noDropdownIcon="true"
         class="user-dropdown"
       >
         <div slot="icon">
@@ -71,7 +71,7 @@
     <div class="side-menu-and-main">
       <tds-side-menu
         aria-label="Side menu"
-        persistent
+        persistent="true"
         open="{{ mobileNavOpen }}"
       >
         <tds-side-menu-overlay
@@ -202,8 +202,8 @@
               slot="label"
               heading="{{ userName }}"
               subheading="{{ placeOfWork }}"
-              img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-              img-alt=""
+              imgSrc="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+              imgAlt="profile avatar"
             ></tds-side-menu-user>
             <tds-side-menu-dropdown-list>
               <tds-side-menu-dropdown-list-item>
