@@ -65,6 +65,24 @@ const routes = [
     loadComponent: () => import('@pages/notifications-page/notifications-page.component'),
   },
   {
+    path: 'support-examples',
+    loadComponent: () =>
+      import('@pages/support-examples/modal-with-table/modal-with-table.component'),
+    children: [
+      {
+        path: 'example-1',
+        loadComponent: () =>
+          import('@pages/support-examples/modal-with-table/modal-with-table.component'),
+      },
+      {
+        path: 'example-2',
+        loadComponent: () =>
+          import('@pages/support-examples/modal-with-table/modal-with-table.component'),
+      },
+      { path: '', redirectTo: 'example-1', pathMatch: 'full' },
+    ],
+  },
+  {
     path: '**',
     loadComponent: () => import('@pages/error-page/error-page.component'),
     pathMatch: 'full',

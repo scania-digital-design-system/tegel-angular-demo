@@ -179,6 +179,23 @@
           </a>
         </tds-side-menu-item>
 
+        <tds-side-menu-dropdown [selected]="onSubRoute('/support-examples')">
+          <tds-icon
+            slot="icon"
+            name="info"
+            size="24"
+          ></tds-icon>
+          <span slot="label">Dev support examples</span>
+          <tds-side-menu-dropdown-list>
+            <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/example-1')">
+              <a routerLink="/support-examples/example-1">Modal with Table</a>
+            </tds-side-menu-dropdown-list-item>
+            <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/example-2')">
+              <a routerLink="/support-examples/example-2">Example 2</a>
+            </tds-side-menu-dropdown-list-item>
+          </tds-side-menu-dropdown-list>
+        </tds-side-menu-dropdown>
+
         <div slot="end">
           <tds-side-menu-dropdown>
             <tds-side-menu-user
