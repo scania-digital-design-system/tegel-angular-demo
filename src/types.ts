@@ -14,5 +14,6 @@ declare global {
     tdsSortChange: CustomEvent;
     tdsSelect: CustomEvent;
     tdsSelectAll: CustomEvent;
+    tdsPagination: CustomEvent;
   }
 }

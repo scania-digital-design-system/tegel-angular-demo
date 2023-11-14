@@ -70,16 +70,11 @@ const routes = [
       import('@pages/support-examples/modal-with-table/modal-with-table.component'),
     children: [
       {
-        path: 'example-1',
+        path: 'modal-with-table',
         loadComponent: () =>
           import('@pages/support-examples/modal-with-table/modal-with-table.component'),
       },
-      {
-        path: 'example-2',
-        loadComponent: () =>
-          import('@pages/support-examples/modal-with-table/modal-with-table.component'),
-      },
-      { path: '', redirectTo: 'example-1', pathMatch: 'full' },
+      { path: '', redirectTo: 'modal-with-table', pathMatch: 'full' },
     ],
   },
   {
