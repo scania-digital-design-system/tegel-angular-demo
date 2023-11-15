@@ -8,6 +8,7 @@ import {SortableTableComponent} from './sortable-table.component'
 import {FilterTableComponent} from './filter-table.component'
 import {PaginationTableComponent} from './pagination-table.component'
 import {ExpandableTableComponent} from './expandable-table.component'
+import {EditableTableComponent} from './editable-table.component'
 import {TableService} from './table.service'
 import {AsyncPipe} from '@angular/common'
 import { TegelModule } from '@scania/tegel-angular'
@@ -21,6 +22,7 @@ import { TegelModule } from '@scania/tegel-angular'
     <app-filter-table></app-filter-table>
     <app-pagination-table></app-pagination-table>
     <app-expandable-table></app-expandable-table>
+    <app-editable-table></app-editable-table>
   `,
   styles: [``],
   standalone: true,
@@ -31,6 +33,7 @@ import { TegelModule } from '@scania/tegel-angular'
     FilterTableComponent,
     PaginationTableComponent,
     ExpandableTableComponent,
+    EditableTableComponent,
     AsyncPipe,
     TegelModule
   ],
