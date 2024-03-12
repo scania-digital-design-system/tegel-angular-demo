@@ -1,0 +1,38 @@
+[
+    {
+        "truck": "Scania R500",
+        "driver": "John",
+        "country": "Sweden",
+        "mileage": ""
+    },
+    {
+        "truck": "Scania V8",
+        "driver": "Jane",
+        "country": "Germany",
+        "mileage": ""
+    },
+    {
+        "truck": "Scania G Series",
+        "driver": "Alex",
+        "country": "Italy",
+        "mileage": ""
+    },
+    {
+        "truck": "Scania P320",
+        "driver": "Chris",
+        "country": "France",
+        "mileage": ""
+    },
+    {
+        "truck": "Scania S730",
+        "driver": "Pat",
+        "country": "Norway",
+        "mileage": ""
+    },
+    {
+        "truck": "Scania R450",
+        "driver": "Morgan",
+        "country": "Spain",
+        "mileage": ""
+    }
+]

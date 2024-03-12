@@ -1,2 +1,38 @@
 <h3>About this page</h3>
 <p>This page is a testing ground and demo for using @scania/tegel-angular in an Angular application.</p>
+
+<h1>Table test with modal</h1>
+
+<tds-table [verticalDividers]="false" [compactDesign]="false" [responsive]="false">
+    <tds-table-header>
+        <tds-header-cell [cellKey]="'truck'" [cellValue]="'Truck type'"></tds-header-cell>
+        <tds-header-cell [cellKey]="'driver'" [cellValue]="'Driver name'"></tds-header-cell>
+        <tds-header-cell [cellKey]="'country'" [cellValue]="'Country'"></tds-header-cell>
+        <tds-header-cell [cellKey]="'mileage'" [cellValue]="'Mileage'" [textAlign]="'right'"></tds-header-cell>
+    </tds-table-header>
+    <tds-table-body>
+        <tds-table-body-row *ngFor="let row of tableRows">
+            <tds-body-cell [cellValue]="row.truck" [cellKey]="'truck'" [disablePadding]="false">
+
+            </tds-body-cell>
+            <tds-body-cell [cellValue]="row.driver" [cellKey]="'driver'" [disablePadding]="false"></tds-body-cell>
+            <tds-body-cell [cellValue]="row.country" [cellKey]="'country'" [disablePadding]="false"></tds-body-cell>
+            <tds-body-cell [cellValue]="row.mileage" [cellKey]="'mileage'" [disablePadding]="false">
+                <tds-button [id]="row.driver" text="Open Modal" size="xs"></tds-button>
+
+                <tds-modal header="The buttons for the Modal only works in the canvas tab" [selector]="'#' + row.driver"
+                    id="my-modal" size="sm" actions-position="static" prevent="false">
+                    <span slot="body">
+                        The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+                        different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there never
+                        anything else?” he asked.
+                    </span>
+                    <span slot="actions" class="tds-u-flex tds-u-gap2">
+                        <tds-button data-dismiss-modal size="md" text="Delete" variant="danger"></tds-button>
+                        <tds-button data-dismiss-modal size="md" text="Cancel" variant="secondary"></tds-button>
+                    </span>
+                </tds-modal>
+            </tds-body-cell>
+        </tds-table-body-row>
+    </tds-table-body>
+</tds-table>
