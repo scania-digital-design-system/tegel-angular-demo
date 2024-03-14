@@ -1,35 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { DropdownDirective } from '@directives/dropdown.directive';
 import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  template: `
-    <div class="tds-headline-02 tds-u-pb1">Dropdown</div>
-    <tds-dropdown
-      name="dropdown"
-      label="Label text"
-      label-position="outside"
-      placeholder="Placeholder"
-      helper="Helper text"
-      size="lg"
-      multiselect
-      open-direction="auto"
-    >
-      <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
-      <tds-dropdown-option
-        disabled
-        value="option-2"
-        >Option 2
-      </tds-dropdown-option>
-      <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
-      <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
-      <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
-      <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
-      <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
-    </tds-dropdown>
-  `,
+  templateUrl: './dropdown.component.html', // Update this line
   imports: [DropdownDirective, TegelModule],
 })
-export class DropdownComponent {}
+export class DropdownComponent {
+  @ViewChild('dropdownRef', { static: true }) dropdownRef: HTMLTdsDropdownElement;
+
+  resetDropdown() {
+    // Check if the dropdown component instance is accessible
+    if (this.dropdownRef) {
+      this.dropdownRef.reset();
+    } else {
+      console.log('Dropdown reference is NOT valid, cannot call reset.');
+    }
+  }
+}
