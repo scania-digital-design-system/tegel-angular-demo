@@ -4,10 +4,10 @@
   <h3>Sliders</h3>
   <h5>Tell us how you feel about your..</h5>
   <tds-slider
+    formControlName="happines"
     label="..happiness at work"
     name="happines"
     min="0"
-    value="5"
     show-tick-numbers
     max="10"
     ticks="9"
@@ -20,11 +20,9 @@
   <tds-slider
     #stressSlider
     formControlName="stress"
-    ngDefaultControl
     label="..stress level  disabled slider"
     name="stress"
     min="0"
-    value="5"
     show-tick-numbers
     max="10"
     ticks="9"
@@ -37,11 +35,9 @@
   <tds-slider
     #balanceSlider
     formControlName="balance"
-    ngDefaultControl
     label="..work/life balance."
     name="balance"
     min="0"
-    value="5"
     show-tick-numbers
     max="10"
     ticks="9"
