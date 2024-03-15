@@ -36,7 +36,7 @@ import { TegelModule } from '@scania/tegel-angular';
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;
 
-  textFieldGroup: FormGroup = new FormGroup({
+  textFieldGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     dateOfBirth: new FormControl(new Date(), Validators.required),
     phoneNumber: new FormControl('', Validators.required),
@@ -68,9 +68,9 @@ export default class ReactiveFormsComponent {
   });
 
   sliderField: FormGroup = new FormGroup({
-    happines: new FormControl('5'),
-    stress: new FormControl({ value: '0', disabled: true }),
-    balance: new FormControl({ value: '0', disabled: true }),
+    happines: new FormControl(5),
+    stress: new FormControl({ value: 0, disabled: true }),
+    balance: new FormControl({ value: 0, disabled: true }),
   });
 
   essayLengthValidator(control: AbstractControl): ValidationErrors | null {
