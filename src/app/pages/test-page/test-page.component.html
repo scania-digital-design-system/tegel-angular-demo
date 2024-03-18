@@ -1,0 +1,44 @@
+<h3 class="tds-headline-03">About this page</h3>
+<p class="tds-body-01">This page is exclusively for testing different scenarios of components.</p>
+
+<h3 class="tds-headline-03">Table test with modal</h3>
+
+<p>Testing the dynamic insertion of table row, button, and modal components that uses buttons ID as reference. Button is
+    considered an "opener" of Modal component</p>
+
+
+<tds-table [verticalDividers]="false" [compactDesign]="false" [responsive]="false">
+    <tds-table-header>
+        <tds-header-cell [cellKey]="'truck'" [cellValue]="'Truck type'"></tds-header-cell>
+        <tds-header-cell [cellKey]="'driver'" [cellValue]="'Driver name'"></tds-header-cell>
+        <tds-header-cell [cellKey]="'country'" [cellValue]="'Country'" style="display: none;"></tds-header-cell>
+        <tds-header-cell [cellKey]="'mileage'" [cellValue]="'Mileage'" [textAlign]="'right'"></tds-header-cell>
+    </tds-table-header>
+    <tds-table-body>
+        <tds-table-body-row *ngFor="let row of tableRows; let i = index">
+            <tds-body-cell [cellValue]="row.truck" [cellKey]="'truck'" [disablePadding]="false">
+
+            </tds-body-cell>
+            <tds-body-cell [cellValue]="row.driver" [cellKey]="'driver'" [disablePadding]="false"></tds-body-cell>
+            <tds-body-cell [cellValue]="row.country" [cellKey]="'country'" [disablePadding]="false"
+                style="display: none;"></tds-body-cell>
+            <tds-body-cell [cellValue]="row.mileage" [cellKey]="'mileage'" [disablePadding]="false">
+                <tds-button [id]="row.driver" text="Open {{i + 1}}. modal" size="xs"></tds-button>
+
+                <tds-modal header="{{i + 1}}. modal" [selector]="'#' + row.driver" id="my-modal" size="sm"
+                    actions-position="static" prevent="false">
+                    <span slot="body">
+                        The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+                        different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+                        never
+                        anything else?” he asked.
+                    </span>
+                    <span slot="actions" class="tds-u-flex tds-u-gap2">
+                        <tds-button data-dismiss-modal size="md" text="Delete" variant="danger"></tds-button>
+                        <tds-button data-dismiss-modal size="md" text="Cancel" variant="secondary"></tds-button>
+                    </span>
+                </tds-modal>
+            </tds-body-cell>
+        </tds-table-body-row>
+    </tds-table-body>
+</tds-table>

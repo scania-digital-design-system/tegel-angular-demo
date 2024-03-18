@@ -4,14 +4,14 @@ import { TegelModule } from '@scania/tegel-angular';
 import truckerData from '../../../assets/trucker-data.json';
 
 @Component({
-  selector: 'app-about-page',
+  selector: 'app-test-page',
   standalone: true,
-  templateUrl: './about-page.component.html',
+  templateUrl: './test-page.component.html',
   imports: [
     TegelModule, CommonModule
   ]
 })
-export default class AboutPageComponent implements OnInit {
+export default class TestPageComponent implements OnInit {
   tableRows = truckerData;
 
   constructor() { }
