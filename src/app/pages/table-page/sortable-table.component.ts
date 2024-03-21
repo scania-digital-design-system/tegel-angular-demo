@@ -1,4 +1,4 @@
-import {  Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import exampleData from './exampleData.json';
 import { TegelModule } from '@scania/tegel-angular';
@@ -50,7 +50,10 @@ import { TegelModule } from '@scania/tegel-angular';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage" style="text-align: right;">
+          <tds-body-cell
+            cell-key="mileage"
+            text-align="right"
+          >
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>

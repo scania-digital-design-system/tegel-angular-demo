@@ -1,7 +1,4 @@
-import {
-  Component,
-  ViewChild,
-} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ModalDirective } from '@directives/modal.directive';
 import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
@@ -11,7 +8,9 @@ import { TegelModule } from '@scania/tegel-angular';
   selector: 'app-batch-actions-table',
   template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Batch Actions</div>
-    <p>This Table uses the batch actions slot and multiselect in order to get data out of the table.</p>
+    <p>
+      This Table uses the batch actions slot and multiselect in order to get data out of the table.
+    </p>
     <tds-table
       #table
       id="batchTable"
@@ -69,7 +68,10 @@ import { TegelModule } from '@scania/tegel-angular';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell cell-key="mileage"  style="text-align: right;">
+          <tds-body-cell
+            cell-key="mileage"
+            text-align="right"
+          >
             {{ row.mileage }}
           </tds-body-cell>
         </tds-table-body-row>
@@ -89,9 +91,7 @@ export class BatchActionsTableComponent {
   allSelected = this.tableData.every((row) => row.selected);
 
   async download() {
-    this.modalDirective.showModal(
-      JSON.stringify(await this.tableRef.getSelectedRows(),  null, 2),
-    );
+    this.modalDirective.showModal(JSON.stringify(await this.tableRef.getSelectedRows(), null, 2));
   }
 
   selectAll(event: any) {

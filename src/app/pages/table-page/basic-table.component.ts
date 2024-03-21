@@ -1,4 +1,4 @@
-import {  Component } from '@angular/core';
+import { Component } from '@angular/core';
 import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
 import { TegelModule } from '@scania/tegel-angular';
@@ -34,7 +34,7 @@ import { TegelModule } from '@scania/tegel-angular';
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-      <tds-table-body-row>
+        <tds-table-body-row>
           <tds-body-cell cell-key="truck">
             <div>This colum uses slots.</div>
           </tds-body-cell>
@@ -42,8 +42,15 @@ import { TegelModule } from '@scania/tegel-angular';
             cell-value="This column uses the cell value prop."
             cell-key="driver"
           ></tds-body-cell>
-          <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
-          <tds-body-cell style="text-align: right;" cell-value="4000" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell
+            cell-value="Sweden"
+            cell-key="country"
+          ></tds-body-cell>
+          <tds-body-cell
+            text-align="right"
+            cell-value="4000"
+            cell-key="mileage"
+          ></tds-body-cell>
         </tds-table-body-row>
         <tds-table-body-row>
           <tds-body-cell cell-key="truck">
@@ -53,8 +60,15 @@ import { TegelModule } from '@scania/tegel-angular';
             cell-value="This column uses the cell value prop."
             cell-key="driver"
           ></tds-body-cell>
-          <tds-body-cell cell-value="Germany" cell-key="country"></tds-body-cell>
-          <tds-body-cell style="text-align: right;" cell-value="260" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell
+            cell-value="Germany"
+            cell-key="country"
+          ></tds-body-cell>
+          <tds-body-cell
+            text-align="right"
+            cell-value="260"
+            cell-key="mileage"
+          ></tds-body-cell>
         </tds-table-body-row>
         <tds-table-body-row>
           <tds-body-cell cell-key="truck">
@@ -64,8 +78,15 @@ import { TegelModule } from '@scania/tegel-angular';
             cell-value="This column uses the cell value prop."
             cell-key="driver"
           ></tds-body-cell>
-          <tds-body-cell cell-value="Norway" cell-key="country"></tds-body-cell>
-          <tds-body-cell style="text-align: right;" cell-value="5889" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell
+            cell-value="Norway"
+            cell-key="country"
+          ></tds-body-cell>
+          <tds-body-cell
+            text-align="right"
+            cell-value="5889"
+            cell-key="mileage"
+          ></tds-body-cell>
         </tds-table-body-row>
       </tds-table-body>
     </tds-table>
