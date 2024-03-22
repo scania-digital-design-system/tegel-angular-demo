@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import exampleData from './exampleData.json';
 import { CommonModule } from '@angular/common';
 import { TegelModule } from '@scania/tegel-angular';
 

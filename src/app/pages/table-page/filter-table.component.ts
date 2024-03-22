@@ -49,12 +49,12 @@ import { TegelModule } from '@scania/tegel-angular';
           <tds-body-cell cell-key="country">
             {{ row.country }}
           </tds-body-cell>
-          <tds-body-cell style="text-align:right;" cell-key="mileage">
+          <tds-body-cell
+            text-align="right"
+            cell-key="mileage"
+          >
             {{ row.mileage }}
-          </tds-body-cell>          
-        </tds-table-body-row>
-        <tds-table-body-row>
-            <td class="tds-u-p2" colspan="4">Hello users</td>    
+          </tds-body-cell>
         </tds-table-body-row>
       </tds-table-body>
     </tds-table>
