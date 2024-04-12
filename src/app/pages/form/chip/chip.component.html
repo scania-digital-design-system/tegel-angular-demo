@@ -1,0 +1,16 @@
+<ng-container [formGroup]="chipGroup">
+  <div>
+    <h5>Which operating systems to you use?</h5>
+    <div class="chip-wrapper">
+      <tds-chip formControlName="windows" type="checkbox">
+        <span slot="label">Windows</span>
+      </tds-chip>
+      <tds-chip formControlName="macOS" type="checkbox">
+        <span slot="label">Mac OS</span>
+      </tds-chip>
+      <tds-chip formControlName="linux" type="checkbox">
+        <span slot="label">Linux</span>
+      </tds-chip>
+    </div>
+  </div>
+</ng-container>
