@@ -15,6 +15,7 @@ import { RadioButtonComponent } from '@pages/form/radio-button/radio-button.comp
 import { SliderComponent } from '@pages/form/slider/slider.component';
 import { TextareaComponent } from '@pages/form/textarea/textarea.component';
 import { TegelModule } from '@scania/tegel-angular';
+import {ChipComponent} from "@pages/form/chip/chip.component";
 
 @Component({
   selector: 'app-reactive-forms',
@@ -30,14 +31,15 @@ import { TegelModule } from '@scania/tegel-angular';
     RadioButtonComponent,
     TextareaComponent,
     SliderComponent,
-    TegelModule
+    TegelModule,
+    ChipComponent
   ],
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;
 
   textFieldGroup = new FormGroup({
-    firstName: new FormControl('', Validators.required),
+    firstName: new FormControl('', [Validators.required, Validators.email]),
     dateOfBirth: new FormControl(new Date(), Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
@@ -55,6 +57,12 @@ export default class ReactiveFormsComponent {
     homeOffice: new FormControl(false),
     building260: new FormControl({ value: false, disabled: true }),
   });
+
+  chipField: FormGroup = new FormGroup({
+    windows: new FormControl(false),
+    macOS: new FormControl(false),
+    linux: new FormControl(false)
+  })
 
   radioButtonField: FormGroup = new FormGroup({
     timeAtScania: new FormControl('radio-1'),
@@ -90,6 +98,7 @@ export default class ReactiveFormsComponent {
     console.log('dropdownField', this.dropdownField.value);
     console.log('dropdownField', this.dropdownField.getRawValue());
     console.log('checkboxField', this.checkboxField.value);
+    console.log('chipField', this.chipField.value)
     console.log('radioButtonField', this.radioButtonField.value);
     console.log('textareaField', this.textareaField.value);
     console.log('sliderField', this.sliderField.value);

@@ -4,30 +4,30 @@
       <div>
         <tds-checkbox
           name="sodertalje"
-          value="checkbox"
-          (tdsChange)="handleCheckboxChange($event, 'sodertalje')"
+          value="sodertalje"
+          formControlName="sodertalje"
         >
           <span slot="label">Södertälje 321</span>
         </tds-checkbox>
         <tds-checkbox
           name="sergel"
           value="sergel"
-          (tdsChange)="handleCheckboxChange($event, 'sergel')"
+          formControlName="sergel"
         >
           <span slot="label">Sergel</span>
         </tds-checkbox>
         <tds-checkbox
           name="homeOffice"
           value="homeOffice"
-          (tdsChange)="handleCheckboxChange($event, 'homeOffice')"
+          formControlName="homeOffice"
         >
           <span slot="label">Home Office</span>
         </tds-checkbox>
         <tds-checkbox
           name="building260"
           value="building260"
-          (tdsChange)="handleCheckboxChange($event, 'building260')"
-          disabled
+          formControlName="building260"
+          [disabled]="true"
         >
           <span slot="label">Building 260</span>
         </tds-checkbox>
