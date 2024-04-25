@@ -20,10 +20,14 @@
     "@angular/platform-browser-dynamic": "^16.1.4",
     "@angular/router": "^16.1.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@scania/tegel-angular": "1.12.1",
 =======
     "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.0.tgz",
 >>>>>>> 212453b (feat: add native forms integration)
+=======
+    "@scania/tegel-angular": "1.8.0-ng-form-beta.1",
+>>>>>>> 2366647 (feat: update tegel version to 1.8.0-ng-form-beta.1)
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
