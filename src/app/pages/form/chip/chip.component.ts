@@ -17,4 +17,5 @@ import {TegelModule} from "@scania/tegel-angular";
 })
 export class ChipComponent {
   @Input() chipGroup: FormGroup;
+  @Input() chipRadioGroup: FormGroup;
 }
