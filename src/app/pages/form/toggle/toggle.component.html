@@ -1,0 +1,15 @@
+<h5>Which of the following peripherals do you use?</h5>
+<div [formGroup]="toggleGroup" class="toggle-group">
+  <tds-toggle size="sm" formControlName="mouse">
+    <div slot="label">Mouse</div>
+  </tds-toggle>
+  <tds-toggle size="sm" formControlName="keyboard">
+    <div slot="label">Keyboard</div>
+  </tds-toggle>
+  <tds-toggle size="sm" formControlName="trackpad">
+    <div slot="label">Trackpad</div>
+  </tds-toggle>
+  <tds-toggle size="sm" formControlName="monitor">
+    <div slot="label">External monitor</div>
+  </tds-toggle>
+</div>

@@ -22,6 +22,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@scania/tegel-angular": "1.12.1",
 =======
     "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.0.tgz",
@@ -32,6 +33,9 @@
 =======
     "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.1-3.tgz",
 >>>>>>> dd2c246 (feat: add examples for chips in radio mode and radio buttons)
+=======
+    "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.1-4.tgz",
+>>>>>>> 0710855 (feat: add examples for tds-toggle with reactive forms)
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
