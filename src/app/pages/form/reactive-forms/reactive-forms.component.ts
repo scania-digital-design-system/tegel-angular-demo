@@ -64,6 +64,10 @@ export default class ReactiveFormsComponent {
     linux: new FormControl(false)
   })
 
+  chipRadioField: FormGroup = new FormGroup({
+    preferredOs: new FormControl("windows"),
+  })
+
   radioButtonField: FormGroup = new FormGroup({
     timeAtScania: new FormControl('radio-1'),
   });
@@ -99,6 +103,7 @@ export default class ReactiveFormsComponent {
     console.log('dropdownField', this.dropdownField.getRawValue());
     console.log('checkboxField', this.checkboxField.value);
     console.log('chipField', this.chipField.value)
+    console.log('chipRadioField', this.chipRadioField.value)
     console.log('radioButtonField', this.radioButtonField.value);
     console.log('textareaField', this.textareaField.value);
     console.log('sliderField', this.sliderField.value);

@@ -21,6 +21,7 @@
     "@angular/router": "^16.1.4",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@scania/tegel-angular": "1.12.1",
 =======
     "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.0.tgz",
@@ -28,6 +29,9 @@
 =======
     "@scania/tegel-angular": "1.8.0-ng-form-beta.1",
 >>>>>>> 2366647 (feat: update tegel version to 1.8.0-ng-form-beta.1)
+=======
+    "@scania/tegel-angular": "file:~/packages/scania-tegel-angular-1.8.1-3.tgz",
+>>>>>>> dd2c246 (feat: add examples for chips in radio mode and radio buttons)
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
