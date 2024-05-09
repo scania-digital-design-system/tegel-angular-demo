@@ -16,6 +16,7 @@ import { SliderComponent } from '@pages/form/slider/slider.component';
 import { TextareaComponent } from '@pages/form/textarea/textarea.component';
 import { TegelModule } from '@scania/tegel-angular';
 import {ChipComponent} from "@pages/form/chip/chip.component";
+import {ToggleComponent} from "@pages/form/toggle/toggle.component";
 
 @Component({
   selector: 'app-reactive-forms',
@@ -32,7 +33,8 @@ import {ChipComponent} from "@pages/form/chip/chip.component";
     TextareaComponent,
     SliderComponent,
     TegelModule,
-    ChipComponent
+    ChipComponent,
+    ToggleComponent
   ],
 })
 export default class ReactiveFormsComponent {
@@ -66,6 +68,13 @@ export default class ReactiveFormsComponent {
 
   chipRadioField: FormGroup = new FormGroup({
     preferredOs: new FormControl("windows"),
+  })
+
+  toggleField: FormGroup = new FormGroup({
+    mouse: new FormControl(true),
+    keyboard: new FormControl(true),
+    trackpad: new FormControl(false),
+    monitor: new FormControl(false)
   })
 
   radioButtonField: FormGroup = new FormGroup({
@@ -104,6 +113,7 @@ export default class ReactiveFormsComponent {
     console.log('checkboxField', this.checkboxField.value);
     console.log('chipField', this.chipField.value)
     console.log('chipRadioField', this.chipRadioField.value)
+    console.log('toggleField', this.toggleField.value);
     console.log('radioButtonField', this.radioButtonField.value);
     console.log('textareaField', this.textareaField.value);
     console.log('sliderField', this.sliderField.value);
