@@ -110,6 +110,19 @@
           </a>
         </tds-side-menu-item>
 
+        <tds-side-menu-item [selected]="isActive('/ag-grid')">
+          <a
+            routerLink="/ag-grid"
+            (click)="toggleMobileSideMenu()"
+          >
+            <tds-icon
+              name="report"
+              size="24"
+            ></tds-icon>
+            AG-Grid
+          </a>
+        </tds-side-menu-item>
+
         <tds-side-menu-item [selected]="isActive('/table')">
           <a
             routerLink="/table"
