@@ -21,6 +21,12 @@ const routes = [
     path: 'text/text-subpage-with-long-name',
     loadComponent: () => import('@pages/text-subpage/text-subpage.component'),
   },
+
+  {
+    path: 'ag-grid',
+    loadComponent: () => import('@pages/ag-grid/ag-grid.component'),
+  },
+
   {
     path: 'tabs-buttons',
     loadComponent: () => import('@pages/tabs-buttons-page/tabs-buttons-page.component'),
