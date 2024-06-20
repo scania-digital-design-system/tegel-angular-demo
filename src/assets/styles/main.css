@@ -1,0 +1,40 @@
+:root {
+  --light-header-bg: #dbdfe6;
+  --light-header-hover-bg: #cdd1db;
+  --light-row-hover-color: #e7e9ee;
+  --light-row-border-color: #cdd1db;
+  --dark-header-bg: #37414f;
+  --dark-row-hover-color: #263238;
+  --dark-bg: #242a33;
+  --dark-row-color: #e7e9ee;
+  --dark-row-hover-color: #2b323d;
+  --dark-row-border-color: #56657a;
+}
+
+.ag-theme-quartz {
+  --ag-header-background-color: var(--light-header-bg);
+  --ag-header-cell-hover-background-color: var(--light-header-hover-bg);
+  --ag-row-hover-color: var(--light-row-hover-color);
+  --ag-row-border-color: var(--light-row-border-color);
+}
+.ag-theme-quartz .header-hover {
+  background-color: var(--light-row-hover-color); /* Example highlight color */
+}
+
+.ag-theme-quartz-dark {
+  --ag-header-background-color: var(--dark-header-bg);
+  --ag-row-hover-color: var(--dark-row-hover-color);
+  --ag-background-color: var(--dark-bg);
+  --ag-row-color: var(--dark-row-color);
+  --ag-row-hover-color: var(--dark-row-hover-color);
+  --ag-row-border-color: var(--dark-row-border-color);
+}
+.ag-theme-quartz-dark .header-hover {
+  background-color: var(--dark-row-hover-color); /* Example highlight color */
+}
+
+.ag-header-cell-resize::after {
+  content: none;
+}
+
+/*# sourceMappingURL=main.css.map */
