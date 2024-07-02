@@ -1,4 +1,5 @@
 import { importProvidersFrom } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AgGridModule } from 'ag-grid-angular';
@@ -15,6 +16,7 @@ bootstrapApplication(AppComponent, {
         BrowserModule,
         TegelModule,
         AgGridModule,
+        HttpClientModule,
         )
     ]
 })

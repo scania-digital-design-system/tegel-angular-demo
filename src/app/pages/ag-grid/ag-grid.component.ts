@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TegelModule } from '@scania/tegel-angular';
+import { HttpClient } from '@angular/common/http';
+import { AgGridAngular } from 'ag-grid-angular'; // Angular Data Grid Component
 import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
 
 @Component({
   selector: 'app-ag-grid',
   standalone: true,
+  encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
   templateUrl: './ag-grid.component.html',
-  styleUrls: ['./ag-grid.component.scss', '../../../assets/styles/main.css'],  // Include your styles if needed
+  styleUrls: ['../../../assets/styles/main.css'],
   imports: [
     TegelModule,
     AgGridModule,
+    AgGridAngular
   ]
 })
 export default class AgGridComponent {
+
   public columnDefs: ColDef[] = [
     { field: 'make', filter: true },
     { field: 'model', filter: true },
@@ -31,11 +36,20 @@ export default class AgGridComponent {
   ];
   public gridApi!: GridApi;
 
+  constructor(private http: HttpClient) {}
+
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
     this.gridApi.sizeColumnsToFit();
+    this.fetchData();
   }
 
+  fetchData() {
+    this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
+      .subscribe(data => {
+        this.gridApi.setRowData(data);
+      });
+  }
   onFilterTextBoxChanged(event: Event, field: string) {
     const filterText = (event.target as HTMLInputElement).value;
     this.gridApi.setFilterModel({
