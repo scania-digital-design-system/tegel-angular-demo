@@ -1,7 +1,9 @@
 @import "reset.css";
 @import url('@scania/tegel/dist/tegel/tegel.css');
-
-
+/* Core Data Grid CSS */
+@import url('ag-grid-community/styles/ag-grid.css');
+/* Quartz Theme Specific CSS */
+@import url('ag-grid-community/styles/ag-theme-quartz.css');
 .tds-mode-dark {
   color: var(--tds-grey-100);
   background-color: var(--tds-grey-958);
