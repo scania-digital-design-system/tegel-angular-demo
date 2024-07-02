@@ -1,0 +1,15 @@
+<div class="filter-container">
+  <input type="text" placeholder="Search by make..." (input)="onFilterTextBoxChanged($event, 'make')" />
+  <input type="text" placeholder="Search by model..." (input)="onFilterTextBoxChanged($event, 'model')" />
+  <input type="text" placeholder="Search by price..." (input)="onFilterTextBoxChanged($event, 'price')" />
+</div>
+
+<div class="ag-theme-quartz" style="height: 500px; width: 100%;">
+  <ag-grid-angular
+    style="width: 100%; height: 100%;"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</div>
