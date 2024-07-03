@@ -42,7 +42,7 @@ export default class AgGridEditableCellsComponent {
   fetchData() {
     this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
       .subscribe(data => {
-        this.gridApi.setRowData(data);
+        this.gridApi.setGridOption('rowData', data);
       });
   }
 }
