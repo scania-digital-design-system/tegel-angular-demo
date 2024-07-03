@@ -24,12 +24,7 @@ const routes = [
 
   {
     path: 'ag-grid',
-    loadComponent: () => import('@pages/ag-grid/ag-grid.component'),
-  },
-
-  {
-    path: 'ag-grid-editable-cells',
-    loadComponent: () => import('@pages/ag-grid/ag-grid-editable-cells.component'),
+    loadComponent: () => import('@pages/ag-grid/ag-grid-page.component'),
   },
 
   {
