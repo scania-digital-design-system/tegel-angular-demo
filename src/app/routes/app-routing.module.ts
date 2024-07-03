@@ -28,6 +28,11 @@ const routes = [
   },
 
   {
+    path: 'ag-grid-editable-cells',
+    loadComponent: () => import('@pages/ag-grid/ag-grid-editable-cells.component'),
+  },
+
+  {
     path: 'tabs-buttons',
     loadComponent: () => import('@pages/tabs-buttons-page/tabs-buttons-page.component'),
   },
