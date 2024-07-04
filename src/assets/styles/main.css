@@ -3,12 +3,14 @@
   --light-header-hover-bg: #cdd1db;
   --light-row-hover-color: #e7e9ee;
   --light-row-border-color: #cdd1db;
+  --light-filter-bg: #f9fafb;
   --dark-header-bg: #37414f;
   --dark-row-hover-color: #263238;
   --dark-bg: #242a33;
   --dark-row-color: #e7e9ee;
   --dark-row-hover-color: #2b323d;
   --dark-row-border-color: #56657a;
+  --dark-filter-bg: #1d2229;
   --cell-focus-border-color: #2b70d3;
   --header-cell-text-font: 'Scania Sans Semi Condensed', Arial, Helvetica, sans-serif;
   --header-cell-text-size: 14px;
@@ -29,6 +31,10 @@
   background-color: var(--light-row-hover-color); /* Example highlight color */
 }
 
+.ag-theme-quartz .ag-menu {
+  background: var(--light-filter-bg);
+}
+
 .ag-theme-quartz-dark {
   --ag-header-background-color: var(--dark-header-bg);
   --ag-row-hover-color: var(--dark-row-hover-color);
@@ -39,6 +45,10 @@
 }
 .ag-theme-quartz-dark .header-hover {
   background-color: var(--dark-row-hover-color); /* Example highlight color */
+}
+
+.ag-theme-quartz-dark .ag-menu {
+  background: var(--dark-filter-bg);
 }
 
 .ag-root-wrapper {
@@ -62,18 +72,26 @@
   content: none;
 }
 
+.ag-ltr .ag-cell {
+  border-right: none;
+}
+
 .ag-ltr .ag-cell-focus:not(.ag-cell-rage-selected):focus-within {
-  border-color: var(--cell-focus-border-color);
+  border-color: var(--cell-focus-border-color) !important;
+}
+
+.ag-ltr .ag-cell-focus:not(.ag-cell-rage-selected):focus-within input[class^=ag-][type]:focus {
+  border: none;
+  border-bottom: 2px solid var(--cell-focus-border-color);
 }
 
 .ag-cell-inline-editing {
-  border-color: var(--cell-focus-border-color) !important;
+  border: none;
   border-radius: 0px;
 }
 
 .ag-theme-quartz input[class^=ag-][type],
-.ag-theme-quartz-dark input[class^=ag-][type]
- {
+.ag-theme-quartz-dark input[class^=ag-][type] {
   border-radius: 0px;
 }
 
@@ -81,8 +99,13 @@ input[class^=ag-][type] {
   border: none;
 }
 
+.ag-filter-body input[class^=ag-][type]:focus {
+  border-bottom: 2px solid var(--cell-focus-border-color) !important;
+}
+
 input[class^=ag-][type]:focus {
   border: none;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=main.css.map */
