@@ -10,6 +10,13 @@
   --dark-row-hover-color: #2b323d;
   --dark-row-border-color: #56657a;
   --cell-focus-border-color: #2b70d3;
+  --header-cell-text-font: 'Scania Sans Semi Condensed', Arial, Helvetica, sans-serif;
+  --header-cell-text-size: 14px;
+  --header-cell-text-weight: bold;
+  --header-cell-text-ls: -0.01em;
+  --cell-text-font: 'Scania Sans Condensed', Arial, Helvetica, sans-serif;
+  --cell-text-size: 14px;
+  --cell-text-ls: -0.01em;
 }
 
 .ag-theme-quartz {
@@ -32,6 +39,23 @@
 }
 .ag-theme-quartz-dark .header-hover {
   background-color: var(--dark-row-hover-color); /* Example highlight color */
+}
+
+.ag-root-wrapper {
+  border-radius: 4px 4px 0 0;
+}
+
+.ag-header-cell {
+  font-family: var(--header-cell-text-font);
+  font-size: var(--header-cell-text-size);
+  font-weight: var(--header-cell-text-weight);
+  letter-spacing: var(--header-cell-text-ls);
+}
+
+.ag-cell-value {
+  font-family: var(--cell-text-font);
+  font-size: var(--cell-text-size);
+  letter-spacing: var(--cell-text-ls);
 }
 
 .ag-header-cell-resize::after {
