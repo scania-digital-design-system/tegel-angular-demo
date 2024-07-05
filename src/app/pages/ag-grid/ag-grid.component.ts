@@ -50,13 +50,4 @@ export default class AgGridComponent {
         this.gridApi.setGridOption('rowData', data);
       });
   }
-  onFilterTextBoxChanged(event: Event, field: string) {
-    const filterText = (event.target as HTMLInputElement).value;
-    this.gridApi.setFilterModel({
-      [field]: {
-        type: 'contains',  // You can adjust the filter type based on your needs
-        filter: filterText
-      }
-    });
-  }
 }
