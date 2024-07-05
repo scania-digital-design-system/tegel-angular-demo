@@ -6,10 +6,10 @@ import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
 
 @Component({
-  selector: 'app-ag-grid',
+  selector: 'app-ag-grid-editable-cells',
   standalone: true,
   encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
-  templateUrl: './ag-grid.component.html',
+  templateUrl: './ag-grid-editable-cells.component.html',
   styleUrls: ['../../../assets/styles/main.css'],
   imports: [
     TegelModule,
@@ -17,23 +17,18 @@ import { AgGridModule } from 'ag-grid-angular';
     AgGridAngular
   ]
 })
-export default class AgGridComponent {
+export default class AgGridEditableCellsComponent {
 
   public columnDefs: ColDef[] = [
-    { field: 'make', filter: true },
-    { field: 'model', filter: true },
-    { field: 'price', filter: true }
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' }
   ];
   public defaultColDef: ColDef = {
-    sortable: true,
-    resizable: true,
-    filter: true
+    editable: true,
+    cellDataType: true
   };
-  public rowData = [
-    { make: 'Toyota', model: 'Celica', price: '35000' },
-    { make: 'Ford', model: 'Mondeo', price: '32000' },
-    { make: 'Porsche', model: 'Boxster', price: '72000' }
-  ];
+  public rowData = [];
   public gridApi!: GridApi;
 
   constructor(private http: HttpClient) {}
