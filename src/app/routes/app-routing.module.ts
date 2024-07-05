@@ -24,7 +24,7 @@ const routes = [
 
   {
     path: 'ag-grid',
-    loadComponent: () => import('@pages/ag-grid/ag-grid.component'),
+    loadComponent: () => import('@pages/ag-grid/ag-grid-page.component'),
   },
 
   {
