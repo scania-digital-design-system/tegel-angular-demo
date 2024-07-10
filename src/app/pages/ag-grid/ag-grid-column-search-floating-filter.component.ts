@@ -20,9 +20,9 @@ import { AgGridModule } from 'ag-grid-angular';
 export default class AgGridColumnSearchFloatingFilterComponent {
 
   public columnDefs: ColDef[] = [
-    { field: 'make', filter: true },
-    { field: 'model', filter: true },
-    { field: 'price', filter: true }
+    { field: 'make' },
+    { field: 'model'},
+    { field: 'price' }
   ];
   public defaultColDef: ColDef = {
     sortable: true,
