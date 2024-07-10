@@ -115,7 +115,9 @@
   border: none;
 }
 
-.ag-filter-body input[class^='ag-'][type]:focus {
+.ag-filter-body input[class^='ag-'][type]:focus,
+.ag-ltr input[class^='ag-'][type]:focus
+ {
   border-bottom: var(--tds-ag-grid-table-bottom-border-focus) !important;
 }
 
