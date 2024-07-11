@@ -57,6 +57,10 @@ const routes = [
     loadComponent: () => import('@pages/table-page/table-page.component'),
   },
   {
+    path: 'tanstack',
+    loadComponent: () => import('@pages/tanstack-table/tanstack-table.component'),
+  },
+  {
     path: 'settings',
     loadComponent: () => import('@pages/settings-page/settings-page.component'),
   },
