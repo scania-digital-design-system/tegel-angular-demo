@@ -130,4 +130,9 @@ input[class^='ag-'][type]:focus, .ag-picker-field-wrapper, .ag-picker-field-wrap
   border-bottom: var(--tds-ag-grid-table-bottom-border-focus);
 }
 
+.compact {
+  --ag-header-height: 32px;
+  --ag-row-height: 32px;
+}
+
 /*# sourceMappingURL=main.css.map */
