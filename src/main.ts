@@ -1,6 +1,8 @@
 import { importProvidersFrom } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { AgGridModule } from 'ag-grid-angular';
 import { RouterModule } from '@angular/router';
 import routes from '@routes/app-routing.module';
 import { TegelModule } from '@scania/tegel-angular';
@@ -12,7 +14,9 @@ bootstrapApplication(AppComponent, {
           scrollPositionRestoration: 'enabled'
         }),
         BrowserModule,
-        TegelModule
+        TegelModule,
+        AgGridModule,
+        HttpClientModule,
         )
     ]
 })
