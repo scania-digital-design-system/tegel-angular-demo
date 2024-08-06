@@ -1,52 +1,67 @@
 <ng-container [formGroup]="sliderGroup">
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap3 tds-u-mb3">
+    <h3>Sliders</h3>
+    <h5>Tell us how you feel about your..</h5>
+    <tds-slider
+      label="..happiness at work"
+      name="happines"
+      min="0"
+      value="5"
+      show-tick-numbers
+      max="10"
+      ticks="9"
+      snap
+      (tdsChange)="handleChange($event)"
+    ></tds-slider>
 
-  <div  class="tds-u-flex tds-u-flex-dir-col tds-u-gap3 tds-u-mb3">
-  <h3>Sliders</h3>
-  <h5>Tell us how you feel about your..</h5>
-  <tds-slider
-    label="..happiness at work"
-    name="happines"
-    min="0"
-    value="5"
-    show-tick-numbers
-    max="10"
-    ticks="9"
-    snap
-    (tdsChange)="handleChange($event)"
+    <h4>Disabled</h4>
+    <tds-slider
+      #stressSlider
+      formControlName="stress"
+      ngDefaultControl
+      label="..stress level  disabled slider"
+      name="stress"
+      min="0"
+      value="5"
+      show-tick-numbers
+      max="10"
+      ticks="9"
+      snap
+      (tdsChange)="handleChange($event)"
+    ></tds-slider>
 
-  ></tds-slider>
+    <h4>Read-Only</h4>
 
-  <h4>Disabled</h4>
-  <tds-slider
-    #stressSlider
-    formControlName="stress"
-    ngDefaultControl
-    label="..stress level  disabled slider"
-    name="stress"
-    min="0"
-    value="5"
-    show-tick-numbers
-    max="10"
-    ticks="9"
-    snap
-    (tdsChange)="handleChange($event)"
-  ></tds-slider>
+    <tds-slider
+      #balanceSlider
+      formControlName="balance"
+      ngDefaultControl
+      label="..work/life balance."
+      name="balance"
+      min="0"
+      value="5"
+      show-tick-numbers
+      max="10"
+      ticks="9"
+      snap
+      (tdsChange)="handleChange($event)"
+    ></tds-slider>
 
-  <h4>Read-Only</h4>
-
-  <tds-slider
-    #balanceSlider
-    formControlName="balance"
-    ngDefaultControl
-    label="..work/life balance."
-    name="balance"
-    min="0"
-    value="5"
-    show-tick-numbers
-    max="10"
-    ticks="9"
-    snap
-    (tdsChange)="handleChange($event)"
-  ></tds-slider>
-</div>
+    <h4>Range Gökberk</h4>
+    <tds-slider
+      min="0"
+      max="500"
+      step="1"
+      value="50"
+      ticks="4"
+      show-tick-numbers
+      snap
+      label="Range"
+      tooltip
+      ngDefaultControl
+      #rangeSlider
+      controls
+      thumb-size="sm"
+    ></tds-slider>
+  </div>
 </ng-container>
