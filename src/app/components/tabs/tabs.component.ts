@@ -75,6 +75,9 @@ export class TabsComponent implements AfterViewInit {
 
   injectSingleTab() {
     //Add new tab to the end of the list
+    //Add 3 new tabs
+    this.inlineTabs.push(`${this.inlineTabs.length} tab`);
+    this.inlineTabs.push(`${this.inlineTabs.length} tab`);
     this.inlineTabs.push(`${this.inlineTabs.length} tab`);
   }
 
