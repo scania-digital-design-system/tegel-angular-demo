@@ -11,8 +11,4 @@ import { TegelModule } from '@scania/tegel-angular';
 })
 export class CheckboxComponent {
   @Input() checkboxGroup: FormGroup;
-
-  handleCheckboxChange(event: any, name: string) {
-    this.checkboxGroup.get(name)?.setValue(event.detail.checked);
-  }
 }

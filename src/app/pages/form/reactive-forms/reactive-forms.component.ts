@@ -15,6 +15,8 @@ import { RadioButtonComponent } from '@pages/form/radio-button/radio-button.comp
 import { SliderComponent } from '@pages/form/slider/slider.component';
 import { TextareaComponent } from '@pages/form/textarea/textarea.component';
 import { TegelModule } from '@scania/tegel-angular';
+import {ChipComponent} from "@pages/form/chip/chip.component";
+import {ToggleComponent} from "@pages/form/toggle/toggle.component";
 
 @Component({
   selector: 'app-reactive-forms',
@@ -30,14 +32,16 @@ import { TegelModule } from '@scania/tegel-angular';
     RadioButtonComponent,
     TextareaComponent,
     SliderComponent,
-    TegelModule
+    TegelModule,
+    ChipComponent,
+    ToggleComponent
   ],
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;
 
-  textFieldGroup: FormGroup = new FormGroup({
-    firstName: new FormControl('', Validators.required),
+  textFieldGroup = new FormGroup({
+    firstName: new FormControl('', [Validators.required, Validators.email]),
     dateOfBirth: new FormControl(new Date(), Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
@@ -56,6 +60,23 @@ export default class ReactiveFormsComponent {
     building260: new FormControl({ value: false, disabled: true }),
   });
 
+  chipField: FormGroup = new FormGroup({
+    windows: new FormControl(false),
+    macOS: new FormControl(false),
+    linux: new FormControl(false)
+  })
+
+  chipRadioField: FormGroup = new FormGroup({
+    preferredOs: new FormControl("windows"),
+  })
+
+  toggleField: FormGroup = new FormGroup({
+    mouse: new FormControl(true),
+    keyboard: new FormControl(true),
+    trackpad: new FormControl(false),
+    monitor: new FormControl(false)
+  })
+
   radioButtonField: FormGroup = new FormGroup({
     timeAtScania: new FormControl('radio-1'),
   });
@@ -68,9 +89,9 @@ export default class ReactiveFormsComponent {
   });
 
   sliderField: FormGroup = new FormGroup({
-    happines: new FormControl('5'),
-    stress: new FormControl({ value: '0', disabled: true }),
-    balance: new FormControl({ value: '0', disabled: true }),
+    happines: new FormControl(5),
+    stress: new FormControl({ value: 0, disabled: true }),
+    balance: new FormControl({ value: 0, disabled: true }),
   });
 
   essayLengthValidator(control: AbstractControl): ValidationErrors | null {
@@ -90,6 +111,9 @@ export default class ReactiveFormsComponent {
     console.log('dropdownField', this.dropdownField.value);
     console.log('dropdownField', this.dropdownField.getRawValue());
     console.log('checkboxField', this.checkboxField.value);
+    console.log('chipField', this.chipField.value)
+    console.log('chipRadioField', this.chipRadioField.value)
+    console.log('toggleField', this.toggleField.value);
     console.log('radioButtonField', this.radioButtonField.value);
     console.log('textareaField', this.textareaField.value);
     console.log('sliderField', this.sliderField.value);

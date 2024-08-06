@@ -1,5 +1,4 @@
 import {
-  
   Component,
   ElementRef,
   Input,
@@ -8,7 +7,6 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownDirective } from 'src/app/directives/dropdown.directive';
 import norwayData from '../../../../assets/norwegianTows.json';
 import swedenData from '../../../../assets/swedishTowns.json';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +16,7 @@ import { TegelModule } from '@scania/tegel-angular';
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [CommonModule, DropdownDirective, ReactiveFormsModule, TegelModule],
+  imports: [CommonModule, ReactiveFormsModule, TegelModule],
   templateUrl: './dropdown.component.html',
 })
 export class DropdownComponent implements OnInit, OnDestroy {
