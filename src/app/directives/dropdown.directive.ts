@@ -1,4 +1,3 @@
-
 import { Directive, ElementRef, forwardRef, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -38,7 +37,7 @@ export class DropdownDirective implements ControlValueAccessor {
 
   @HostListener('tdsChange', ['$event'])
   handleValueChanged(event: CustomEvent) {
-    console.log("on change");
+    console.log('on change', event.detail.value);
 
     if (this.onChange) {
       this.onChange(event.detail.value);
