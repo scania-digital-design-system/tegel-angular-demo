@@ -18,7 +18,6 @@
     <tds-slider
       #stressSlider
       formControlName="stress"
-      ngDefaultControl
       label="..stress level  disabled slider"
       name="stress"
       min="0"
@@ -32,21 +31,6 @@
 
     <h4>Read-Only</h4>
 
-    <tds-slider
-      #balanceSlider
-      formControlName="balance"
-      ngDefaultControl
-      label="..work/life balance."
-      name="balance"
-      min="0"
-      value="5"
-      show-tick-numbers
-      max="10"
-      ticks="9"
-      snap
-      (tdsChange)="handleChange($event)"
-    ></tds-slider>
-
     <h4>Range Gökberk</h4>
     <tds-slider
       min="0"
@@ -58,8 +42,6 @@
       snap
       label="Range"
       tooltip
-      ngDefaultControl
-      #rangeSlider
       controls
       thumb-size="sm"
     ></tds-slider>
