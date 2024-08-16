@@ -3,7 +3,6 @@ import {
     Component
   } from '@angular/core'
   import AgGridColumnSearch from './ag-grid-column-search.component'
-  import AgGridColumnSearchFloatingFilter from './ag-grid-column-search-floating-filter.component'
   import AgGridEditableCells from './ag-grid-editable-cells.component'
   import {AsyncPipe} from '@angular/common'
   import { TegelModule } from '@scania/tegel-angular'
@@ -25,12 +24,6 @@ import {
     <div class="ag-theme-quartz" [class.compact]="classCompact" style="height: 500px; width: 100%;">
       <app-ag-grid-column-search></app-ag-grid-column-search>
     </div>
-    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">AG-Grid Column Search Floating Filter</div>
-    <p>This is an implementation of AG-Grid with column search, including a floating text input for
-        filtering.</p>
-    <div class="ag-theme-quartz" [class.compact]="classCompact" style="height: 500px; width: 100%;">
-      <app-ag-grid-column-search-floating-filter></app-ag-grid-column-search-floating-filter>
-    </div>
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">AG-Grid Editable Cells</div>
     <p>This is an implementation of AG-Grid with editable cells.</p>
     <div class="ag-theme-quartz" [class.compact]="classCompact" style="height: 500px; width: 100%;">
@@ -42,7 +35,6 @@ import {
     imports: [
       AgGridColumnSearch,
       AgGridEditableCells,
-      AgGridColumnSearchFloatingFilter,
       AsyncPipe,
       TegelModule
     ],
