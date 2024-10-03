@@ -1,16 +1,14 @@
-import {
-  
-  Component, inject,
-} from '@angular/core'
-import {BasicTableComponent} from './basic-table.component'
-import {BatchActionsTableComponent} from './batch-actions-table.component'
-import {SortableTableComponent} from './sortable-table.component'
-import {FilterTableComponent} from './filter-table.component'
-import {PaginationTableComponent} from './pagination-table.component'
-import {ExpandableTableComponent} from './expandable-table.component'
-import {TableService} from './table.service'
-import {AsyncPipe} from '@angular/common'
-import { TegelModule } from '@scania/tegel-angular'
+import { Component, inject } from '@angular/core';
+import { BasicTableComponent } from './basic-table.component';
+import { BatchActionsTableComponent } from './batch-actions-table.component';
+import { SortableTableComponent } from './sortable-table.component';
+import { FilterTableComponent } from './filter-table.component';
+import { PaginationTableComponent } from './pagination-table.component';
+import { ExpandableTableComponent } from './expandable-table.component';
+import { ZebraTableComponent } from './zebra-table.component';
+import { TableService } from './table.service';
+import { AsyncPipe } from '@angular/common';
+import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-table-page',
@@ -21,6 +19,7 @@ import { TegelModule } from '@scania/tegel-angular'
     <app-filter-table></app-filter-table>
     <app-pagination-table></app-pagination-table>
     <app-expandable-table></app-expandable-table>
+    <app-zebra-table></app-zebra-table>
   `,
   styles: [``],
   standalone: true,
@@ -32,10 +31,11 @@ import { TegelModule } from '@scania/tegel-angular'
     PaginationTableComponent,
     ExpandableTableComponent,
     AsyncPipe,
-    TegelModule
+    TegelModule,
+    ZebraTableComponent,
   ],
   providers: [TableService],
 })
 export default class TablePageComponent {
-  tableService = inject(TableService)
+  tableService = inject(TableService);
 }
