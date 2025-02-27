@@ -9,10 +9,12 @@ import { ZebraTableComponent } from './zebra-table.component';
 import { TableService } from './table.service';
 import { AsyncPipe } from '@angular/common';
 import { TegelModule } from '@scania/tegel-angular';
+import { DragDropTableComponent } from './drag-drop-table.component';
 
 @Component({
   selector: 'app-table-page',
   template: `
+    <app-drag-drop-table></app-drag-drop-table>
     <app-basic-table></app-basic-table>
     <app-batch-actions-table></app-batch-actions-table>
     <app-sortable-table></app-sortable-table>
@@ -24,6 +26,7 @@ import { TegelModule } from '@scania/tegel-angular';
   styles: [``],
   standalone: true,
   imports: [
+    DragDropTableComponent,
     BasicTableComponent,
     BatchActionsTableComponent,
     SortableTableComponent,

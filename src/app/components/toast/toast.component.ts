@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {  Component } from '@angular/core';
-import { TdsToastCustomEvent } from '@scania/tegel';
 import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
