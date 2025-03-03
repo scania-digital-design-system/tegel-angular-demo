@@ -1,0 +1,24 @@
+<div class="tds-headline-02 tds-u-pb1">Dropdown</div>
+<tds-dropdown
+  #dropdownTestRef
+  name="dropdown"
+  label="Label text"
+  label-position="outside"
+  placeholder="Placeholder"
+  helper="Helper text"
+  size="lg"
+  open-direction="auto"
+  (tdsChange)="handleTdsChange($event)"
+  [defaultValue]="dropdownValue"
+>
+  <tds-dropdown-option
+    *ngFor="let option of dropdownOptions"
+    value="{{ option.value }}"
+  >
+    {{ option.label }}
+  </tds-dropdown-option>
+</tds-dropdown>
+<tds-button
+  text="Reset Dropdown"
+  (click)="resetDropdown()"
+></tds-button>
