@@ -9,7 +9,7 @@ interface TableData {
   description: string;
   department?: string;
 }
-
+//comment
 @Component({
   selector: 'app-drag-drop-table',
   template: `
