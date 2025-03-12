@@ -1,2 +1,17 @@
 <h3>About this page</h3>
 <p>This page is a testing ground and demo for using @scania/tegel-angular in an Angular application.</p>
+
+<tds-header *ngIf="vm$ | async as vm">
+    <!-- Ett exempel på en vänster-placerad header-item -->
+    <tds-header-item title="My App"></tds-header-item>
+
+    <!-- Här är den som ska visas till höger (slot="end") -->
+    <tds-header-item order="end" *ngIf="vm.user" title="Orders">
+      <a routerLink="/orders">Orders</a>
+    </tds-header-item>
+  </tds-header>
+
+  <p style="font-size: 20px; color: red;">Klick on <strong>X</strong> to toggle the Orders link.</p>
+
+
+  
