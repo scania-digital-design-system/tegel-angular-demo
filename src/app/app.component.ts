@@ -1,8 +1,9 @@
-import {  Component, OnDestroy, OnInit } from '@angular/core';
-import { FooterComponent } from "@components/footer/footer.component";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FooterComponent } from '@components/footer/footer.component';
 import { Router, RouterOutlet, RouterLink, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
 import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
+import { BrandSwitcherComponent } from './brand-switcher/brand-switcher.component';
 import BreadcrumbsComponent from './navigation/breadcrumbs/breadcrumbs.component';
 import { BannerComponent } from '@components/banner/banner.component';
 import { UserStoreService } from './services/user-store.service';
@@ -26,10 +27,15 @@ import { TegelModule } from '@scania/tegel-angular';
     ModeVariantSwitcherComponent,
     CommonModule,
     TegelModule,
+    BrandSwitcherComponent,
   ],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private router: Router, private route: ActivatedRoute, private userStoreService: UserStoreService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private userStoreService: UserStoreService,
+  ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         let currentRoute = this.route.root;
@@ -50,6 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   title = 'Angular Demo';
   mobileNavOpen = false;
+  brand: 'scania' | 'traton' = 'scania';
   mode: 'tds-mode-light' | 'tds-mode-dark' = 'tds-mode-light';
   modeVariant: 'tds-mode-variant-primary' | 'tds-mode-variant-secondary' =
     'tds-mode-variant-primary';
@@ -79,6 +86,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleModeToggle() {
     this.mode = this.mode === 'tds-mode-light' ? 'tds-mode-dark' : 'tds-mode-light';
+  }
+
+  handleBrandToggle() {
+    this.brand = this.brand === 'scania' ? 'traton' : 'scania';
+    console.log('brand avtive is', this.brand);
   }
 
   ngOnInit() {
