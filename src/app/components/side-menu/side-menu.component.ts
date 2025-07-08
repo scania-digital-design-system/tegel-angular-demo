@@ -1,36 +1,20 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FooterComponent } from '@components/footer/footer.component';
-import { Router, RouterOutlet, RouterLink, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { ModeSwitcherComponent } from './mode-switcher/mode-switcher.component';
-import { ModeVariantSwitcherComponent } from './mode-variant-switcher/mode-variant-switcher.component';
-import BreadcrumbsComponent from './navigation/breadcrumbs/breadcrumbs.component';
-import { BannerComponent } from '@components/banner/banner.component';
-import { UserStoreService } from './services/user-store.service';
-import { Subject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Notification } from 'src/types';
+import { Component } from '@angular/core';
 import { TegelModule } from '@scania/tegel-angular';
-import SideMenuComponent from './components/side-menu/side-menu.component';
+
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+
+import { UserStoreService } from '../../services/user-store.service';
+import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-side-menu',
   standalone: true,
-  imports: [
-    RouterLink,
-    RouterOutlet,
-    FooterComponent,
-    BannerComponent,
-    BreadcrumbsComponent,
-    ModeSwitcherComponent,
-    ModeVariantSwitcherComponent,
-    CommonModule,
-    TegelModule,
-    SideMenuComponent,
-  ],
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.css'],
+  imports: [CommonModule, TegelModule],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export default class SideMenuComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -85,20 +69,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleModeToggle() {
     this.mode = this.mode === 'tds-mode-light' ? 'tds-mode-dark' : 'tds-mode-light';
-  }
-
-  ngOnInit() {
-    this.userStoreService.userName$.pipe(takeUntil(this.onDestroy$)).subscribe((userName) => {
-      this.userName = userName;
-    });
-    this.userStoreService.placeOfWork$.pipe(takeUntil(this.onDestroy$)).subscribe((placeOfWork) => {
-      this.placeOfWork = placeOfWork;
-    });
-    this.userStoreService.notifications$
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe((notifications) => {
-        this.notifications = notifications;
-      });
   }
 
   ngOnDestroy(): void {

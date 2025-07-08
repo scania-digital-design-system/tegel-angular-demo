@@ -1,0 +1,14 @@
+@media (min-width: 992px) {
+  tds-side-menu {
+    height: 100%;
+    position: sticky;
+    top: 64px;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-nav-item {
+    display: block;
+  }
+}

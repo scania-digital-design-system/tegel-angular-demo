@@ -1,0 +1,141 @@
+<tds-side-menu
+  aria-label="Side menu"
+  persistent
+  open="{{ mobileNavOpen }}"
+>
+  <tds-side-menu-overlay
+    (click)="toggleMobileSideMenu()"
+    slot="overlay"
+  ></tds-side-menu-overlay>
+
+  <tds-side-menu-close-button
+    slot="close-button"
+    (click)="toggleMobileSideMenu()"
+  ></tds-side-menu-close-button>
+
+  <tds-side-menu-item [selected]="isActive('/about')">
+    <a
+      routerLink="/about"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="info"
+        size="24"
+      ></tds-icon>
+      About us
+    </a>
+  </tds-side-menu-item>
+
+  <tds-side-menu-item [selected]="isActive('/stepper')">
+    <a
+      routerLink="/stepper"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="report"
+        size="24"
+      ></tds-icon>
+      Stepper
+    </a>
+  </tds-side-menu-item>
+
+  <tds-side-menu-item [selected]="isActive('/table')">
+    <a
+      routerLink="/table"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="document_tool"
+        size="24"
+      ></tds-icon>
+      Table
+    </a>
+  </tds-side-menu-item>
+
+  <tds-side-menu-item [selected]="isActive('/web-components')">
+    <a
+      routerLink="/web-components"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="tool"
+        size="24"
+      ></tds-icon>
+      Components
+    </a>
+  </tds-side-menu-item>
+
+  <tds-side-menu-item [selected]="isActive('/form')">
+    <a
+      routerLink="/form"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="edit"
+        size="24"
+      ></tds-icon>
+      Form
+    </a>
+  </tds-side-menu-item>
+
+  <tds-side-menu-dropdown [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')">
+    <tds-icon
+      slot="icon"
+      name="folder"
+      size="24"
+    ></tds-icon>
+    <span slot="label">Tabs</span>
+    <tds-side-menu-dropdown-list>
+      <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
+        <a routerLink="/tabs-buttons">Button</a>
+      </tds-side-menu-dropdown-list-item>
+      <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
+        <a routerLink="tabs-links">Link</a>
+      </tds-side-menu-dropdown-list-item>
+    </tds-side-menu-dropdown-list>
+  </tds-side-menu-dropdown>
+
+  <tds-side-menu-item [selected]="isActive('/text')">
+    <a
+      routerLink="/text"
+      (click)="toggleMobileSideMenu()"
+    >
+      <tds-icon
+        name="document"
+        size="24"
+      ></tds-icon>
+      Text
+    </a>
+  </tds-side-menu-item>
+
+  <div slot="end">
+    <tds-side-menu-dropdown>
+      <tds-side-menu-user
+        slot="label"
+        heading="{{ userName }}"
+        subheading="{{ placeOfWork }}"
+        img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+        img-alt=""
+      ></tds-side-menu-user>
+      <tds-side-menu-dropdown-list>
+        <tds-side-menu-dropdown-list-item>
+          <a routerLink="settings">
+            <tds-icon name="settings"></tds-icon>
+            <div class="tds-u-pl1">Settings</div>
+          </a>
+        </tds-side-menu-dropdown-list-item>
+        <tds-side-menu-dropdown-list-item>
+          <a routerLink="notifications">
+            <tds-badge
+              *ngIf="notifications.length"
+              [value]="notifications.length"
+            ></tds-badge>
+            <div class="tds-u-pl1">Notifications</div>
+          </a>
+        </tds-side-menu-dropdown-list-item>
+      </tds-side-menu-dropdown-list>
+    </tds-side-menu-dropdown>
+  </div>
+
+  <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
+</tds-side-menu>
