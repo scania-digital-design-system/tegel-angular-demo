@@ -1,2 +1,311 @@
-<h3>About this page</h3>
-<p>This page is a testing ground and demo for using @scania/tegel-angular in an Angular application.</p>
+<article style="padding: 20px; max-width: 1200px;">
+  <h3>Dropdown Testing Page</h3>
+  <p>
+    This page contains multiple dropdowns with different features for manual testing of the
+    &#64;scania/tegel-angular dropdown component.
+  </p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+    <!-- Basic Dropdown -->
+    <section>
+      <h4>1. Basic Dropdown</h4>
+      <tds-dropdown
+        name="basic-dropdown"
+        label="Basic Dropdown"
+        label-position="outside"
+        placeholder="Select an option"
+        size="lg"
+        (tdsChange)="handleDropdownChange($event, 'basic')"
+      >
+        <tds-dropdown-option value="option1">Option 1</tds-dropdown-option>
+        <tds-dropdown-option value="option2">Option 2</tds-dropdown-option>
+        <tds-dropdown-option value="option3">Option 3</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['basic']) }}</p>
+    </section>
+
+    <!-- Dropdown with Filter -->
+    <section>
+      <h4>2. Dropdown with Filter</h4>
+      <tds-dropdown
+        name="filter-dropdown"
+        label="Filterable Dropdown"
+        label-position="outside"
+        placeholder="Type to filter..."
+        size="lg"
+        filter
+        (tdsChange)="handleDropdownChange($event, 'filter')"
+      >
+        <tds-dropdown-option value="apple">Apple</tds-dropdown-option>
+        <tds-dropdown-option value="banana">Banana</tds-dropdown-option>
+        <tds-dropdown-option value="cherry">Cherry</tds-dropdown-option>
+        <tds-dropdown-option value="date">Date</tds-dropdown-option>
+        <tds-dropdown-option value="elderberry">Elderberry</tds-dropdown-option>
+        <tds-dropdown-option value="fig">Fig</tds-dropdown-option>
+        <tds-dropdown-option value="grape">Grape</tds-dropdown-option>
+        <tds-dropdown-option value="honeydew">Honeydew</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['filter']) }}</p>
+    </section>
+
+    <!-- Multi-select Dropdown -->
+    <section>
+      <h4>3. Multi-select Dropdown</h4>
+      <tds-dropdown
+        name="multiselect-dropdown"
+        label="Multi-select Dropdown"
+        label-position="outside"
+        placeholder="Select multiple options"
+        size="lg"
+        multiselect
+        (tdsChange)="handleDropdownChange($event, 'multiselect')"
+      >
+        <tds-dropdown-option value="red">Red</tds-dropdown-option>
+        <tds-dropdown-option value="green">Green</tds-dropdown-option>
+        <tds-dropdown-option value="blue">Blue</tds-dropdown-option>
+        <tds-dropdown-option value="yellow">Yellow</tds-dropdown-option>
+        <tds-dropdown-option value="purple">Purple</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['multiselect']) }}</p>
+    </section>
+
+    <!-- Dropdown with Disabled Options -->
+    <section>
+      <h4>4. Dropdown with Disabled Options</h4>
+      <tds-dropdown
+        name="disabled-options-dropdown"
+        label="Dropdown with Disabled Options"
+        label-position="outside"
+        placeholder="Select an option"
+        size="lg"
+        (tdsChange)="handleDropdownChange($event, 'disabled')"
+      >
+        <tds-dropdown-option value="active1">Active Option 1</tds-dropdown-option>
+        <tds-dropdown-option value="active2">Active Option 2</tds-dropdown-option>
+        <tds-dropdown-option disabled value="disabled1">
+          Disabled Option 1
+        </tds-dropdown-option>
+        <tds-dropdown-option value="active3">Active Option 3</tds-dropdown-option>
+        <tds-dropdown-option disabled value="disabled2">
+          Disabled Option 2
+        </tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['disabled']) }}</p>
+    </section>
+
+    <!-- Different Sizes -->
+    <section>
+      <h4>5. Different Sizes</h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <tds-dropdown
+          name="small-dropdown"
+          label="Small Size"
+          label-position="outside"
+          placeholder="Small"
+          size="sm"
+          (tdsChange)="handleDropdownChange($event, 'small')"
+        >
+          <tds-dropdown-option value="small1">Small Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="small2">Small Option 2</tds-dropdown-option>
+        </tds-dropdown>
+
+        <tds-dropdown
+          name="medium-dropdown"
+          label="Medium Size"
+          label-position="outside"
+          placeholder="Medium"
+          size="md"
+          (tdsChange)="handleDropdownChange($event, 'medium')"
+        >
+          <tds-dropdown-option value="medium1">Medium Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="medium2">Medium Option 2</tds-dropdown-option>
+        </tds-dropdown>
+
+        <tds-dropdown
+          name="large-dropdown"
+          label="Large Size"
+          label-position="outside"
+          placeholder="Large"
+          size="lg"
+          (tdsChange)="handleDropdownChange($event, 'large')"
+        >
+          <tds-dropdown-option value="large1">Large Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="large2">Large Option 2</tds-dropdown-option>
+        </tds-dropdown>
+      </div>
+    </section>
+
+    <!-- Dropdown with Helper Text -->
+    <section>
+      <h4>6. Dropdown with Helper Text</h4>
+      <tds-dropdown
+        name="helper-dropdown"
+        label="Dropdown with Helper"
+        label-position="outside"
+        placeholder="Select your department"
+        helper="This will help us route your request to the correct team"
+        size="lg"
+        (tdsChange)="handleDropdownChange($event, 'helper')"
+      >
+        <tds-dropdown-option value="engineering">Engineering</tds-dropdown-option>
+        <tds-dropdown-option value="marketing">Marketing</tds-dropdown-option>
+        <tds-dropdown-option value="sales">Sales</tds-dropdown-option>
+        <tds-dropdown-option value="support">Support</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['helper']) }}</p>
+    </section>
+
+    <!-- Dropdown with Different Open Directions -->
+    <section>
+      <h4>7. Different Open Directions</h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <tds-dropdown
+          name="up-dropdown"
+          label="Opens Up"
+          label-position="outside"
+          placeholder="Up direction"
+          size="md"
+          open-direction="up"
+          (tdsChange)="handleDropdownChange($event, 'up')"
+        >
+          <tds-dropdown-option value="up1">Up Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="up2">Up Option 2</tds-dropdown-option>
+        </tds-dropdown>
+
+        <tds-dropdown
+          name="down-dropdown"
+          label="Opens Down"
+          label-position="outside"
+          placeholder="Down direction"
+          size="md"
+          open-direction="down"
+          (tdsChange)="handleDropdownChange($event, 'down')"
+        >
+          <tds-dropdown-option value="down1">Down Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="down2">Down Option 2</tds-dropdown-option>
+        </tds-dropdown>
+
+        <tds-dropdown
+          name="auto-dropdown"
+          label="Auto Direction"
+          label-position="outside"
+          placeholder="Auto direction"
+          size="md"
+          open-direction="auto"
+          (tdsChange)="handleDropdownChange($event, 'auto')"
+        >
+          <tds-dropdown-option value="auto1">Auto Option 1</tds-dropdown-option>
+          <tds-dropdown-option value="auto2">Auto Option 2</tds-dropdown-option>
+        </tds-dropdown>
+      </div>
+    </section>
+
+    <!-- Dropdown with Default Value -->
+    <section>
+      <h4>8. Dropdown with Default Value</h4>
+      <tds-dropdown
+        name="default-dropdown"
+        label="Dropdown with Default"
+        label-position="outside"
+        placeholder="Select a country"
+        size="lg"
+        default-value="sweden"
+        (tdsChange)="handleDropdownChange($event, 'default')"
+      >
+        <tds-dropdown-option value="sweden">Sweden</tds-dropdown-option>
+        <tds-dropdown-option value="norway">Norway</tds-dropdown-option>
+        <tds-dropdown-option value="denmark">Denmark</tds-dropdown-option>
+        <tds-dropdown-option value="finland">Finland</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['default']) || 'Sweden (default)' }}</p>
+    </section>
+
+    <!-- Disabled Dropdown -->
+    <section>
+      <h4>9. Disabled Dropdown</h4>
+      <tds-dropdown
+        name="disabled-dropdown"
+        label="Disabled Dropdown"
+        label-position="outside"
+        placeholder="This dropdown is disabled"
+        size="lg"
+        disabled
+        (tdsChange)="handleDropdownChange($event, 'disabled-dropdown')"
+      >
+        <tds-dropdown-option value="disabled1">Disabled Option 1</tds-dropdown-option>
+        <tds-dropdown-option value="disabled2">Disabled Option 2</tds-dropdown-option>
+      </tds-dropdown>
+      <p>This dropdown should be disabled and non-interactive</p>
+    </section>
+
+    <!-- Dropdown with Special Characters -->
+    <section>
+      <h4>10. Dropdown with Special Characters</h4>
+      <tds-dropdown
+        name="special-chars-dropdown"
+        label="Special Characters Test"
+        label-position="outside"
+        placeholder="Test with special chars"
+        size="lg"
+        filter
+        normalize-text="true"
+        (tdsChange)="handleDropdownChange($event, 'special')"
+      >
+        <tds-dropdown-option value="optión-1">Äptión 1</tds-dropdown-option>
+        <tds-dropdown-option value="optîón-2">Optîon 2</tds-dropdown-option>
+        <tds-dropdown-option value="optiôn-3">Öptiôn 3</tds-dropdown-option>
+        <tds-dropdown-option value="åptiõn-4">Åptiõn 4</tds-dropdown-option>
+        <tds-dropdown-option value="optiöñ-5">Optiöñ 5</tds-dropdown-option>
+        <tds-dropdown-option value="optiôñ-6">Optiôñ 6</tds-dropdown-option>
+        <tds-dropdown-option value="optiõñ-7">Optiõñ 7</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['special']) }}</p>
+    </section>
+
+    <!-- Dropdown with Many Options -->
+    <section>
+      <h4>11. Dropdown with Many Options</h4>
+      <tds-dropdown
+        name="many-options-dropdown"
+        label="Many Options (50+)"
+        label-position="outside"
+        placeholder="Select from many options"
+        size="lg"
+        filter
+        (tdsChange)="handleDropdownChange($event, 'many')"
+      >
+        <tds-dropdown-option *ngFor="let i of [].constructor(50); let index = index" 
+                            [value]="'option-' + (index + 1)">
+          Option {{ index + 1 }} - Lorem ipsum dolor sit amet
+        </tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['many']) }}</p>
+    </section>
+
+    <!-- Dropdown with Mode Variant -->
+    <section>
+      <h4>12. Dropdown with Secondary Mode</h4>
+      <tds-dropdown
+        name="secondary-dropdown"
+        label="Secondary Mode Variant"
+        label-position="outside"
+        placeholder="Secondary style"
+        size="lg"
+        mode-variant="secondary"
+        (tdsChange)="handleDropdownChange($event, 'secondary')"
+      >
+        <tds-dropdown-option value="primary">Primary Option</tds-dropdown-option>
+        <tds-dropdown-option value="secondary">Secondary Option</tds-dropdown-option>
+        <tds-dropdown-option value="tertiary">Tertiary Option</tds-dropdown-option>
+      </tds-dropdown>
+      <p>Selected: {{ getSelectedDisplay(selectedValues['secondary']) }}</p>
+    </section>
+  </div>
+
+  <div style="margin-top: 40px; padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+    <h4>Test Results Summary</h4>
+    <pre style="background-color: white; padding: 10px; border-radius: 4px; overflow: auto;">
+{{ selectedValues | json }}
+    </pre>
+  </div>
+</article>
