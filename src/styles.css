@@ -1,7 +1,8 @@
 @import 'reset.css';
-@import url('@scania/tegel/dist/tegel/tegel.css');
 
+@import url('@scania/tegel/dist/tegel/tegel.css');
 @import url('@scania/tegel/dist-styles/traton-variables.css');
+@import url('@scania/tegel/dist-styles/scania-variables.css');
 @import url('@scania/tegel/dist-styles/core.css');
 
 .tds-mode-dark {
