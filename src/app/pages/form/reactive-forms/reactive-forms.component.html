@@ -1,32 +1,40 @@
-<div class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
-  <h3>Reactive forms</h3>
-  <p>
-    This form is built using Angular Reactive forms. It needs some manual work to make it fully
-    function with our components
-  </p>
-  <form (submit)="submitForm($event)">
-    <app-text-input [textFieldGroup]="textFieldGroup"></app-text-input>
-    <app-dropdown [dropdownGroup]="dropdownField"> </app-dropdown>
-    <app-checkbox [checkboxGroup]="checkboxField"></app-checkbox>
-    <app-chip [chipGroup]="chipField" [chipRadioGroup]="chipRadioField"></app-chip>
-    <app-toggle [toggleGroup]="toggleField"></app-toggle>
-    <app-radio-button [radioButtonGroup]="radioButtonField"></app-radio-button>
-    <app-textarea [textareaGroup]="textareaField"></app-textarea>
-    <app-slider [sliderGroup]="sliderField"></app-slider>
-    <tds-button
-      class="tds-u-mt2"
-      type="submit"
-      text="Submit"
-      size="md"
-      fullbleed
-    ></tds-button>
-    <tds-button
-      class="tds-u-mt1"
-      type="reset"
-      text="Reset"
-      size="md"
-      fullbleed
-      variant="secondary"
-    ></tds-button>
-  </form>
-</div>
+<tds-block>
+  <div class="tds-u-flex-dir-col">
+    <h3>Reactive forms</h3>
+    <p>
+      This form is built using Angular Reactive forms. It needs some manual work to make it fully
+      function with our components
+    </p>
+    <form
+      class="reactive-forms"
+      (submit)="submitForm($event)"
+    >
+      <app-text-input [textFieldGroup]="textFieldGroup"></app-text-input>
+      <app-dropdown [dropdownGroup]="dropdownField"> </app-dropdown>
+      <app-checkbox [checkboxGroup]="checkboxField"></app-checkbox>
+      <app-chip
+        [chipGroup]="chipField"
+        [chipRadioGroup]="chipRadioField"
+      ></app-chip>
+      <app-toggle [toggleGroup]="toggleField"></app-toggle>
+      <app-radio-button [radioButtonGroup]="radioButtonField"></app-radio-button>
+      <app-textarea [textareaGroup]="textareaField"></app-textarea>
+      <app-slider [sliderGroup]="sliderField"></app-slider>
+      <tds-button
+        class="tds-u-mt2"
+        type="submit"
+        text="Submit"
+        size="md"
+        fullbleed
+      ></tds-button>
+      <tds-button
+        class="tds-u-mt1"
+        type="reset"
+        text="Reset"
+        size="md"
+        fullbleed
+        variant="secondary"
+      ></tds-button>
+    </form>
+  </div>
+</tds-block>

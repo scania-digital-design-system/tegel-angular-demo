@@ -1,5 +1,5 @@
 <ng-container [formGroup]="textFieldGroup">
-  <section class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
+  <section class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
     <tds-text-field
       mode-variant="secondary"
       name="text-field"
@@ -15,6 +15,7 @@
       label="Date of birth"
       name="dateOfBirth"
       type="date"
+      label-position="outside"
       [defaultValue]="getDefaultDate()"
     ></tds-datetime>
     <div class="side-by-side">
