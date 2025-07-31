@@ -1,4 +1,9 @@
 .form {
+  .input-dropdown-section * {
+    margin-bottom: 16px;
+    display: block;
+  }
+
   tds-block {
     transition: filter 250ms ease;
   }
