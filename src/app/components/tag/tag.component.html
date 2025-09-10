@@ -1,0 +1,58 @@
+<div class="tds-headline-02 tds-u-pb1">Tag</div>
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
+  <!-- Large Tags -->
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+    <div class="tds-body-02">Large Tags</div>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <ng-container *ngFor="let tag of tags.slice(0, 6)">
+        <tds-tag
+          [text]="tag.text"
+          [variant]="tag.variant"
+          [size]="tag.size"
+        ></tds-tag>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Small Tags -->
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+    <div class="tds-body-02">Small Tags</div>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <ng-container *ngFor="let tag of tags.slice(6, 12)">
+        <tds-tag
+          [text]="tag.text"
+          [variant]="tag.variant"
+          [size]="tag.size"
+        ></tds-tag>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Tag with Icon (Prefix Slot) -->
+  <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+    <div class="tds-body-02">Tag with Icon</div>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <tds-tag
+        [text]="tagWithIcon.text"
+        [variant]="tagWithIcon.variant"
+        [size]="tagWithIcon.size"
+      >
+        <tds-icon slot="prefix" name="check" size="16px"></tds-icon>
+      </tds-tag>
+      <tds-tag
+        text="Warning with Icon"
+        variant="Warning"
+        size="lg"
+      >
+        <tds-icon slot="prefix" name="warning" size="16px"></tds-icon>
+      </tds-tag>
+      <tds-tag
+        text="Info with Icon"
+        variant="Information"
+        size="lg"
+      >
+        <tds-icon slot="prefix" name="info" size="16px"></tds-icon>
+      </tds-tag>
+    </div>
+  </div>
+</div>
