@@ -6,10 +6,18 @@ describe('TagComponent', () => {
   let component: TagComponent;
   let fixture: ComponentFixture<TagComponent>;
 
+<<<<<<< Updated upstream
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TagComponent],
     });
+=======
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TagComponent],
+    }).compileComponents();
+
+>>>>>>> Stashed changes
     fixture = TestBed.createComponent(TagComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,3 +27,7 @@ describe('TagComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

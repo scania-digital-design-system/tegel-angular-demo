@@ -1,10 +1,15 @@
+<<<<<<< Updated upstream
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+=======
+import { Component, Input } from '@angular/core';
+>>>>>>> Stashed changes
 import { TegelModule } from '@scania/tegel-angular';
 
 @Component({
   selector: 'app-tag',
   templateUrl: './tag.component.html',
+<<<<<<< Updated upstream
   standalone: true,
   imports: [CommonModule, TegelModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -32,4 +37,14 @@ export class TagComponent {
     variant: 'Success' as const,
     size: 'lg' as const,
   };
+=======
+  styleUrls: ['./tag.component.css'],
+  standalone: true,
+  imports: [TegelModule],
+})
+export class TagComponent {
+  @Input() text: string = 'Tag';
+  @Input() size: 'lg' | 'sm' = 'lg';
+  @Input() variant: 'Success' | 'Warning' | 'New' | 'Neutral' | 'Information' | 'Error' = 'Neutral';
+>>>>>>> Stashed changes
 }
